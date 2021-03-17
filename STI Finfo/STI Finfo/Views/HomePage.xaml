@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="STI_Finfo.Views.HomePage">
+
+   
+    <!-- Principal-->
+    <StackLayout  HeightRequest="130">
+        <!-- Main image-->
+        <AbsoluteLayout BackgroundColor="Black">
+            <Image Source="sti_bg6.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7"/>
+            <Label Margin="30,220,0,0">
+                
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="STI San Jose Del Monte  &#10;" FontSize="28" FontAttributes="Bold" ForegroundColor="White" />
+                        <Span Text="Online Monitoring From &#10;" FontSize="28" FontAttributes="Bold" ForegroundColor="White" />
+                        <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="#fbf304" FontAttributes="Italic" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </AbsoluteLayout>
+        <Frame CornerRadius="35" Margin="0,-300,0,-50" BackgroundColor="White" HasShadow="True" HeightRequest="550" VerticalOptions="EndAndExpand" >
+        </Frame>
+
+    </StackLayout>
+</ContentPage>
