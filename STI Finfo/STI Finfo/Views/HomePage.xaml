@@ -3,25 +3,77 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="STI_Finfo.Views.HomePage">
 
-   
-    <!-- Principal-->
-    <StackLayout  HeightRequest="130">
-        <!-- Main image-->
-        <AbsoluteLayout BackgroundColor="Black">
-            <Image Source="sti_bg6.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7"/>
-            <Label Margin="30,221,0,0">
-                
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="STI San Jose Del Monte  &#10;" FontSize="28" FontAttributes="Bold" ForegroundColor="White" />
-                        <Span Text="Online Monitoring From &#10;" FontSize="28" FontAttributes="Bold" ForegroundColor="White" />
-                        <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="#fbf304" FontAttributes="Italic" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-        </AbsoluteLayout>
-        <Frame CornerRadius="35" Margin="0,-300,0,-50" BackgroundColor="White" HasShadow="True" HeightRequest="550" VerticalOptions="EndAndExpand" >
-        </Frame>
+    <StackLayout>
+        <ScrollView>
+            <AbsoluteLayout BackgroundColor="Black" >
+                <Image Source="sti_bg6.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7"/>
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Row="0" Grid.Column="0" InputTransparent="True">
+                        <Label Margin="30,150,0,0" Padding="0,0,0,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="STI San Jose Del Monte  &#10;" FontSize="26" FontAttributes="Bold" ForegroundColor="White" />
+                                    <Span Text="Online Monitoring Form &#10;" FontSize="26" FontAttributes="Bold" ForegroundColor="White" />
+                                    <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="Yellow" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    <Frame Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Padding="0,0,0,0" HeightRequest="1200" CornerRadius="30" BackgroundColor="white" Margin="0,0,0,-50" HasShadow="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300">
+                        <StackLayout WidthRequest="500" BackgroundColor="White">
+                            <ScrollView>
+                                <StackLayout WidthRequest="900">
+                                    <StackLayout>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Guard" Margin="0,20,-30,0" BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30"  HorizontalOptions="End">
+                                            </Button>
+                                            <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="6" >
+                                                <Button Text="Guest" TextColor="WhiteSmoke"   CornerRadius="5" Margin="10,0,10,0"  Padding="0,0,0,0"  >
+                                                    <Button.Background>
+                                                        <LinearGradientBrush EndPoint="0,2">
+                                                            <GradientStop Color="#01579b" Offset="0.1" />
+                                                            <GradientStop Color="#2c384a" Offset="1.0" />
+                                                        </LinearGradientBrush>
+                                                    </Button.Background>
 
+                                                </Button>
+                                            </Frame>
+                                            <Frame BackgroundColor="White" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" >
+                                                <Button  Text="No ID" TextColor="black"   CornerRadius="5"  Margin="0,0,10,0">
+                                                </Button>
+                                            </Frame>
+                                           
+                                        </Grid>
+                                    </StackLayout>
+                                    
+                                </StackLayout>
+                            </ScrollView>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </AbsoluteLayout>
+        </ScrollView>
     </StackLayout>
+
+
+
+
 </ContentPage>
