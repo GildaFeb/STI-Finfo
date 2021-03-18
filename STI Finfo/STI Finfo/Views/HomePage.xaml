@@ -22,7 +22,7 @@
                                 <FormattedString>
                                     <Span Text="STI San Jose Del Monte  &#10;" FontSize="26" FontAttributes="Bold" ForegroundColor="White" />
                                     <Span Text="Online Monitoring Form &#10;" FontSize="26" FontAttributes="Bold" ForegroundColor="White" />
-                                    <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="Yellow" />
+                                    <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="Yellow" FontAttributes="Italic" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -43,24 +43,39 @@
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
-                                            <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Guard" Margin="0,20,-30,0" BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30"  HorizontalOptions="End">
-                                            </Button>
-                                            <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="6" >
-                                                <Button Text="Guest" TextColor="WhiteSmoke"   CornerRadius="5" Margin="10,0,10,0"  Padding="0,0,0,0"  >
-                                                    <Button.Background>
-                                                        <LinearGradientBrush EndPoint="0,2">
-                                                            <GradientStop Color="#01579b" Offset="0.1" />
-                                                            <GradientStop Color="#2c384a" Offset="1.0" />
-                                                        </LinearGradientBrush>
-                                                    </Button.Background>
-
-                                                </Button>
-                                            </Frame>
-                                            <Frame BackgroundColor="White" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" >
-                                                <Button  Text="No ID" TextColor="black"   CornerRadius="5"  Margin="0,0,10,0">
-                                                </Button>
-                                            </Frame>
-                                           
+                                            <Grid >
+                                                <StackLayout>
+                                                    <Image Source="sti_logo.png" BackgroundColor="white" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Margin="-30,20,0,0"/>
+                                                </StackLayout>
+                                            </Grid>
+                                            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,40,-40,0">
+                                                <StackLayout>
+                                                    <Button Text="Security"  BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30">
+                                                    </Button>
+                                                </StackLayout>
+                                            </Grid>
+                                            
+                                            <!-- GUEST -->
+                                            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                                                <StackLayout>
+                                                    <Button Text="Guest" TextColor="WhiteSmoke"   CornerRadius="5" Margin="10,0,10,0"  Padding="0,0,0,0" >
+                                                        <Button.Background>
+                                                            <LinearGradientBrush EndPoint="0,2">
+                                                                <GradientStop Color="#01579b" Offset="0.1" />
+                                                                <GradientStop Color="#2c384a" Offset="1.0" />
+                                                            </LinearGradientBrush>
+                                                        </Button.Background>
+                                                    </Button>
+                                                </StackLayout>
+                                                
+                                            </Grid>
+                                            <!-- NO ID -->
+                                            <Grid BackgroundColor="White" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" >
+                                                <StackLayout>
+                                                    <Button  Text="No ID" TextColor="black"   CornerRadius="5"  Margin="10,-60,10,0" BorderColor="Black">
+                                                    </Button>
+                                                </StackLayout>
+                                            </Grid>
                                         </Grid>
                                     </StackLayout>
                                     
