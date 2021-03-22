@@ -32,7 +32,7 @@
     <TabBar>
         <ShellContent Title="Home" Icon="home_logo.jpg" ContentTemplate="{DataTemplate local:HomePage}" />
         <ShellContent Title="About" Icon="about_logo.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Contact" Icon="contact_logog.jpg" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Title="Contact" Icon="contact_logog.jpg" ContentTemplate="{DataTemplate local:ContactPage}" />
         
     </TabBar>
 

@@ -17,16 +17,7 @@ namespace STI_Finfo.ViewModels
         public Command AddItemCommand { get; }
         public Command<Item> ItemTapped { get; }
 
-        public ItemsViewModel()
-        {
-            Title = "Browse";
-            Items = new ObservableCollection<Item>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
-            ItemTapped = new Command<Item>(OnItemSelected);
-
-            AddItemCommand = new Command(OnAddItem);
-        }
+      
 
         async Task ExecuteLoadItemsCommand()
         {
@@ -65,11 +56,6 @@ namespace STI_Finfo.ViewModels
                 SetProperty(ref _selectedItem, value);
                 OnItemSelected(value);
             }
-        }
-
-        private async void OnAddItem(object obj)
-        {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));
         }
 
         async void OnItemSelected(Item item)

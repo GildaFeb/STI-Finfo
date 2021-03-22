@@ -15,8 +15,12 @@ namespace STI_Finfo.Views
         public HomePage()
         {
             InitializeComponent();
+           
         }
-
+        private async void GuestButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GuestForm());
+        }
         private void Image_SizeChanged(object sender, EventArgs e)
         {
 

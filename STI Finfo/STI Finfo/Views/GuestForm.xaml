@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="STI_Finfo.Views.GuestForm"
+             xmlns:vm="clr-namespace:STI_Finfo.ViewModels"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout>
+                    <Grid Margin="40,-45,40,40" HorizontalOptions="Center">
+                        <Image Source="talk.png" Margin="50,50,50,50" ></Image>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Margin="0,-90,0,0">
+                    <Grid HorizontalOptions="CenterAndExpand" >
+                        <Label Text="Quest Form" Margin="0,-50,0,0" TextColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="26"></Label>
+                        <Label Text="Please complete the form below" TextColor="#f3c30c" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Italic" FontSize="15"></Label>
+                    </Grid>
+                </StackLayout>
+                <StackLayout>
+                    <Frame WidthRequest="700" Margin="7,0,5,7"  HasShadow="true" BackgroundColor="#cccccc" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="1200" CornerRadius="10">
+                        <StackLayout>
+                            <Grid>
+                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1">
+                                    <Entry  Placeholder="First name" PlaceholderColor="#f3c30c" FontSize="15" Margin="-2,2,-2,6" />
+                                </Frame>
+                            </Grid>
+                            <Grid>
+                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1">
+                                    <Entry  Placeholder="Last Name" PlaceholderColor="#f3c30c" Margin="-2,2,-2,6"  FontSize="15" />
+                                </Frame>
+                            </Grid>
+                            <Grid>
+                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1">
+                                    <Entry  Placeholder="Middle Name" PlaceholderColor="#f3c30c" Margin="-2,2,-2,6" FontSize="15" />
+                                </Frame>
+                            </Grid>
+                            <Grid>
+                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1" >
+                                    <Entry  Placeholder="Contact Number" PlaceholderColor="#f3c30c" Margin="-2,2,-2,6"  FontSize="15" />
+                                </Frame>
+                            </Grid>
+                            <Grid>
+                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1" >
+                                    <Entry  Placeholder="Address ( block, street, barangay, city )" PlaceholderColor="#f3c30c" Margin="-2,2,-2,6"  FontSize="15" />
+                                </Frame>
+                            </Grid>
+                        </StackLayout>
+
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>
