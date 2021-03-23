@@ -11824,16 +11824,19 @@ namespace STI_Finfo.Droid
 			public const int talk = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
-			public const int test_custom_background = 2131165340;
+			public const int teacher = 2131165340;
 			
 			// aapt resource value: 0x7F07009D
-			public const int tooltip_frame_dark = 2131165341;
+			public const int test_custom_background = 2131165341;
 			
 			// aapt resource value: 0x7F07009E
-			public const int tooltip_frame_light = 2131165342;
+			public const int tooltip_frame_dark = 2131165342;
 			
 			// aapt resource value: 0x7F07009F
-			public const int xamarin_logo = 2131165343;
+			public const int tooltip_frame_light = 2131165343;
+			
+			// aapt resource value: 0x7F0700A0
+			public const int xamarin_logo = 2131165344;
 			
 			static Drawable()
 			{

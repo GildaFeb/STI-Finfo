@@ -15,7 +15,8 @@ namespace STI_Finfo.Views
         public HomePage()
         {
             InitializeComponent();
-           
+          
+
         }
         private async void GuestButton_Clicked(object sender, EventArgs e)
         {

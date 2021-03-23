@@ -12,6 +12,7 @@
                         <Image Source="talk.png" Margin="50,50,50,50" ></Image>
                     </Grid>
                 </StackLayout>
+                <!-- GUIDE -->
                 <StackLayout Margin="0,-90,0,0">
                     <Grid HorizontalOptions="CenterAndExpand" >
                         <Label Text="Quest Form" Margin="0,-50,0,0" TextColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="26"></Label>
@@ -21,38 +22,137 @@
                 <StackLayout>
                     <Frame WidthRequest="700" Margin="7,0,5,7"  HasShadow="true" BackgroundColor="#cccccc" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="1200" CornerRadius="10">
                         <StackLayout>
+
                             <Grid>
-                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1">
-                                    <Entry  Placeholder="First name" PlaceholderColor="#f3c30c" FontSize="15" Margin="-2,2,-2,6" />
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <!--- FIRST NAME -->
+                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Entry  Placeholder="First name" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                </Frame>
+                                <!--- AGE -->
+                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2" >
+                                    <Entry  Placeholder="Age" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                 </Frame>
                             </Grid>
                             <Grid>
+                                <!--- LAST NAME -->
                                 <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1">
-                                    <Entry  Placeholder="Last Name" PlaceholderColor="#f3c30c" Margin="-2,2,-2,6"  FontSize="15" />
+                                    <Entry  Placeholder="Last Name" PlaceholderColor="#cccccc" Margin="-2,2,-2,6"  FontSize="15" />
                                 </Frame>
                             </Grid>
                             <Grid>
+                                <!--- MIDDLE NAME -->
                                 <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1">
-                                    <Entry  Placeholder="Middle Name" PlaceholderColor="#f3c30c" Margin="-2,2,-2,6" FontSize="15" />
+                                    <Entry  Placeholder="Middle Name" PlaceholderColor="#cccccc" Margin="-2,2,-2,6" FontSize="15" />
                                 </Frame>
                             </Grid>
                             <Grid>
+                                <!--- ADDRESS -->
                                 <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1" >
-                                    <Entry  Placeholder="Contact Number" PlaceholderColor="#f3c30c" Margin="-2,2,-2,6"  FontSize="15" />
+                                    <Entry  Placeholder="Address ( block, street, barangay, city )" PlaceholderColor="#cccccc" Margin="-2,2,-2,6"  FontSize="15" />
                                 </Frame>
                             </Grid>
                             <Grid>
+                                <!--- CONTACT -->
                                 <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1" >
-                                    <Entry  Placeholder="Address ( block, street, barangay, city )" PlaceholderColor="#f3c30c" Margin="-2,2,-2,6"  FontSize="15" />
+                                    <Entry  Placeholder="Contact" PlaceholderColor="#cccccc" Margin="-2,2,-2,6"  FontSize="15" />
                                 </Frame>
+                            </Grid>
+                            <Grid>
+                                <!--- EMAIL -->
+                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1" >
+                                    <Entry  Placeholder="Email" PlaceholderColor="#cccccc" Margin="-2,2,-2,6"  FontSize="15" />
+                                </Frame>
+                            </Grid>
+                            <Grid >
+                                <!--- SYMPTOMS -->
+                                <Frame>
+                                    <StackLayout>
+                                        <Frame BackgroundColor="#003366">
+                                            <Label TextColor="White" Text="Are you experiencing new or worsening (If yes, check the following symptoms):" x:Name="label">
+
+                                            </Label>
+                                        </Frame>
+                                        <!-- CHOICES -->
+                                        <Frame Margin="3,0,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="370" Padding="10,-2,5,2" >
+                                            <Grid Margin="-10,0,0,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Frame Margin="9,8,8,8" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
+                                                    <RelativeLayout>
+                                                        <CheckBox IsChecked="False" Color="#e0cc7b"  BindingContext="Cough" x:Name="cought" Margin="-10,0,-14,-5">
+                                                        </CheckBox>
+                                                        <Label Margin="25,0,0,-5" Text="Cough or cold" TextColor="#003366" FontSize="16"/>
+                                                    </RelativeLayout>
+                                                </Frame>
+                                                <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
+                                                    <RelativeLayout>
+                                                        <CheckBox IsChecked="False" Color="#e0cc7b" BindingContext="Cough" x:Name="Breath" Margin="-10,0,-14,-5">
+                                                        </CheckBox>
+                                                        <Label Margin="25,4,0,-5" Text="Shortness of breath or respiratory illness" TextColor="#003366" FontSize="16"/>
+                                                    </RelativeLayout>
+                                                </Frame>
+                                                <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
+                                                    <RelativeLayout>
+                                                        <CheckBox IsChecked="False" Color="#e0cc7b" BindingContext="Cough" x:Name="taste" Margin="-10,0,-14,-5">
+                                                        </CheckBox>
+                                                        <Label Margin="25,2,8,-5" Text="Lack of taste or smell" TextColor="#003366" FontSize="16"/>
+                                                    </RelativeLayout>
+                                                </Frame>
+                                                <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
+                                                    <RelativeLayout>
+                                                        <CheckBox IsChecked="False" Color="#e0cc7b" BindingContext="Cough" x:Name="none" Margin="-10,0,-14,-5">
+                                                        </CheckBox>
+                                                        <Label Margin="25,2,0,-5" Text="None" TextColor="#003366" FontSize="16"/>
+                                                    </RelativeLayout>
+                                                </Frame>
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                            <!-- BUTTON SUBMIT-->
+                            <Grid>
+                                <Button Text="SUBMIT"  BackgroundColor="#fab637" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="60"/>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="True" WidthRequest="1500" Margin="5,28,5,0" CornerRadius="8" HeightRequest="130" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" BackgroundColor="#003366"></Frame>
+                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3"  Margin="-5,28,5,0" BackgroundColor="#003366">
+                                    <StackLayout>
+                                        <Label Text="WELCOME TO STI" FontAttributes="Bold" FontSize="30" TextColor="White" Margin="-18,-5,0,0"/>
+                                        <Label Text="Keep social distance and wear your mask" FontAttributes="Italic" FontSize="10" TextColor="#e0cc7b" Margin="-18,-8,0,0"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Image Source="teacher.png" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="2,-380,0,-10"/>
                             </Grid>
                         </StackLayout>
-
                     </Frame>
                 </StackLayout>
             </StackLayout>
-            
         </ScrollView>
-        
     </ContentPage.Content>
 </ContentPage>

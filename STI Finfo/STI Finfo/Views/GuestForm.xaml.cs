@@ -9,13 +9,17 @@ using Xamarin.Forms.Xaml;
 
 namespace STI_Finfo.Views
 {
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GuestForm : ContentPage
     {
+
         public GuestForm()
         {
             InitializeComponent();
+
         }
+     
        
     }
 }
