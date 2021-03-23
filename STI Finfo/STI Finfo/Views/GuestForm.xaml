@@ -16,7 +16,7 @@
                 <StackLayout Margin="0,-90,0,0">
                     <Grid HorizontalOptions="CenterAndExpand" >
                         <Label Text="Quest Form" Margin="0,-50,0,0" TextColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="26"></Label>
-                        <Label Text="Please complete the form below" TextColor="#f3c30c" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Italic" FontSize="15"></Label>
+                        <Label Text="Please complete the form below" TextColor="#ba9400" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Italic" FontSize="15"></Label>
                     </Grid>
                 </StackLayout>
                 <StackLayout>
@@ -94,28 +94,28 @@
                                                 </Grid.RowDefinitions>
                                                 <Frame Margin="9,8,8,8" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
                                                     <RelativeLayout>
-                                                        <CheckBox IsChecked="False" Color="#e0cc7b"  BindingContext="Cough" x:Name="cought" Margin="-10,0,-14,-5">
+                                                        <CheckBox IsChecked="False" Color="#62212f"  BindingContext="Cough" x:Name="cought" Margin="-10,0,-14,-5">
                                                         </CheckBox>
                                                         <Label Margin="25,0,0,-5" Text="Cough or cold" TextColor="#003366" FontSize="16"/>
                                                     </RelativeLayout>
                                                 </Frame>
                                                 <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
                                                     <RelativeLayout>
-                                                        <CheckBox IsChecked="False" Color="#e0cc7b" BindingContext="Cough" x:Name="Breath" Margin="-10,0,-14,-5">
+                                                        <CheckBox IsChecked="False" Color="#62212f" BindingContext="Cough" x:Name="Breath" Margin="-10,0,-14,-5">
                                                         </CheckBox>
                                                         <Label Margin="25,4,0,-5" Text="Shortness of breath or respiratory illness" TextColor="#003366" FontSize="16"/>
                                                     </RelativeLayout>
                                                 </Frame>
                                                 <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
                                                     <RelativeLayout>
-                                                        <CheckBox IsChecked="False" Color="#e0cc7b" BindingContext="Cough" x:Name="taste" Margin="-10,0,-14,-5">
+                                                        <CheckBox IsChecked="False" Color="#62212f" BindingContext="Cough" x:Name="taste" Margin="-10,0,-14,-5">
                                                         </CheckBox>
                                                         <Label Margin="25,2,8,-5" Text="Lack of taste or smell" TextColor="#003366" FontSize="16"/>
                                                     </RelativeLayout>
                                                 </Frame>
                                                 <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
                                                     <RelativeLayout>
-                                                        <CheckBox IsChecked="False" Color="#e0cc7b" BindingContext="Cough" x:Name="none" Margin="-10,0,-14,-5">
+                                                        <CheckBox IsChecked="False" Color="#62212f" BindingContext="Cough" x:Name="none" Margin="-10,0,-14,-5">
                                                         </CheckBox>
                                                         <Label Margin="25,2,0,-5" Text="None" TextColor="#003366" FontSize="16"/>
                                                     </RelativeLayout>
@@ -127,7 +127,7 @@
                             </Grid>
                             <!-- BUTTON SUBMIT-->
                             <Grid>
-                                <Button Text="SUBMIT"  BackgroundColor="#fab637" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="60"/>
+                                <Button Text="SUBMIT"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="60"/>
                             </Grid>
                             <Grid>
                                 <Grid.ColumnDefinitions>

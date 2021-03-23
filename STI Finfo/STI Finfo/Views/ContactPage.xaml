@@ -11,8 +11,8 @@
                     <Image Source="contact_bg.png" Margin="0" Aspect="AspectFill"/>
                 </Frame>
             </StackLayout>
-            <StackLayout Margin="10,250,10,0">
-                <Label Text="You may contact us throught:" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" FontAttributes="Bold"/>
+            <StackLayout Margin="10,300,10,0">
+                <Label Text="You may contact us throught:" HorizontalTextAlignment="Center" TextColor="White" FontSize="30" FontAttributes="Bold" FontFamily="Helvetica"/>
                 <Label Text="Email: sticollegesjdm@gamil.com" FontSize="Subtitle" Padding="17,15,0,0"/>
                 <Label Text="Facebook: Sti College SJDM" FontSize="Subtitle" Padding="17,15,0,0"/>
                 <Label Text="Contact #: 09278363748" FontSize="Subtitle" Padding="17,15,0,0"/>

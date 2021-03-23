@@ -22,6 +22,10 @@ namespace STI_Finfo.Views
         {
             await Navigation.PushAsync(new GuestForm());
         }
+        private async void SecurityButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LogInForm());
+        }
         private void Image_SizeChanged(object sender, EventArgs e)
         {
 

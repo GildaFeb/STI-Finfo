@@ -52,14 +52,10 @@
                                             <!--- SECURITY BUTTON -->
                                             <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,40,-40,10">
                                                 <StackLayout>
-                                                    <Button Text="Security"  BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30">
+                                                    <Button Text="Security"  BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30" Clicked="SecurityButton_Clicked" >
                                                     </Button>
                                                 </StackLayout>
                                             </Grid>
-                                            <!-- CENTER  -->
-
-                                       
-
                                             <!-- GUEST -->
                                             <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  >
                                                 <StackLayout>
@@ -80,7 +76,7 @@
                                                         <Button.Background>
                                                             <LinearGradientBrush EndPoint="0,2">
                                                                 <GradientStop Color="#ffcc00" Offset="0.1" />
-                                                                <GradientStop Color="#2c384a" Offset="1.0" />
+                                                                <GradientStop Color="#b08d00" Offset="1.0" />
                                                             </LinearGradientBrush>
                                                         </Button.Background>
 

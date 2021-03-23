@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="STI_Finfo.Views.LogInForm">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0,2">
+                        <GradientStop Color="White" Offset="0.1"/>
+                        <GradientStop Color="White" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+                <StackLayout Padding="2" >
+                    <Grid>
+                        <StackLayout Margin="10,90,20,100" Opacity=".9">
+                            <Frame  HasShadow="True" HeightRequest="2500" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                                <StackLayout HorizontalOptions="FillAndExpand" >
+                                    <!--  LOG IN  -->
+                                    <StackLayout Margin="0,10,0,5">
+                                        <Label TextColor="#003366" Text="Sign in" FontFamily="helvetica" FontSize="60" FontAttributes="Bold" >
+                                        </Label>
+                                        <Label TextColor="#003366" Text="This section is for security monitoring only." FontFamily="helvetica" FontSize="Medium" FontAttributes="Bold" >
+                                        </Label>
+                                    </StackLayout>
+                                    <!-- USERNAME -->
+                                    <StackLayout Margin="0,50,0,0">
+                                        <Frame CornerRadius="10" HeightRequest="50" Padding="0" Margin="0" HorizontalOptions="FillAndExpand" HasShadow="True">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="username.png" Margin="0,0,-10,0"></Image>
+                                                <Entry Placeholder="Username" Margin="0,5,10,5" HeightRequest="50"  HorizontalOptions="FillAndExpand" Keyboard="Email" TextColor="black" PlaceholderColor="#002d5a" />
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                    <!-- Password -->
+                                    <StackLayout Margin="0,10,0,6">
+                                        <Frame CornerRadius="10" HeightRequest="50" Padding="0" Margin="0" HorizontalOptions="FillAndExpand" HasShadow="True">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="password.png" Margin="12,8,0,8" ></Image>
+                                                <Entry Placeholder="Password" Margin="0,5,10,5" HeightRequest="50" IsPassword="True" HorizontalOptions="FillAndExpand" TextColor="black" PlaceholderColor="#002d5a" />
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                    <FlexLayout>
+                                        <StackLayout>
+                                            <CheckBox Color="#b08d00"></CheckBox>
+                                        </StackLayout>
+                                        <StackLayout Margin="0,5,0,0">
+                                            <Label Text="Remember me" TextColor="#003366"></Label>
+                                        </StackLayout>
+                                    </FlexLayout>
+                                    <!-- Button -->
+                                    <StackLayout Margin="0,20,0,0">
+                                        <Button x:Name="SignInBtn" CornerRadius="20" Margin="0,30,0,5" Text="Log in" TextColor="white"  >
+                                            <Button.Background>
+                                                <LinearGradientBrush EndPoint="0,1">
+                                                    <GradientStop Color="#003366" Offset=".2" />
+                                                    <GradientStop Color="#002d5a" Offset=".9" />
+                                                </LinearGradientBrush>
+                                            </Button.Background>
+                                        </Button>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
