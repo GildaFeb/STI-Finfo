@@ -59,30 +59,31 @@
                                             <!-- GUEST -->
                                             <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  >
                                                 <StackLayout>
-                                                    <Button Text="GUEST" TextColor="WhiteSmoke" Clicked="GuestButton_Clicked"  CornerRadius="5" Margin="9,0,10,0"  Padding="0,0,0,0" >
-                                                        <Button.Background>
-                                                            <LinearGradientBrush EndPoint="0,2">
-                                                                <GradientStop Color="#01579b" Offset="0.1" />
-                                                                <GradientStop Color="#2c384a" Offset="1.0" />
-                                                            </LinearGradientBrush>
-                                                        </Button.Background>
-                                                    </Button>
-                                                </StackLayout>
-                                            </Grid>
-                                            <!-- NO ID -->
-                                            <Grid BackgroundColor="White" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,0,0" >
-                                                <StackLayout>
-                                                    <Button  Text="No ID" TextColor="DarkSlateGray"   CornerRadius="5"  Margin="10,-60,10,0" BackgroundColor="#ffcc00">
-                                                        <Button.Background>
-                                                            <LinearGradientBrush EndPoint="0,2">
-                                                                <GradientStop Color="#ffcc00" Offset="0.1" />
-                                                                <GradientStop Color="#b08d00" Offset="1.0" />
-                                                            </LinearGradientBrush>
-                                                        </Button.Background>
+                                                    <StackLayout>
+                                                        <Button Text="GUEST" TextColor="WhiteSmoke" Clicked="GuestButton_Clicked"  CornerRadius="5" Margin="9,0,10,0"  >
+                                                            <Button.Background>
+                                                                <LinearGradientBrush EndPoint="0,2">
+                                                                    <GradientStop Color="#01579b" Offset="0.1" />
+                                                                    <GradientStop Color="#2c384a" Offset="1.0" />
+                                                                </LinearGradientBrush>
+                                                            </Button.Background>
+                                                        </Button>
+                                                    </StackLayout>
+                                                    <StackLayout>
+                                                        <Button  Text="No ID" TextColor="DarkSlateGray" Clicked="NoIDButton_Clicked" CornerRadius="5" BackgroundColor="#ffcc00" Margin="9,0,9,0">
+                                                            <Button.Background>
+                                                                <LinearGradientBrush EndPoint="0,2">
+                                                                    <GradientStop Color="#ffcc00" Offset="0.1" />
+                                                                    <GradientStop Color="#b08d00" Offset="1.0" />
+                                                                </LinearGradientBrush>
+                                                            </Button.Background>
 
-                                                    </Button>
+                                                        </Button>
+                                                    </StackLayout>
                                                 </StackLayout>
                                             </Grid>
+                                            <!-- NO ID --> 
+                                            
                                         </Grid>
                                     </StackLayout>
 

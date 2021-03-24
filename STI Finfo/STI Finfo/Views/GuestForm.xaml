@@ -30,56 +30,78 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <!--- FIRST NAME -->
-                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="0" Grid.ColumnSpan="2">
-                                    <Entry  Placeholder="First name" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
-                                </Frame>
+                                <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Label Text="First name" FontSize="15" TextColor="#003366"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                        <Entry  Placeholder="e.g., Juan John" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                                </StackLayout>
                                 <!--- AGE -->
-                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2" >
-                                    <Entry  Placeholder="Age" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
-                                </Frame>
+                                <StackLayout Grid.Column="2" >
+                                    <Label Text="Age" FontSize="15" TextColor="#003366"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
+                                        <Entry  Placeholder="e.g., 18" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                                </StackLayout>
+                                
                             </Grid>
                             <Grid>
                                 <!--- LAST NAME -->
-                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1">
-                                    <Entry  Placeholder="Last Name" PlaceholderColor="#cccccc" Margin="-2,2,-2,6"  FontSize="15" />
-                                </Frame>
+                                <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Label Text="Last name" FontSize="15" TextColor="#003366"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                        <Entry  Placeholder="e.g., Mapagmahal" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                                </StackLayout>
                             </Grid>
                             <Grid>
                                 <!--- MIDDLE NAME -->
-                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1">
-                                    <Entry  Placeholder="Middle Name" PlaceholderColor="#cccccc" Margin="-2,2,-2,6" FontSize="15" />
-                                </Frame>
-                            </Grid>
+                                <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Label Text="Middle name" FontSize="15" TextColor="#003366"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                        <Entry  Placeholder="e.g., Aquino" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                        </StackLayout>
+                        </Grid>
                             <Grid>
                                 <!--- ADDRESS -->
-                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1" >
-                                    <Entry  Placeholder="Address ( block, street, barangay, city )" PlaceholderColor="#cccccc" Margin="-2,2,-2,6"  FontSize="15" />
-                                </Frame>
+                                <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Label Text="Address" FontSize="15" TextColor="#003366" Margin="0,0,0,-2"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                        <Entry  Placeholder="e.g., STICollge@sjdelmonte.sti.edu.ph" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                                </StackLayout>
                             </Grid>
                             <Grid>
                                 <!--- CONTACT -->
-                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1" >
-                                    <Entry  Placeholder="Contact" PlaceholderColor="#cccccc" Margin="-2,2,-2,6"  FontSize="15" />
-                                </Frame>
+                                <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Label Text="Contact no." FontSize="15" TextColor="#003366"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                        <Entry  Placeholder="e.g., 09692536215" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                                </StackLayout>
                             </Grid>
                             <Grid>
                                 <!--- EMAIL -->
-                                <Frame Margin="0,0,0,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1" >
-                                    <Entry  Placeholder="Email" PlaceholderColor="#cccccc" Margin="-2,2,-2,6"  FontSize="15" />
-                                </Frame>
+                                <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Label Text="Email" FontSize="15" TextColor="#003366"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                        <Entry  Placeholder="e.g., STICollege.sjdelmonte.sti.edu.ph" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                                </StackLayout>
                             </Grid>
                             <Grid >
                                 <!--- SYMPTOMS -->
-                                <Frame>
+                                <Frame Margin="0,7,0,0">
                                     <StackLayout>
                                         <Frame BackgroundColor="#003366">
-                                            <Label TextColor="White" Text="Are you experiencing new or worsening (If yes, check the following symptoms):" x:Name="label">
+                                            <Label TextColor="White" Text="Do you have the following symptoms (Check all that apply):" x:Name="label">
 
                                             </Label>
                                         </Frame>
                                         <!-- CHOICES -->
-                                        <Frame Margin="3,0,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="370" Padding="10,-2,5,2" >
-                                            <Grid Margin="-10,0,0,0">
+                                        <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="370" Padding="10,-2,5,2" >
+                                            <Grid Margin="0,0,0,0">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition/>
                                                     <ColumnDefinition/>
@@ -93,31 +115,31 @@
                                                     <RowDefinition/>
                                                 </Grid.RowDefinitions>
                                                 <Frame Margin="9,8,8,8" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
-                                                    <RelativeLayout>
+                                                    <RelativeLayout Margin="-2,-6,-2,-6">
                                                         <CheckBox IsChecked="False" Color="#62212f"  BindingContext="Cough" x:Name="cought" Margin="-10,0,-14,-5">
                                                         </CheckBox>
-                                                        <Label Margin="25,0,0,-5" Text="Cough or cold" TextColor="#003366" FontSize="16"/>
+                                                        <Label Margin="25,-7,0,-5" Text="Cough or cold" TextColor="#003366" FontSize="16"/>
                                                     </RelativeLayout>
                                                 </Frame>
                                                 <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
-                                                    <RelativeLayout>
+                                                    <RelativeLayout Margin="-2,-2,-2,-2">
                                                         <CheckBox IsChecked="False" Color="#62212f" BindingContext="Cough" x:Name="Breath" Margin="-10,0,-14,-5">
                                                         </CheckBox>
-                                                        <Label Margin="25,4,0,-5" Text="Shortness of breath or respiratory illness" TextColor="#003366" FontSize="16"/>
+                                                        <Label Margin="25,-4,0,-5" Text="Shortness of breath or respiratory illness" TextColor="#003366" FontSize="16"/>
                                                     </RelativeLayout>
                                                 </Frame>
                                                 <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
-                                                    <RelativeLayout>
+                                                    <RelativeLayout Margin="-2,-2,-2,-2">
                                                         <CheckBox IsChecked="False" Color="#62212f" BindingContext="Cough" x:Name="taste" Margin="-10,0,-14,-5">
                                                         </CheckBox>
-                                                        <Label Margin="25,2,8,-5" Text="Lack of taste or smell" TextColor="#003366" FontSize="16"/>
+                                                        <Label Margin="25,-4,8,-5" Text="Lack of taste or smell" TextColor="#003366" FontSize="16"/>
                                                     </RelativeLayout>
                                                 </Frame>
                                                 <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
-                                                    <RelativeLayout>
+                                                    <RelativeLayout Margin="-2,-2,-2,-2">
                                                         <CheckBox IsChecked="False" Color="#62212f" BindingContext="Cough" x:Name="none" Margin="-10,0,-14,-5">
                                                         </CheckBox>
-                                                        <Label Margin="25,2,0,-5" Text="None" TextColor="#003366" FontSize="16"/>
+                                                        <Label Margin="25,-4,0,-5" Text="None" TextColor="#003366" FontSize="16"/>
                                                     </RelativeLayout>
                                                 </Frame>
                                             </Grid>
@@ -140,14 +162,24 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Frame HasShadow="True" WidthRequest="1500" Margin="5,28,5,0" CornerRadius="8" HeightRequest="130" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" BackgroundColor="#003366"></Frame>
-                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3"  Margin="-5,28,5,0" BackgroundColor="#003366">
-                                    <StackLayout>
-                                        <Label Text="WELCOME TO STI" FontAttributes="Bold" FontSize="30" TextColor="White" Margin="-18,-5,0,0"/>
-                                        <Label Text="Keep social distance and wear your mask" FontAttributes="Italic" FontSize="10" TextColor="#e0cc7b" Margin="-18,-8,0,0"/>
-                                    </StackLayout>
+                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="18,28,8,150" BackgroundColor="#003366" VerticalOptions="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"> 
+                                            <Image Source="teacher.png"  Margin="-30,-20,0,30" HorizontalOptions="Center" VerticalOptions="Center" />
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" VerticalOptions="Center" >
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" >
+                                                <Label HorizontalOptions="Center" Text="WELCOME TO" FontAttributes="Bold" FontSize="19" TextColor="White" Margin="-30,10,0,0" Padding="0,0,0,0"></Label>
+                                                <Label HorizontalOptions="Center" Text="STI" FontAttributes="Bold" FontSize="20" TextColor="yellow" Margin="0,10,0,0" Padding="0,0,0,0"></Label>
+                                            </StackLayout>
+                                            <Label Text="Keep social distance and wear your mask." FontAttributes="Italic" FontSize="10" TextColor="#e0cc7b" Margin="-30,1,0,0"/>
+                                        </StackLayout>
+                                    </Grid>
                                 </Frame>
-                                <Image Source="teacher.png" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="2,-380,0,-10"/>
                             </Grid>
                         </StackLayout>
                     </Frame>
