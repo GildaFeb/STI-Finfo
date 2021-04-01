@@ -4,49 +4,36 @@
              x:Class="STI_Finfo.Views.AboutPage"
              xmlns:vm="clr-namespace:STI_Finfo.ViewModels"
              Title="{Binding Title}">
-    
-    <ContentPage.BindingContext>
-        <vm:AboutViewModel />
-    </ContentPage.BindingContext>
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
-                </ContentView>
+    <ScrollView >
+        <Grid>
+            <StackLayout>
+                <Frame BackgroundColor="Transparent" HeightRequest="700" HorizontalOptions="FillAndExpand" Padding="0" Margin="0">
+                    <Image Source="BGF1.png" Margin="0" Aspect="AspectFill"/>
+
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" HeightRequest="700" Padding="0" Margin="-44">
+                    <Image Source="BGF4.png" Margin="0" Aspect="AspectFill"/>
+
+                </Frame>
             </StackLayout>
-        </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Start developing now" FontSize="Title"/>
-                <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="0,0,0,0"/>
-                <Label FontSize="16" Padding="0,24,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Learn more at "/>
-                                <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
+
+
+            <StackLayout Margin="0,400,10,0">
+                <Label Text="Our Vision" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="40"/>
+                <Label Text="Our vision is to see the STI College San Jose Del Monte the security it needs through monitoring its guests and students through online monitoring system and to see the innovation that is being used in STI and its continuing development on its technology and systems" FontSize="15" HorizontalTextAlignment="Center" Margin="10" TextColor="#0a0a0a" Padding="15,15,0,0"/>
             </StackLayout>
-        </ScrollView>
-    </Grid>
+            <StackLayout Margin="0,620,10,0">
+                <Label Text="Our Story" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="40"/>
+                <Label Text="We are Grade 12 students of STI college San Jose Del Monte and we want to utilize our skills in web designing and programming. So we decided to make a website that will help STI College SJDM to have our own footprint in our school." FontSize="15" HorizontalTextAlignment="Start" Margin="10" TextColor="#0a0a0a" Padding="15,15,0,0"/>
+            </StackLayout>
+            <StackLayout Margin="0,1050,10,0">
+                <Label Text="Our Mission" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="40"/>
+                <Label Text="Our mission is to provide an online monitoring system for STI College San Jose Del Monte to monitor the individuals that comes in and out of the school's premises. We decided to make it online to avoid touching objects that may have corona virus, and to provide a paperless and less hassle system on monitoring individuals." FontSize="15" HorizontalTextAlignment="End" TextColor="#0a0a0a" Margin="10" Padding="15,15,0,0"/>
+            </StackLayout>
+
+        </Grid>
+    </ScrollView>
 
 </ContentPage>

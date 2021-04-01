@@ -50,7 +50,7 @@
                                         </FlexLayout>
                                         <!-- Button -->
                                         <StackLayout Margin="0,20,0,0">
-                                            <Button x:Name="SignInBtn" CornerRadius="20" Margin="0,30,0,5" Text="Log in" TextColor="white"  >
+                                            <Button x:Name="SignInBtn" CornerRadius="20" Margin="0,30,0,5" Text="Log in" TextColor="white" Clicked="LogIn_Clicked" >
                                                 <Button.Background>
                                                     <LinearGradientBrush EndPoint="0,1">
                                                         <GradientStop Color="#003366" Offset=".2" />

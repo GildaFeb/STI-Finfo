@@ -10,15 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace STI_Finfo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LogInForm : ContentPage
+    public partial class GuardMenu : ContentPage
     {
-        public LogInForm()
+        public GuardMenu()
         {
             InitializeComponent();
-        }
-        private async void LogIn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new GuardMenu());
         }
     }
 }
