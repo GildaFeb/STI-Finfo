@@ -4,15 +4,15 @@
              x:Class="STI_Finfo.Views.GuardMenu">
     <ContentPage.Content>
         <ScrollView>
-            <AbsoluteLayout>
-                <Image Source="guard_bg1.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
-                <Grid>
-                    <Frame Margin="50,30,50,50" BackgroundColor="#003366">
+            <AbsoluteLayout Margin="0,0,0,-100">
+                <Image Source="bg_guard.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"  />
+                <Grid Margin="0,0,0,-100">
+                    <Frame Margin="50,30,50,-300" BackgroundColor="#003366">
                         <StackLayout>
                             <StackLayout>
                                 <Label Text="Request" FontAttributes="Bold" TextColor="White" FontSize="40" HorizontalOptions="Center" Margin="50,30,50,20">
                                 </Label>
-                                <Button Text="NO ID"  FontAttributes="Bold" Margin="20,30,20,10" BackgroundColor="#e0cc7b"/>
+                                <Button Text="NO ID"  FontAttributes="Bold" Margin="20,30,20,10" BackgroundColor="#e0cc7b" TextColor="#003366"/>
                                 <Button Text="GUEST" FontAttributes="Bold" Margin="20,0,20,10" BackgroundColor="#daaf00"/>
                                 <Image Source="secu_icon.png" />
                             </StackLayout>

@@ -15,7 +15,7 @@
                 <!-- GUIDE -->
                 <StackLayout Margin="0,-90,0,0">
                     <Grid HorizontalOptions="CenterAndExpand" >
-                        <Label Text="Quest Form" Margin="0,-50,0,0" TextColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="26"></Label>
+                        <Label Text="Guest Form" Margin="0,-50,0,0" TextColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="26"></Label>
                         <Label Text="Please complete the form below" TextColor="#ba9400" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Italic" FontSize="15"></Label>
                     </Grid>
                 </StackLayout>
@@ -28,24 +28,8 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
+                                    <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <!--- FIRST NAME -->
-                                <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
-                                    <Label Text="First name" FontSize="15" TextColor="#003366"/>
-                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
-                                        <Entry  Placeholder="e.g., Juan John" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
-                                    </Frame>
-                                </StackLayout>
-                                <!--- AGE -->
-                                <StackLayout Grid.Column="2" >
-                                    <Label Text="Age" FontSize="15" TextColor="#003366"/>
-                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
-                                        <Entry  Placeholder="e.g., 18" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
-                                    </Frame>
-                                </StackLayout>
-                                
-                            </Grid>
-                            <Grid>
                                 <!--- LAST NAME -->
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
                                     <Label Text="Last name" FontSize="15" TextColor="#003366"/>
@@ -53,24 +37,58 @@
                                         <Entry  Placeholder="e.g., Mapagmahal" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
+                                <!--- FIRST NAME -->
+                                <StackLayout Grid.Column="2"  Grid.ColumnSpan="2">
+                                    <Label Text="Age" FontSize="15" TextColor="#003366"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
+                                        <Entry  Placeholder="e.g., Juan John" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                                </StackLayout>
+                                
                             </Grid>
                             <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
                                 <!--- MIDDLE NAME -->
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
                                     <Label Text="Middle name" FontSize="15" TextColor="#003366"/>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
-                                        <Entry  Placeholder="e.g., Aquino" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
-                                    </Frame>
-                        </StackLayout>
-                        </Grid>
-                            <Grid>
-                                <!--- ADDRESS -->
-                                <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
-                                    <Label Text="Address" FontSize="15" TextColor="#003366" Margin="0,0,0,-2"/>
-                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
-                                        <Entry  Placeholder="e.g., STICollge@sjdelmonte.sti.edu.ph" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                        <Entry  Placeholder="e.g., Delacor" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
+                                <!--- SUFFIX-->
+                                <StackLayout Grid.Column="2" >
+                                    <Label Text="Suffix" FontSize="15" TextColor="#003366"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
+                                        <Entry  Placeholder="e.g., Jr." PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                                </StackLayout>
+
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <!--- AGE -->
+                                <StackLayout Grid.Column="0">
+                                    <Label Text="Age" FontSize="15" TextColor="#003366"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                        <Entry  Placeholder="e.g., 18" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                                </StackLayout>
+                                <!--- ADDRESS -->
+                                <StackLayout Grid.Column="1"  Grid.ColumnSpan="2">
+                                    <Label Text="Address" FontSize="15" TextColor="#003366"/>
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
+                                        <Entry  Placeholder="e.g., 143 Heart Avenue" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                    </Frame>
+                                </StackLayout>
+
                             </Grid>
                             <Grid>
                                 <!--- CONTACT -->
@@ -86,7 +104,7 @@
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
                                     <Label Text="Email" FontSize="15" TextColor="#003366"/>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
-                                        <Entry  Placeholder="e.g., STICollege.sjdelmonte.sti.edu.ph" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                        <Entry  Placeholder="e.g., example@email.com" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
                             </Grid>

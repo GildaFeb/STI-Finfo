@@ -2,14 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="STI_Finfo.Views.HomePage">
-
     <StackLayout>
         <ScrollView>
             <AbsoluteLayout BackgroundColor="Black" >
-                <Image Source="sti_bg6.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7"/>
+                <Image Source="home_bg3.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7" Margin="0,0,0,0" />
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
@@ -20,22 +18,20 @@
                         <Label Margin="30,150,0,0" Padding="0,0,0,0">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="STI San Jose Del Monte  &#10;" FontSize="26" FontAttributes="Bold" ForegroundColor="White" />
-                                    <Span Text="Online Monitoring Form &#10;" FontSize="26" FontAttributes="Bold" ForegroundColor="White" />
-                                    <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="Yellow" FontAttributes="Italic" />
+                                    <Span Text=" FINFO" FontSize="26" FontAttributes="Bold" TextColor="White" />
+                                    <Span Text="  " FontSize="26" />
+                                    <Span Text="  " FontSize="17" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
                     </StackLayout>
-                    <Frame Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Padding="0,0,0,0" HeightRequest="1200" CornerRadius="30" BackgroundColor="white" Margin="0,0,0,-50" HasShadow="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300">
+                    <Frame Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Padding="0,0,0,0" HeightRequest="1200" CornerRadius="30" BackgroundColor="white" Margin="0,-80,0,-20" HasShadow="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300">
                         <StackLayout WidthRequest="500" BackgroundColor="White">
                             <ScrollView>
                                 <StackLayout WidthRequest="900">
                                     <StackLayout>
-
                                         <Grid>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition/>
                                                 <RowDefinition/>
                                                 <RowDefinition/>
                                             </Grid.RowDefinitions>
@@ -44,21 +40,30 @@
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
-                                            <Grid >
-                                                <StackLayout>
-                                                    <Image Source="sti_logo.png" BackgroundColor="white" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Margin="-30,20,0,0"/>
-                                                </StackLayout>
-                                            </Grid>
                                             <!--- SECURITY BUTTON -->
-                                            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,40,-40,10">
-                                                <StackLayout>
-                                                    <Button Text="Security"  BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30" Clicked="SecurityButton_Clicked" >
+                                            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,40,0,10">
+                                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                                    <Button Text="Security" Padding="90,15,90,15" BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30" Clicked="SecurityButton_Clicked" >
                                                     </Button>
                                                 </StackLayout>
                                             </Grid>
-                                            <!-- GUEST -->
-                                            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  >
+                                            <!--- APP NAME -->
+                                            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#2c384a" Margin="0,-20">
+                                                <StackLayout BackgroundColor="#2c384a" HorizontalOptions="Center" VerticalOptions="Center" Margin="5,0,5,0"  >
+                                                    <Label Padding="0,0,0,0">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="STI Collge San Jose Del Monte  &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
+                                                                <Span Text="Online Monitoring Form &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
+                                                                <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="Yellow" FontAttributes="Italic" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </StackLayout>
+                                            </Grid>
+                                            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,60,0,0" >
                                                 <StackLayout>
+                                                    <!-- GUEST -->
                                                     <StackLayout>
                                                         <Button Text="GUEST" TextColor="WhiteSmoke" Clicked="GuestButton_Clicked"  CornerRadius="5" Margin="9,0,10,0"  >
                                                             <Button.Background>
@@ -69,6 +74,7 @@
                                                             </Button.Background>
                                                         </Button>
                                                     </StackLayout>
+                                                    <!-- NO ID -->
                                                     <StackLayout>
                                                         <Button  Text="No ID" TextColor="DarkSlateGray" Clicked="NoIDButton_Clicked" CornerRadius="5" BackgroundColor="#ffcc00" Margin="9,0,9,0">
                                                             <Button.Background>
@@ -82,8 +88,6 @@
                                                     </StackLayout>
                                                 </StackLayout>
                                             </Grid>
-                                            <!-- NO ID --> 
-                                            
                                         </Grid>
                                     </StackLayout>
 
