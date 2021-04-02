@@ -15,6 +15,7 @@ namespace STI_Finfo.Views
         public LogInForm()
         {
             InitializeComponent();
+         
         }
         private async void LogIn_Clicked(object sender, EventArgs e)
         {

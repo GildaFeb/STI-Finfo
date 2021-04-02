@@ -26,7 +26,7 @@
                     </Grid>
                 </StackLayout>
                 <StackLayout>
-                    <Frame WidthRequest="700" Margin="7,0,5,7"  HasShadow="true" BackgroundColor="#cccccc" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="1200" CornerRadius="10">
+                    <Frame WidthRequest="700" Margin="7,0,5,7"  HasShadow="true" BackgroundColor="#cccccc" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="500" CornerRadius="10">
                         <StackLayout>
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -40,7 +40,7 @@
                                 <!--- Student No.-->
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="3">
                                     <Label Text="Student no."  TextColor="#003366" Margin="0,0,0,-2"></Label>
-                                    <Frame Margin="0,-3,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                    <Frame Margin="0,-3,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="50" Padding="10,-2,10,-1" >
                                         <Entry  Placeholder="e.g., 2000175865" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
@@ -49,7 +49,7 @@
                                 <!--- Email -->
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="3" >
                                     <Label Text="Email"  TextColor="#003366" ></Label>
-                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                    <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="50" Padding="10,-2,10,-1" >
                                         <Entry  Placeholder="e.g., STICollege.sti.edu.ph" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
@@ -58,106 +58,14 @@
                                 <!--- REASON -->
                                 <StackLayout>
                                     <Label Text="Reason for having no ID"  TextColor="#003366"></Label>
-                                    <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="60" Padding="10,-2,10,-1">
+                                    <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
                                         <Entry  Placeholder="e.g., I forgot my ID in house" PlaceholderColor="#cccccc" Margin="-2,2,-2,6" FontSize="15" />
                                     </Frame>
                                 </StackLayout>
                             </Grid>
-                            <Grid>
-                                <StackLayout>
-                                    <Grid Margin="0,6,0,0"  HeightRequest="130" Padding="0,0,0,5">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                        </Grid.RowDefinitions>
-                                        <StackLayout Grid.Row="0" Grid.ColumnSpan="4" Margin="3,1,4,2" Padding="0,0,-40,0" Orientation="Horizontal">
-                                            <Label Text="Have you been in close contact with someone who has confirmed coronavirus disease?" TextColor="#003366" />
-                                        </StackLayout>
-                                        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" WidthRequest="2000" Margin="-3,0,5,3"  Orientation="Horizontal">
-                                        <RadioButton Content="Yes" FontSize="15"/>
-                                                <RadioButton Content="No" FontSize="15"   />
-                                                <RadioButton Content="I do not have any idea" FontSize="15"  />
-                                           
-                                        </StackLayout>
-                                            
-                                    </Grid>
-                                   
-                                    
-                                </StackLayout>
-                            </Grid>
-                           
-                            <Grid >
-                                <!--- SYMPTOMS -->
-                                <Frame>
-                                    <StackLayout>
-                                        <Frame BackgroundColor="#003366">
-                                            <Label TextColor="White" Text="Do you have the following symptoms (Check all that apply):" x:Name="label">
-
-                                            </Label>
-                                        </Frame>
-                                        <!-- CHOICES -->
-                                        <Frame Margin="3,0,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="420" Padding="10,1,5,2" >
-                                            <Grid Margin="-10,0,0,0">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition/>
-                                                    
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition/>
-                                                    <RowDefinition/>
-                                                    <RowDefinition/>
-                                                    <RowDefinition/>
-                                                    <RowDefinition/>
-                                                </Grid.RowDefinitions>
-                                                <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
-                                                    <RelativeLayout  Margin="-2,-2,-2,-2">
-                                                        <CheckBox IsChecked="False" Color="#62212f"  BindingContext="Cough" x:Name="cought" Margin="-10,0,-14,-5">
-                                                        </CheckBox>
-                                                        <Label Margin="25,-7,0,-5" Text="Cough or cold" TextColor="#003366" FontSize="16"/>
-                                                    </RelativeLayout>
-                                                </Frame>
-                                                <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
-                                                    <RelativeLayout Margin="-2,-2,-2,-2">
-                                                        <CheckBox IsChecked="False" Color="#62212f" BindingContext="Cough" x:Name="fever" Margin="-10,0,-14,-5">
-                                                        </CheckBox>
-                                                        <Label Margin="25,-7,0,-5" Text="Fever" TextColor="#003366" FontSize="16"/>
-                                                    </RelativeLayout>
-                                                </Frame>
-                                                <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
-                                                    <RelativeLayout Margin="-2,-2,-2,-2">
-                                                        <CheckBox IsChecked="False" Color="#62212f" BindingContext="Cough" x:Name="breath" Margin="-10,0,-14,-5">
-                                                        </CheckBox>
-                                                        <Label Margin="25,-7,8,-5" Text="Difficulty in breathing" TextColor="#003366" FontSize="16"/>
-                                                    </RelativeLayout>
-                                                </Frame>
-                                                <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
-                                                    <RelativeLayout Margin="-2,-2,-2,-2">
-                                                        <CheckBox IsChecked="False" Color="#62212f" BindingContext="Cough" x:Name="taste" Margin="-10,0,-14,-5">
-                                                        </CheckBox>
-                                                        <Label Margin="25,-7,0,-5" Text="Loss of taste or smell" TextColor="#003366" FontSize="16"/>
-                                                    </RelativeLayout>
-                                                </Frame>
-                                                <Frame Margin="8,0,8,8" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" CornerRadius="5" HeightRequest="50" >
-                                                    <RelativeLayout Margin="-2,-2,-2,-2">
-                                                        <CheckBox IsChecked="False" Color="#62212f" BindingContext="Cough" x:Name="none" Margin="-10,0,-14,-5">
-                                                        </CheckBox>
-                                                        <Label Margin="25,-7,0,-5" Text="None" TextColor="#003366" FontSize="16"/>
-                                                    </RelativeLayout>
-                                                </Frame>
-                                            </Grid>
-                                        </Frame>
-                                    </StackLayout>
-                                </Frame>
-                            </Grid>
                             <!-- BUTTON SUBMIT-->
                             <Grid>
-                                <Button Text="SUBMIT"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="60"/>
+                                <Button Text="SUBMIT"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="50"/>
                             </Grid>
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -170,18 +78,18 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="8,28,8,150" BackgroundColor="#003366">
+                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="8,28,8,20" BackgroundColor="#003366" HeightRequest="130">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
                                         <StackLayout Grid.Column="0" >
-                                            <Image Source="professor.png"  Margin="0,0,0,-10" HorizontalOptions="Center" />
+                                            <Image Source="professor.png"  Margin="0,0,0,-20" HorizontalOptions="Center" />
                                         </StackLayout>
                                         <StackLayout Grid.Column="1" VerticalOptions="Center">
                                             <Label HorizontalOptions="Center" Text="The value of identity of course is that so often with it comes purpose." FontAttributes="Bold" FontSize="Micro" TextColor="White" Margin="-5,10,0,0" Padding="0,0,0,0"></Label>
-                                            <Label Text=" - Richard Grant" FontAttributes="Italic" FontSize="10" TextColor="#e0cc7b" Margin="-5,1,0,0"/>
+                                            <Label Text=" - Richard Grant" FontAttributes="Italic" FontSize="10" TextColor="#e0cc7b" Margin="-5,1,0,5"/>
                                         </StackLayout>
                                     </Grid>
                                 </Frame>

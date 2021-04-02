@@ -4,28 +4,24 @@
              x:Class="STI_Finfo.Views.HomePage">
     <StackLayout>
         <ScrollView>
-            <AbsoluteLayout BackgroundColor="Black" >
-                <Image Source="home_bg3.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7" Margin="0,0,0,0" />
+            <AbsoluteLayout BackgroundColor="Black" Margin="0,0,0,-100" >
+                <Image Source="sti_bg6.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7" Margin="0,0,0,0" />
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
                     <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <StackLayout Grid.Row="0" Grid.Column="0" InputTransparent="True">
-                        <Label Margin="30,150,0,0" Padding="0,0,0,0">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span Text=" FINFO" FontSize="26" FontAttributes="Bold" TextColor="White" />
-                                    <Span Text="  " FontSize="26" />
-                                    <Span Text="  " FontSize="17" />
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
+                    <StackLayout Grid.Row="0" Grid.Column="0" InputTransparent="True" Margin="0,0,0,50">
+                        <Frame Margin="30,120,0,0" Padding="0,0,0,0">
+                            
+                        </Frame>
                     </StackLayout>
-                    <Frame Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Padding="0,0,0,0" HeightRequest="1200" CornerRadius="30" BackgroundColor="white" Margin="0,-80,0,-20" HasShadow="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300">
+                    <Frame Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Padding="0,0,0,0" HeightRequest="1200" CornerRadius="30" BackgroundColor="white" Margin="0,-120,0,0" HasShadow="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300">
                         <StackLayout WidthRequest="500" BackgroundColor="White">
                             <ScrollView>
                                 <StackLayout WidthRequest="900">
@@ -41,7 +37,7 @@
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
                                             <!--- SECURITY BUTTON -->
-                                            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,40,0,10">
+                                            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,0,10">
                                                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                                     <Button Text="Security" Padding="90,15,90,15" BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30" Clicked="SecurityButton_Clicked" >
                                                     </Button>
@@ -49,7 +45,7 @@
                                             </Grid>
                                             <!--- APP NAME -->
                                             <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#2c384a" Margin="0,-20">
-                                                <StackLayout BackgroundColor="#2c384a" HorizontalOptions="Center" VerticalOptions="Center" Margin="5,0,5,0"  >
+                                                <StackLayout BackgroundColor="#2c384a" HorizontalOptions="Center" VerticalOptions="Center" Margin="10,0,10,0"  >
                                                     <Label Padding="0,0,0,0">
                                                         <Label.FormattedText>
                                                             <FormattedString>
@@ -90,7 +86,6 @@
                                             </Grid>
                                         </Grid>
                                     </StackLayout>
-
                                 </StackLayout>
                             </ScrollView>
                         </StackLayout>

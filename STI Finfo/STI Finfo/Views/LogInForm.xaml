@@ -4,15 +4,12 @@
              x:Class="STI_Finfo.Views.LogInForm">
     <ContentPage.Content>
         <ScrollView>
-            
-            <AbsoluteLayout>
+            <AbsoluteLayout Margin="0,0,0,-100">
                 <Image Source="orangeyellow.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7"/>
-                <Grid>
-
+                <Grid Margin="0,0,0,-100">
                     <StackLayout Padding="2" >
-
                         <Grid>
-                            <StackLayout Margin="10,90,20,100" Opacity=".9">
+                            <StackLayout Margin="10,10,10,0" Opacity=".9">
                                 <Frame  HasShadow="True" HeightRequest="500" HorizontalOptions="FillAndExpand" CornerRadius="10">
                                     <StackLayout HorizontalOptions="FillAndExpand" >
                                         <!--  LOG IN  -->
