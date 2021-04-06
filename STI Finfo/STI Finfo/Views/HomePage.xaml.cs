@@ -20,7 +20,7 @@ namespace STI_Finfo.Views
         }
         private async void GuestButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GuestForm());
+            await Navigation.PushAsync(new TableRequest());
         }
         private async void SecurityButton_Clicked(object sender, EventArgs e)
         {

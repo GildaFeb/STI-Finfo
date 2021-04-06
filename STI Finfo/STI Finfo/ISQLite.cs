@@ -1,0 +1,19 @@
+﻿using Microsoft.Data.Sqlite;
+using SQLite;
+using System;
+using System.Collections.Generic;
+using System.Text;
+namespace STI_Finfo
+{
+    public interface ISQLite
+    {
+        SQLiteConnection GetConnectionWithCreateDatabase();
+
+        bool SaveEmployee(Employee employee);
+
+        List<Employee> GetEmployees();
+
+        bool UpdateEmployee(Employee employee);
+        void DeleteEmployee(int Id);
+    }
+}

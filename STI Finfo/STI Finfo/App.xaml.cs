@@ -12,7 +12,7 @@ namespace STI_Finfo
         public App()
         {
             InitializeComponent();
-
+            DependencyService.Get<ISQLite>().GetConnectionWithCreateDatabase();
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
           
