@@ -13,7 +13,7 @@ namespace STI_Finfo
     public partial class AddRequest : ContentPage
     {
         
-        public AddRequest(Employee details)
+        public AddRequest(Request details)
         {
            
             InitializeComponent();
@@ -26,31 +26,31 @@ namespace STI_Finfo
             
         }
 
-        private void PopulateDetails(Employee details)
+        private void PopulateDetails(Request details)
         {
-            name.Text = details.Name;
-            address.Text = details.Address;
-            phoneNumber.Text = details.PhoneNumber;
-            email.Text = details.Email;
+            last.Text = details.LastName;
+            first.Text = details.FirstName;
+           middle.Text = details.MiddleName;
+            suffix.Text = details.Suffix;
             
             saveBtn.Text = "Update";
             this.Title = "Edit Employee";
         }
 
-        private void SaveEmployee(object sender, EventArgs e)
+        private void SaveRequests(object sender, EventArgs e)
         {
             if (saveBtn.Text == "Save")
             {
-                Employee employee = new Employee
+                Request request = new Request
                 {
-                    Name = name.Text,
-                    Address = address.Text,
-                    PhoneNumber = phoneNumber.Text,
-                    Email = email.Text,
+                    LastName = last.Text,
+                    FirstName = first.Text,
+                    MiddleName = middle.Text,
+                    Suffix = first.Text,
                    
                 };
 
-                bool res = DependencyService.Get<ISQLite>().SaveEmployee(employee);
+                bool res = DependencyService.Get<ISQLite>().SaveRequest(request);
                 if (res)
                 {
                     Navigation.PopAsync();
@@ -63,13 +63,15 @@ namespace STI_Finfo
             else
             {
                 // update employee
-                Employee employeeDetails=new Employee();
-                employeeDetails.Name = name.Text;
-                employeeDetails.Address = address.Text;
-                employeeDetails.PhoneNumber = phoneNumber.Text;
-                employeeDetails.Email = email.Text;
+                Request RequestDetails = new Request
+                {
+                    LastName = last.Text,
+                    FirstName = first.Text,
+                    MiddleName = middle.Text,
+                    Suffix = suffix.Text
+                };
 
-                bool res = DependencyService.Get<ISQLite>().UpdateEmployee(employeeDetails);
+                bool res = DependencyService.Get<ISQLite>().UpdateRequest(RequestDetails);
                 if (res)
                 {
                     Navigation.PopAsync();

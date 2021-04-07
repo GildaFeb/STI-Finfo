@@ -18,38 +18,38 @@ namespace STI_Finfo
         }
         protected override void OnAppearing()
         {
-            PopulateEmployeeList();
+            PopulateRequestList();
         }
-        public void PopulateEmployeeList()
+        public void PopulateRequestList()
 
         {
-            var list = this.FindByName<ListView>("EmployeeList");
+            var list = this.FindByName<ListView>("RequestList");
             list.ItemsSource = null;
-            list.ItemsSource = DependencyService.Get<ISQLite>().GetEmployees();
+            list.ItemsSource = DependencyService.Get<ISQLite>().GetRequest();
         }
 
-        private void AddEmployee(object sender, EventArgs e)
+        private void AddRequest(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AddRequest(null));
         }
 
-        private void EditEmployee(object sender, ItemTappedEventArgs e)
+        private void EditRequest(object sender, ItemTappedEventArgs e)
         {
-            if (e.Item is Employee list)
+            if (e.Item is Request list)
             {
                 Navigation.PushAsync(new AddRequest(list));
             }
         }
 
-        private async void DeleteEmployee(object sender, EventArgs e)
+        private async void DeleteRequest(object sender, EventArgs e)
         {
             bool res = await DisplayAlert("Message", "Do you want to delete employee?", "Ok", "Cancel");
             if (res)
             {
                 var menu = sender as MenuItem;
-                Employee details = menu.CommandParameter as Employee;
-                DependencyService.Get<ISQLite>().DeleteEmployee(details.Id);
-                PopulateEmployeeList();
+                Request  details = menu.CommandParameter as Request;
+                DependencyService.Get<ISQLite>().DeleteRequest(details.Id);
+                PopulateRequestList();
             }
         }
     }

@@ -9,11 +9,11 @@ namespace STI_Finfo
     {
         SQLiteConnection GetConnectionWithCreateDatabase();
 
-        bool SaveEmployee(Employee employee);
+        bool SaveRequest(Request request);
 
-        List<Employee> GetEmployees();
+        List<Request> GetRequest();
 
-        bool UpdateEmployee(Employee employee);
-        void DeleteEmployee(int Id);
+        bool UpdateRequest(Request request);
+        void DeleteRequest(int Id);
     }
 }

@@ -1,4 +1,4 @@
-﻿using STI_Finfo.Services;
+﻿
 using STI_Finfo.Views;
 using System;
 using Xamarin.Forms;
@@ -13,7 +13,7 @@ namespace STI_Finfo
         {
             InitializeComponent();
             DependencyService.Get<ISQLite>().GetConnectionWithCreateDatabase();
-            DependencyService.Register<MockDataStore>();
+            
             MainPage = new AppShell();
           
         }

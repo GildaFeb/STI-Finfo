@@ -3,24 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using STI_Finfo.Droid;
 using SQLite;
 using Xamarin.Forms;
@@ -34,19 +16,19 @@ namespace STI_Finfo.Droid
         SQLiteConnection con;
         public SQLiteConnection GetConnectionWithCreateDatabase()
         {
-            string fileName = "finfoDB.db";
+            string fileName = "finfodb.db";
             string documentPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string path = Path.Combine(documentPath, fileName);
             con = new SQLiteConnection(path);
-            con.CreateTable<Employee>();
+            con.CreateTable<Request>();
             return con;
         }
-        public bool SaveEmployee(Employee employee)
+        public bool SaveRequest(Request request)
         {
             bool res;
             try
             {
-                con.Insert(employee);
+                con.Insert(request);
                 res = true;
             }
             catch 
@@ -55,19 +37,19 @@ namespace STI_Finfo.Droid
             }
             return res;
         }
-        public List<Employee> GetEmployees()
+        public List<Request> GetRequest()
         {
-            string sql = "SELECT * FROM Employee";
-            List<Employee> employees = con.Query<Employee>(sql);
-            return employees;
+            string sql = "SELECT * FROM Request";
+            List<Request> request = con.Query<Request>(sql);
+            return request;
         }
-        public bool UpdateEmployee(Employee employee)
+        public bool UpdateRequest(Request request)
         {
             bool res = false;
             try
             {
-                string sql = $"UPDATE Employee SET Name='{employee.Name}',Address='{employee.Address}',PhoneNumber='{employee.PhoneNumber}'," +
-                                $"Email='{employee.Email}' WHERE Id={employee.Id}";
+                string sql = $"UPDATE Request SET Name='{request.LastName}',Address='{request.FirstName}',PhoneNumber='{request.MiddleName}'," +
+                                $"Email='{request.Suffix}' WHERE Id={request.Id}";
                 con.Execute(sql);
                 res = true;
             }
@@ -77,9 +59,9 @@ namespace STI_Finfo.Droid
             }
             return res;
         }
-        public void DeleteEmployee(int Id)
+        public void DeleteRequest(int Id)
         {
-            string sql = $"DELETE FROM Employee WHERE Id={Id}";
+            string sql = $"DELETE FROM Request WHERE Id={Id}";
             con.Execute(sql);
         }
     }

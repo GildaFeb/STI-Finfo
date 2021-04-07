@@ -1,4 +1,4 @@
-﻿using STI_Finfo.ViewModels;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace STI_Finfo.Views
         public LoginPage()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+        
         }
     }
 }

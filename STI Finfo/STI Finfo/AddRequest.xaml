@@ -4,17 +4,17 @@
              x:Class="STI_Finfo.AddRequest">
     <StackLayout Padding="5">
         <Label Text="Name" FontAttributes="Bold" TextColor="Black"/>
-        <Entry Placeholder="Name" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="name"/>
+        <Entry Placeholder="Last name" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="last"/>
         <Label Text="Address" FontAttributes="Bold" TextColor="Black"/>
-        <Entry Placeholder="Address" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="address"/>
+        <Entry Placeholder="First name" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="first"/>
         <Label Text="Phone Number" FontAttributes="Bold" TextColor="Black"/>
-        <Entry Placeholder="Phone Number" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="phoneNumber" 
+        <Entry Placeholder="Middle name" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="middle" 
                    Keyboard="Numeric"/>
         <Label Text="Email" FontAttributes="Bold" TextColor="Black"/>
-        <Entry Placeholder="Email" FontSize="Small" HorizontalOptions="FillAndExpand" Keyboard="Email" x:Name="email"/>
+        <Entry Placeholder="Suffix" FontSize="Small" HorizontalOptions="FillAndExpand" Keyboard="Email" x:Name="suffix"/>
        
 
-        <Button Text="Save" Clicked="SaveEmployee" HorizontalOptions="FillAndExpand" 
+        <Button Text="Save" Clicked="SaveRequests" HorizontalOptions="FillAndExpand" 
                     BackgroundColor="Maroon" TextColor="White" x:Name="saveBtn"/>
     </StackLayout>
 </ContentPage>
