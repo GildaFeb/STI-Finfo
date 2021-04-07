@@ -22,44 +22,32 @@ namespace STI_Finfo
                  
                 PopulateDetails(details);
             }
+          
+            
         }
 
         private void PopulateDetails(Employee details)
         {
-            var saveBtn = this.FindByName<Button>("saveBtn");
-            var name = this.FindByName<Entry>("name");
-            var address = this.FindByName<Entry>("address");
-            var email = this.FindByName<Entry>("email");
-            var password = this.FindByName<Entry>("password");
-            var phoneNumber = this.FindByName<Entry>("phoneNumber");
             name.Text = details.Name;
             address.Text = details.Address;
             phoneNumber.Text = details.PhoneNumber;
             email.Text = details.Email;
-            password.Text = details.Password;
-            password.IsEnabled = false;
+            
             saveBtn.Text = "Update";
             this.Title = "Edit Employee";
         }
 
         private void SaveEmployee(object sender, EventArgs e)
         {
-            var saveBtn = this.FindByName<Button>("saveBtn");
             if (saveBtn.Text == "Save")
             {
-
-                var name = this.FindByName<Entry>("name");
-                var address = this.FindByName<Entry>("address");
-                var email = this.FindByName<Entry>("email");
-                var password = this.FindByName<Entry>("password");
-                var phoneNumber = this.FindByName<Entry>("phoneNumber");
                 Employee employee = new Employee
                 {
                     Name = name.Text,
                     Address = address.Text,
                     PhoneNumber = phoneNumber.Text,
                     Email = email.Text,
-                    Password = password.Text
+                   
                 };
 
                 bool res = DependencyService.Get<ISQLite>().SaveEmployee(employee);
@@ -69,26 +57,19 @@ namespace STI_Finfo
                 }
                 else
                 {
-                    DisplayAlert("Message", "Data Failed To Save", "Ok");
+                    DisplayAlert("Message", "Data Failed To Savessss", "Ok");
                 }
             }
             else
             {
-
-                var name = this.FindByName<Entry>("name");
-                var address = this.FindByName<Entry>("address");
-                var email = this.FindByName<Entry>("email");
-                var phoneNumber = this.FindByName<Entry>("phoneNumber");
                 // update employee
-                Employee EmployeeDetails = new Employee
-                {
-                    Name = name.Text,
-                    Address = address.Text,
-                    PhoneNumber = phoneNumber.Text,
-                    Email = email.Text
-                };
+                Employee employeeDetails=new Employee();
+                employeeDetails.Name = name.Text;
+                employeeDetails.Address = address.Text;
+                employeeDetails.PhoneNumber = phoneNumber.Text;
+                employeeDetails.Email = email.Text;
 
-                bool res = DependencyService.Get<ISQLite>().UpdateEmployee(EmployeeDetails);
+                bool res = DependencyService.Get<ISQLite>().UpdateEmployee(employeeDetails);
                 if (res)
                 {
                     Navigation.PopAsync();

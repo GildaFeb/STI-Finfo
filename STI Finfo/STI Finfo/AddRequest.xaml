@@ -12,9 +12,7 @@
                    Keyboard="Numeric"/>
         <Label Text="Email" FontAttributes="Bold" TextColor="Black"/>
         <Entry Placeholder="Email" FontSize="Small" HorizontalOptions="FillAndExpand" Keyboard="Email" x:Name="email"/>
-        <Label Text="Password" FontAttributes="Bold" TextColor="Black"/>
-        <Entry Placeholder="Name" FontSize="Small" 
-                   HorizontalOptions="FillAndExpand" IsPassword="True" x:Name="password"/>
+       
 
         <Button Text="Save" Clicked="SaveEmployee" HorizontalOptions="FillAndExpand" 
                     BackgroundColor="Maroon" TextColor="White" x:Name="saveBtn"/>
