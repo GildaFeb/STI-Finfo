@@ -2,22 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="STI_Finfo.TableRequest">
-    <StackLayout Padding="5">
-        <Button Text="Add Request" HorizontalOptions="FillAndExpand" 
-                BackgroundColor="Orange" TextColor="Black" Clicked="AddRequest"/>
+    <StackLayout Padding="5" BackgroundColor="White">
+        <SearchBar Placeholder="Search items..." TextChanged="SearchBar_TextChanged" CancelButtonColor="DarkSlateGray" PlaceholderColor="Gray"
+           TextColor="Black" TextTransform="Lowercase"  HorizontalTextAlignment="Center" FontSize="20" HeightRequest="35" />
+        <Label Text="Request List" FontSize="35" HorizontalOptions="Start" TextColor="Black" FontAttributes="Bold" FontFamily="He;lvetica" />
+        <Button Text="Add Request" HorizontalOptions="FillAndExpand"  TextColor="Black" Clicked="AddRequest" CornerRadius="3">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,2">
+                    <GradientStop Color="#ffcc00" Offset="0.1" />
+                    <GradientStop Color="#b08d00" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
-        <ListView x:Name="RequestList" HasUnevenRows="True" ItemTapped="EditRequest">
+        <ListView x:Name="RequestList" HasUnevenRows="True" ItemTapped="EditRequest" RefreshControlColor="DarkSlateGray" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell Tapped="ViewCell_Tapped" >
                         <ViewCell.ContextActions>
                             <MenuItem Text="Delete" Clicked="DeleteRequest" IsDestructive="true" CommandParameter="{Binding .}"/>
                         </ViewCell.ContextActions>
-                        <StackLayout Spacing="2">
-                            <Label Text="{Binding LastName,StringFormat='Name:{0:F0}'}" FontSize="Small" FontAttributes="Bold"/>
-                            <Label Text="{Binding FirstName,StringFormat='Address:{0:F0}'}" FontSize="Small" FontAttributes="None"/>
-                            <Label Text="{Binding MiddleName,StringFormat='Phone No :{0:F0}'}" FontSize="Small" FontAttributes="None"/>
-                        </StackLayout>
+                        <Frame BackgroundColor="#003366" CornerRadius="3" HasShadow="True" >
+                            <StackLayout Spacing="2" Margin="0,-6,0,-6">
+                                <StackLayout Orientation="Horizontal"> 
+                                    <Label Text="{Binding LastName,StringFormat='Name: {0:F0},'}" FontSize="Small" FontAttributes="Bold" Margin="-4,0,-4,0" TextColor="White"/>
+                                    <Label Text="{Binding FirstName,StringFormat=' {0:F0}'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="White"/>
+                                    <Label Text="{Binding MiddleName,StringFormat='{0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="White"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Age,StringFormat='Age: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,-5,0,-5" TextColor="White"/>
+                                    <Label Text="{Binding Number,StringFormat='Number: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="White"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -13,6 +13,16 @@ namespace STI_Finfo
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string Suffix { get; set; }
+        public string Age { get; set; }
+        public string Number { get; set; }
+        public string Address { get; set; }
+        public string Email { get; set; }
+        public string Department { get; set; }
+        public string Transaction { get; set; }
+        public string Exit { get; set; }
+        public string Enter { get; set; }
+       
+
 
     }
 }

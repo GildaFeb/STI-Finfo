@@ -28,26 +28,42 @@ namespace STI_Finfo
 
         private void PopulateDetails(Request details)
         {
-            last.Text = details.LastName;
+            Last.Text = details.LastName;
             first.Text = details.FirstName;
            middle.Text = details.MiddleName;
             suffix.Text = details.Suffix;
-            
-            saveBtn.Text = "Update";
+            age.Text= details.Age;
+            number.Text = details.Number;
+            address.Text = details.Address;
+            email.Text = details.Email;
+            transaction.Text = details.Transaction;
+            department.Text = details.Department;
+
+
+            var save = this.FindByName<Button>("saveBtn");
+            save.Text = "Update";
             this.Title = "Edit Employee";
         }
 
         private void SaveRequests(object sender, EventArgs e)
         {
-            if (saveBtn.Text == "Save")
+            var save = this.FindByName<Button>("saveBtn");
+            if (save.Text == "SUBMIT")
             {
                 Request request = new Request
                 {
-                    LastName = last.Text,
+                    LastName = Last.Text,
                     FirstName = first.Text,
                     MiddleName = middle.Text,
                     Suffix = first.Text,
-                   
+                    Age = age.Text,
+                    Number = number.Text,
+                    Address = address.Text,
+                    Email = email.Text,
+                    Department = department.Text,
+                    Transaction = transaction.Text,
+                    
+
                 };
 
                 bool res = DependencyService.Get<ISQLite>().SaveRequest(request);
@@ -62,13 +78,19 @@ namespace STI_Finfo
             }
             else
             {
-                // update employee
+                // update request
                 Request RequestDetails = new Request
                 {
-                    LastName = last.Text,
+                    LastName = Last.Text,
                     FirstName = first.Text,
                     MiddleName = middle.Text,
-                    Suffix = suffix.Text
+                    Suffix = first.Text,
+                    Age = age.Text,
+                    Number = number.Text,
+                    Address = address.Text,
+                    Email = email.Text,
+                    Department = department.Text,
+                    Transaction = transaction.Text,
                 };
 
                 bool res = DependencyService.Get<ISQLite>().UpdateRequest(RequestDetails);

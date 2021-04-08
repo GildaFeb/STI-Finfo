@@ -15,6 +15,45 @@ namespace STI_Finfo.Views
         public GuardMenu()
         {
             InitializeComponent();
+              
+        }
+
+        private async void NoID_Clicked(object sender, EventArgs e)
+        {
+            
+            // TEMPORARY LIST
+            Request request1 = new Request
+            {
+                LastName = "Malinao",
+                FirstName = "Malaboo",
+                MiddleName = "D",
+
+            };
+            Request request2 = new Request
+            {
+                LastName = "Malinao",
+                FirstName = "Malaboo",
+                MiddleName = "D",
+
+
+
+            };
+            Request request3 = new Request
+            {
+                LastName = "Malinao",
+                FirstName = "Malaboo",
+                MiddleName = "D",
+
+
+
+            };
+            bool res = DependencyService.Get<ISQLite>().SaveRequest(request1);
+            bool res1 = DependencyService.Get<ISQLite>().SaveRequest(request2);
+            bool res3 = DependencyService.Get<ISQLite>().SaveRequest(request3);
+            if (res & res1 & res3)
+            {
+                await Navigation.PushAsync(new TableRequest());
+            }
         }
     }
 }

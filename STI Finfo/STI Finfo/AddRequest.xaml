@@ -2,19 +2,150 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="STI_Finfo.AddRequest">
-    <StackLayout Padding="5">
-        <Label Text="Name" FontAttributes="Bold" TextColor="Black"/>
-        <Entry Placeholder="Last name" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="last"/>
-        <Label Text="Address" FontAttributes="Bold" TextColor="Black"/>
-        <Entry Placeholder="First name" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="first"/>
-        <Label Text="Phone Number" FontAttributes="Bold" TextColor="Black"/>
-        <Entry Placeholder="Middle name" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="middle" 
-                   Keyboard="Numeric"/>
-        <Label Text="Email" FontAttributes="Bold" TextColor="Black"/>
-        <Entry Placeholder="Suffix" FontSize="Small" HorizontalOptions="FillAndExpand" Keyboard="Email" x:Name="suffix"/>
-       
+    <ScrollView>
+        <StackLayout BackgroundColor="White">
+   
+            <!-- GUIDE -->
+            <StackLayout Margin="0,0,0,0">
+                <Grid HorizontalOptions="CenterAndExpand" >
+                    <Label Text="Guest Form" Margin="0,50,0,0" TextColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="26"></Label>
+                    <Label Text="Please complete the form below" TextColor="#ba9400" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Italic" FontSize="15"></Label>
+                </Grid>
+            </StackLayout>
+            <StackLayout>
+                <Frame WidthRequest="700" Margin="7,0,5,7"  HasShadow="true" BackgroundColor="#cccccc" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="1200" >
+                    <StackLayout>
 
-        <Button Text="Save" Clicked="SaveRequests" HorizontalOptions="FillAndExpand" 
-                    BackgroundColor="Maroon" TextColor="White" x:Name="saveBtn"/>
-    </StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <!--- LAST NAME -->
+                            <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                <Label Text="Last name" FontSize="15" TextColor="#003366"/>
+                                <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                    <Entry  Placeholder="e.g., Mapagmahal" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" x:Name="Last" />
+                                </Frame>
+                            </StackLayout>
+                            <!--- FIRST NAME -->
+                            <StackLayout Grid.Column="2"  Grid.ColumnSpan="2">
+                                <Label Text="First name" FontSize="15" TextColor="#003366"/>
+                                <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
+                                    <Entry  Placeholder="e.g., Juan John" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6"  x:Name="first" />
+                                </Frame>
+                            </StackLayout>
+
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <!--- MIDDLE NAME -->
+                            <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                <Label Text="Middle name" FontSize="15" TextColor="#003366"/>
+                                <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                    <Entry  Placeholder="e.g., Delacor" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6"  x:Name="middle" />
+                                </Frame>
+                            </StackLayout>
+                            <!--- SUFFIX-->
+                            <StackLayout Grid.Column="2" >
+                                <Label Text="Suffix" FontSize="15" TextColor="#003366"/>
+                                <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
+                                    <Entry  Placeholder="e.g., Jr." PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6"  x:Name="suffix" />
+                                </Frame>
+                            </StackLayout>
+
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <!--- AGE -->
+                            <StackLayout Grid.Column="0">
+                                <Label Text="Age" FontSize="15" TextColor="#003366"/>
+                                <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                    <Entry  Placeholder="e.g., 18" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6"  x:Name="age" />
+                                </Frame>
+                            </StackLayout>
+                            <!--- Contact no. -->
+                            <StackLayout Grid.Column="1"  Grid.ColumnSpan="2">
+                                <Label Text="Mobile number" FontSize="15" TextColor="#003366"/>
+                                <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                    <Entry  Placeholder="e.g., 09692536215" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6"  x:Name="number"/>
+                                </Frame>
+                            </StackLayout>
+
+                        </Grid>
+                        <Grid>
+                            <!--- Address -->
+                            <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                <Label Text="Address" FontSize="15" TextColor="#003366"/>
+                                <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
+                                    <Entry  Placeholder="e.g., 143 Heart Avenue" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6"  x:Name="address" />
+                                </Frame>
+
+                            </StackLayout>
+                        </Grid>
+                        <Grid>
+                            <!--- EMAIL -->
+                            <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
+                                <Label Text="Email address" FontSize="15" TextColor="#003366"/>
+                                <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
+                                    <Entry  Placeholder="e.g., example@email.com" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6"  x:Name="email" />
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                        <Grid >
+                            <!--- DEPARTMENT PLANNING TO VISIT -->
+                            <Frame Margin="0,7,0,0">
+                                <StackLayout>
+                                    <Frame BackgroundColor="#003366">
+                                        <Label TextColor="White" Text="What particular department/s you are planning to visit inside the campus?"/>
+                                    </Frame>
+                                    <Frame  Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="100" Padding="10,-2,5,2" >
+                                        <Grid Margin="0,0,0,0" >
+                                            <ScrollView Margin="2,0,2,0"  Orientation="Horizontal">
+                                                <Entry  Placeholder="e.g., registrar, cashier, or faculty" PlaceholderColor="#cccccc" FontSize="15"  x:Name="department"  Margin="1,0,2,0" />
+
+                                            </ScrollView>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                        <Grid >
+                            <!--- PURPOSE/F OF VISITING -->
+                            <Frame Margin="0,7,0,0">
+                                <StackLayout>
+                                    <Frame BackgroundColor="#003366">
+                                        <Label TextColor="White" Text="What is/are your transaction/s inside the campus?"/>
+                                    </Frame>
+                                    <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="100" Padding="10,-2,5,2" >
+                                        <Grid Margin="0,0,0,0">
+                                            <ScrollView Margin="2,0,2,0" Orientation="Vertical" Padding="2,2,2,2"  >
+                                                <Entry  Placeholder="e.g., inquire or pass requirements" PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"  x:Name="transaction"   />
+
+                                            </ScrollView>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                        <!-- BUTTON SUBMIT-->
+                        <Grid>
+                            <Button Text="SUBMIT"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="60" Clicked="SaveRequests" x:Name="saveBtn"/>
+                        </Grid>
+                       
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

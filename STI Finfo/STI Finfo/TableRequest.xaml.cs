@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +9,22 @@ using Xamarin.Forms.Xaml;
 
 namespace STI_Finfo
 {
+    
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TableRequest : ContentPage
     {
+        SearchBar searchBar = new SearchBar
+        {
+            Placeholder = "Search items...",
+            PlaceholderColor = Color.Orange,
+            TextColor = Color.Orange,
+            TextTransform = TextTransform.Lowercase,
+            HorizontalTextAlignment = TextAlignment.Center,
+            FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(SearchBar)),
+            FontAttributes = FontAttributes.Italic
+        };
+
+        private ViewCell lastCell;
         public TableRequest()
         {
             InitializeComponent();
@@ -43,6 +56,7 @@ namespace STI_Finfo
 
         private async void DeleteRequest(object sender, EventArgs e)
         {
+           
             bool res = await DisplayAlert("Message", "Do you want to delete employee?", "Ok", "Cancel");
             if (res)
             {
@@ -51,6 +65,25 @@ namespace STI_Finfo
                 DependencyService.Get<ISQLite>().DeleteRequest(details.Id);
                 PopulateRequestList();
             }
+        }
+
+        private void ViewCell_Tapped(object sender, EventArgs e)
+        {
+            if (lastCell != null)
+                lastCell.View.BackgroundColor = Color.Transparent;
+            var viewCell = (ViewCell)sender;
+            if (viewCell.View != null)
+            {
+                viewCell.View.BackgroundColor = Color.DimGray;
+                lastCell = viewCell;
+            }
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SearchBar searchBar = (SearchBar)sender;
+            searchBar.TextChanged += SearchBar_TextChanged;
+            
         }
     }
 }
