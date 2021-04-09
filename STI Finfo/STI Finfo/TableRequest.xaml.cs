@@ -70,7 +70,7 @@ namespace STI_Finfo
         private void ViewCell_Tapped(object sender, EventArgs e)
         {
             if (lastCell != null)
-                lastCell.View.BackgroundColor = Color.Transparent;
+                lastCell.View.BackgroundColor = Color.Yellow;
             var viewCell = (ViewCell)sender;
             if (viewCell.View != null)
             {

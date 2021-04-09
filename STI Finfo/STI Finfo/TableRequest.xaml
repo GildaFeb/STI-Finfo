@@ -1,43 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="STI_Finfo.TableRequest">
-    <StackLayout Padding="5" BackgroundColor="White">
-        <SearchBar Placeholder="Search items..." TextChanged="SearchBar_TextChanged" CancelButtonColor="DarkSlateGray" PlaceholderColor="Gray"
-           TextColor="Black" TextTransform="Lowercase"  HorizontalTextAlignment="Center" FontSize="20" HeightRequest="35" />
-        <Label Text="Request List" FontSize="35" HorizontalOptions="Start" TextColor="Black" FontAttributes="Bold" FontFamily="He;lvetica" />
-        <Button Text="Add Request" HorizontalOptions="FillAndExpand"  TextColor="Black" Clicked="AddRequest" CornerRadius="3">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0,2">
-                    <GradientStop Color="#ffcc00" Offset="0.1" />
-                    <GradientStop Color="#b08d00" Offset="1.0" />
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-
-        <ListView x:Name="RequestList" HasUnevenRows="True" ItemTapped="EditRequest" RefreshControlColor="DarkSlateGray" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell Tapped="ViewCell_Tapped" >
-                        <ViewCell.ContextActions>
-                            <MenuItem Text="Delete" Clicked="DeleteRequest" IsDestructive="true" CommandParameter="{Binding .}"/>
-                        </ViewCell.ContextActions>
-                        <Frame BackgroundColor="#003366" CornerRadius="3" HasShadow="True" >
-                            <StackLayout Spacing="2" Margin="0,-6,0,-6">
-                                <StackLayout Orientation="Horizontal"> 
-                                    <Label Text="{Binding LastName,StringFormat='Name: {0:F0},'}" FontSize="Small" FontAttributes="Bold" Margin="-4,0,-4,0" TextColor="White"/>
-                                    <Label Text="{Binding FirstName,StringFormat=' {0:F0}'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="White"/>
-                                    <Label Text="{Binding MiddleName,StringFormat='{0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="White"/>
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding Age,StringFormat='Age: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,-5,0,-5" TextColor="White"/>
-                                    <Label Text="{Binding Number,StringFormat='Number: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="White"/>
-                                </StackLayout>
-                            </StackLayout>
-                        </Frame>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+             x:Class="STI_Finfo.TableRequest"
+             BackgroundImageSource="blacky.png">
+    <ScrollView HorizontalOptions="CenterAndExpand" Margin="0,0,0,0">
+        <StackLayout HorizontalOptions="CenterAndExpand" >
+            <StackLayout Margin="0,0,15,0" >
+                <SearchBar Placeholder="Search request..." TextChanged="SearchBar_TextChanged" CancelButtonColor="DarkSlateGray" PlaceholderColor="White"
+                        TextColor="Black" TextTransform="Lowercase"  HorizontalTextAlignment="Center" FontSize="20" HeightRequest="35" Margin="0,10,0,0" />
+            </StackLayout>
+            <Frame BackgroundColor="#2c384a" WidthRequest="400" HasShadow="True" Margin="12,20,12,12" CornerRadius="20" HorizontalOptions="CenterAndExpand">
+                <StackLayout Margin="10,-10,0,0" >
+                    <Label Text="Request List" FontSize="35" HorizontalOptions="Start" TextColor="White" FontAttributes="Bold" FontFamily="Helvetica" />
+                    <Label  Text="Hold list to delete" Margin="0,-7,0,-7"  FontSize="13" TextColor="Wheat"/>
+                    <Label  Text="Click list to submit or update" FontSize="13" TextColor="Wheat"/>
+                </StackLayout>
+            </Frame>
+            <Button Text="Add Request" Padding="34,0,34,0" Margin="5,-35,17,0" HorizontalOptions="End"  TextColor="#2c384a" Clicked="AddRequest" CornerRadius="20">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,2">
+                        <GradientStop Color="#ffcc00" Offset="0.1" />
+                        <GradientStop Color="#b08d00" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <ScrollView HorizontalOptions="CenterAndExpand">
+                <StackLayout Margin="15,-2,15,-2" >
+                    <ListView x:Name="RequestList" SeparatorVisibility="None" HorizontalScrollBarVisibility="Never" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" ItemTapped="EditRequest"  SeparatorColor="#003366">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell Tapped="ViewCell_Tapped" >
+                                    <ViewCell.ContextActions>
+                                        <MenuItem Text="Delete"  Clicked="DeleteRequest" IsDestructive="true" CommandParameter="{Binding .}"/>
+                                    </ViewCell.ContextActions>
+                                    <Grid  HorizontalOptions="CenterAndExpand" Margin="2,0,2,0">
+                                        <Frame CornerRadius="3" HasShadow="True" Margin="12,5,12,5" WidthRequest="1000" >
+                                            <StackLayout Spacing="2" Margin="0,-6,3,-6">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="{Binding LastName,StringFormat='Name: {0:F0},'}" FontSize="Small" FontAttributes="Bold" Margin="-4,0,-4,0" TextColor="Black"/>
+                                                    <Label Text="{Binding FirstName,StringFormat=' {0:F0}'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
+                                                    <Label Text="{Binding MiddleName,StringFormat='{0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Vertical">
+                                                    <Label Text="{Binding Age,StringFormat='Age: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,-5,0,-5" TextColor="Black"/>
+                                                    <Label Text="{Binding Number,StringFormat='Number: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
