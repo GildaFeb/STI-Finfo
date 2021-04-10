@@ -21,8 +21,8 @@
                             
                         </Frame>
                     </StackLayout>
-                    <Frame Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Padding="0,0,0,0" HeightRequest="1200" CornerRadius="30" BackgroundColor="gray" Margin="0,-120,0,0" HasShadow="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300">
-                        <StackLayout WidthRequest="500" BackgroundColor="gray">
+                    <Frame Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Padding="0,0,0,0" HeightRequest="1200" CornerRadius="30" BackgroundColor="#cccccc" Margin="0,-100,0,0" HasShadow="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300">
+                        <StackLayout WidthRequest="500" BackgroundColor="#cccccc">
                             <ScrollView>
                                 <StackLayout WidthRequest="900">
                                     <StackLayout>
@@ -38,14 +38,16 @@
                                             </Grid.ColumnDefinitions>
                                             <!--- SECURITY BUTTON -->
                                             <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,0,10">
-                                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                                <Frame HasShadow="True" BackgroundColor="#cccccc">
+                                                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                                     <Button Text="Security" Padding="90,15,90,15" BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30" Clicked="SecurityButton_Clicked" >
                                                     </Button>
                                                 </StackLayout>
+                                                </Frame>
                                             </Grid>
                                             <!--- APP NAME -->
-                                            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#2c384a" Margin="0,-20">
-                                                <StackLayout BackgroundColor="#2c384a" HorizontalOptions="Center" VerticalOptions="Center" Margin="10,0,10,0"  >
+                                            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#003366" Margin="0,-20">
+                                                <StackLayout BackgroundColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" Margin="10,0,10,0"  >
                                                     <Label Padding="0,0,0,0">
                                                         <Label.FormattedText>
                                                             <FormattedString>

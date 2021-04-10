@@ -194,14 +194,14 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="18,4,8,30" HeightRequest="130" BackgroundColor="#003366" VerticalOptions="Center">
+                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="18,4,8,30" HeightRequest="170" BackgroundColor="#003366" VerticalOptions="Center">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
                                         <StackLayout Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"> 
-                                            <Image Source="talk.png"  Margin="-10,-30,0,-10" HorizontalOptions="Center" VerticalOptions="Center" />
+                                            <Image Source="talk.png"  Margin="-10,-10,0,-10" HorizontalOptions="Center" VerticalOptions="Center" />
                                         </StackLayout>
                                         <StackLayout Grid.Column="1" VerticalOptions="Center" >
                                             <StackLayout Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Center" >

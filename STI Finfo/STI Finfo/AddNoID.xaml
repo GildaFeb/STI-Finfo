@@ -67,15 +67,15 @@
                         <Grid>
                             <!--- TIME AND DATE -->
                             <StackLayout>
-                                <Label Text="TIME AND DATE"  TextColor="#003366"></Label>
+                                <Label Text="Date and Time"  TextColor="#003366"></Label>
                                 <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
-                                    <Entry IsEnabled="False" Placeholder="Guard will fill this section." PlaceholderColor="DarkRed" Margin="-2,2,-2,6" FontSize="15" />
+                                    <Entry IsEnabled="True"  Placeholder="Guard will fill this section." PlaceholderColor="DarkRed" Margin="-2,2,-2,6" FontSize="15" />
                                 </Frame>
                             </StackLayout>
                         </Grid>
                         <!-- BUTTON SUBMIT-->
                         <Grid>
-                            <Button Text="SUBMIT"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="50"/>
+                            <Button Text="SUBMIT" x:Name="saveB" Clicked="SaveNoID"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,15,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="50"/>
                         </Grid>
                         <Grid>
                             <Grid.ColumnDefinitions>

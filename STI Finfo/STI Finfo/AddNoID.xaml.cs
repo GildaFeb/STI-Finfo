@@ -39,7 +39,7 @@ namespace STI_Finfo
 
         private void SaveNoID(object sender, EventArgs e)
         {
-            var save = this.FindByName<Button>("saveBtn");
+            var save = this.FindByName<Button>("saveB");
             if (save.Text == "SUBMIT")
             {
                 NoID requestss = new NoID
