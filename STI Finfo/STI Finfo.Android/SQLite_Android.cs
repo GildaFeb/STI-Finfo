@@ -13,7 +13,7 @@ namespace STI_Finfo.Droid
 {
     class SQLite_Android : ISQLite
     {
-        SQLiteConnection con;
+     SQLiteConnection con;
         public SQLiteConnection GetConnectionWithCreateDatabase()
         {
             string fileName = "finfodb.db";
@@ -21,6 +21,7 @@ namespace STI_Finfo.Droid
             string path = Path.Combine(documentPath, fileName);
             con = new SQLiteConnection(path);
             con.CreateTable<Request>();
+            con.CreateTable<NoID>();
             return con;
         }
         public bool SaveRequest(Request request)
@@ -62,6 +63,50 @@ namespace STI_Finfo.Droid
         public void DeleteRequest(int Id)
         {
             string sql = $"DELETE FROM Request WHERE Id={Id}";
+            con.Execute(sql);
+        }  
+     
+
+        // no id
+
+        public bool SaveNoID(NoID noID)
+        {
+            bool res;
+            try
+            {
+                con.Insert(noID);
+                res = true;
+            }
+            catch
+            {
+                res = false;
+            }
+            return res;
+        }
+        public List<NoID> GetNoID()
+        {
+            string sql = "SELECT * FROM NoID";
+            List<NoID> noID = con.Query<NoID>(sql);
+            return noID;
+        }
+        public bool UpdateNoID(NoID noID)
+        {
+            bool res = false;
+            try
+            {
+                string sql = $"UPDATE NoID SET Name='{noID.StudentNumber}',Address='{noID.Account}',PhoneNumber='{noID.Reasons}' WHERE Id={noID.NoId}";
+                con.Execute(sql);
+                res = true;
+            }
+            catch (Exception)
+            {
+
+            }
+            return res;
+        }
+        public void DeleteNoID(int Id)
+        {
+            string sql = $"DELETE FROM NoID WHERE Id={Id}";
             con.Execute(sql);
         }
     }

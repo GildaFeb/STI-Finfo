@@ -21,8 +21,8 @@
                             
                         </Frame>
                     </StackLayout>
-                    <Frame Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Padding="0,0,0,0" HeightRequest="1200" CornerRadius="30" BackgroundColor="white" Margin="0,-120,0,0" HasShadow="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300">
-                        <StackLayout WidthRequest="500" BackgroundColor="White">
+                    <Frame Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Padding="0,0,0,0" HeightRequest="1200" CornerRadius="30" BackgroundColor="gray" Margin="0,-120,0,0" HasShadow="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300">
+                        <StackLayout WidthRequest="500" BackgroundColor="gray">
                             <ScrollView>
                                 <StackLayout WidthRequest="900">
                                     <StackLayout>

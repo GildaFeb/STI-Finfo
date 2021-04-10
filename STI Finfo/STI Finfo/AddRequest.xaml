@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sti_finfo="clr-namespace:STI_Finfo" x:DataType="sti_finfo:AppShell"
              x:Class="STI_Finfo.AddRequest">
+
     <ScrollView>
         <StackLayout BackgroundColor="White">
    
@@ -53,10 +54,11 @@
                                 </Frame>
                             </StackLayout>
                             <!--- SUFFIX-->
+                           
                             <StackLayout Grid.Column="2" >
                                 <Label Text="Suffix" FontSize="15" TextColor="#003366"/>
                                 <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
-                                    <Entry  Placeholder="e.g., Jr." PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6"  x:Name="suffix" />
+                                    <Picker x:Name="suffix" FontSize="15" Margin="-2,2,-2,6" Title="Suffix" />
                                 </Frame>
                             </StackLayout>
 
@@ -131,6 +133,38 @@
                                         <Grid Margin="0,0,0,0">
                                             <ScrollView Margin="2,0,2,0" Orientation="Vertical" Padding="2,2,2,2"  >
                                                 <Entry  Placeholder="e.g., inquire or pass requirements" PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"  x:Name="transaction"   />
+
+                                            </ScrollView>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                        <Grid >
+                            <!--- DATE TIME ENTERED -->
+                            <Frame Margin="0,7,0,0">
+                                <StackLayout>
+                                    <Label TextColor="#003366" Text="Date and Time Entered"/>
+                                    <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="70" Padding="10,-2,5,2" >
+                                        <Grid Margin="0,0,0,0">
+                                            <ScrollView Margin="2,0,2,0" Orientation="Vertical" Padding="2,2,2,2"  >
+                                                <Entry   Placeholder=" Click here to set date and time " PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"   />
+
+                                            </ScrollView>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                        <Grid >
+                            <!--- DATE TIME EXITED -->
+                            <Frame Margin="0,7,0,0">
+                                <StackLayout>
+                                    <Label TextColor="#003366" Text="Date and Time Exited"/>
+                                    <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="70" Padding="10,-2,5,2" >
+                                        <Grid Margin="0,0,0,0">
+                                            <ScrollView Margin="2,0,2,0" Orientation="Vertical" Padding="2,2,2,2"  >
+                                                <Entry   Placeholder=" Click here to set date and time " PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"   />
 
                                             </ScrollView>
                                         </Grid>

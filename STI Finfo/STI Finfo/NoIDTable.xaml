@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="STI_Finfo.TableRequest"
-             BackgroundImageSource="blacky.png">
+             x:Class="STI_Finfo.NoIDTable">
     <ScrollView HorizontalOptions="CenterAndExpand" Margin="0,0,0,0">
         <StackLayout HorizontalOptions="CenterAndExpand" >
             <StackLayout Margin="0,0,15,0" >
@@ -11,12 +10,12 @@
             </StackLayout>
             <Frame BackgroundColor="#2c384a" WidthRequest="400" HasShadow="True" Margin="12,20,12,12" CornerRadius="20" HorizontalOptions="CenterAndExpand">
                 <StackLayout Margin="10,-10,0,0" >
-                    <Label Text="Guest List" FontSize="35" HorizontalOptions="Start" TextColor="White" FontAttributes="Bold" FontFamily="Helvetica" />
+                    <Label Text="No ID Lst" FontSize="35" HorizontalOptions="Start" TextColor="White" FontAttributes="Bold" FontFamily="Helvetica" />
                     <Label  Text="Hold list to delete" Margin="0,-7,0,-7"  FontSize="13" TextColor="Wheat"/>
                     <Label  Text="Click list to submit or update" FontSize="13" TextColor="Wheat"/>
                 </StackLayout>
             </Frame>
-            <Button Text="Add Request" Padding="34,0,34,0" Margin="5,-35,17,0" HorizontalOptions="End"  TextColor="#2c384a" Clicked="AddRequest" CornerRadius="20">
+            <Button Text="Add Request" Padding="34,0,34,0" Margin="5,-35,17,0" HorizontalOptions="End"  TextColor="#2c384a" Clicked="AddNoID" CornerRadius="20">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,2">
                         <GradientStop Color="#ffcc00" Offset="0.1" />
@@ -26,24 +25,20 @@
             </Button>
             <ScrollView HorizontalOptions="CenterAndExpand">
                 <StackLayout Margin="15,-2,15,-2" >
-                    <ListView x:Name="RequestList" SeparatorVisibility="None" HorizontalScrollBarVisibility="Never" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" ItemTapped="EditRequest"  SeparatorColor="#003366">
+                    <ListView x:Name="NoIDList" SeparatorVisibility="None" HorizontalScrollBarVisibility="Never" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" ItemTapped="EditNoID"  SeparatorColor="#003366">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell Tapped="ViewCell_Tapped" >
+                                <ViewCell  >
                                     <ViewCell.ContextActions>
-                                        <MenuItem Text="Delete"  Clicked="DeleteRequest" IsDestructive="true" CommandParameter="{Binding .}"/>
+                                        <MenuItem Text="Delete"  Clicked="DeleteNoID" IsDestructive="true" CommandParameter="{Binding .}"/>
                                     </ViewCell.ContextActions>
                                     <Grid  HorizontalOptions="CenterAndExpand" Margin="2,0,2,0">
                                         <Frame CornerRadius="3" HasShadow="True" Margin="12,5,12,5" WidthRequest="1000" >
                                             <StackLayout Spacing="2" Margin="0,-6,3,-6">
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Label Text="{Binding LastName,StringFormat='Name: {0:F0},'}" FontSize="Small" FontAttributes="Bold" Margin="-4,0,-4,0" TextColor="Black"/>
-                                                    <Label Text="{Binding FirstName,StringFormat=' {0:F0}'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
-                                                    <Label Text="{Binding MiddleName,StringFormat='{0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
-                                                </StackLayout>
                                                 <StackLayout Orientation="Vertical">
-                                                    <Label Text="{Binding Age,StringFormat='Age: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,-5,0,-5" TextColor="Black"/>
-                                                    <Label Text="{Binding Number,StringFormat='Number: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
+                                                    <Label Text="{Binding StudentNumber,StringFormat='Student number: {0:F0},'}" FontSize="Small" FontAttributes="Bold" Margin="-2,-5,0,-5" TextColor="Black"/>
+                                                    <Label Text="{Binding Account,StringFormat='O365 account: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,-5,0,-5" TextColor="Black"/>
+                                                    <Label Text="{Binding Reasons,StringFormat='Reason for having no ID: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
                                                 </StackLayout>
                                             </StackLayout>
                                         </Frame>
@@ -55,5 +50,7 @@
                 </StackLayout>
             </ScrollView>
         </StackLayout>
-    </ScrollView>
+        </ScrollView>
+
+
 </ContentPage>

@@ -17,8 +17,8 @@ namespace STI_Finfo.Views
             InitializeComponent();
               
         }
-
-        private async void NoID_Clicked(object sender, EventArgs e)
+        
+        private async void Guest_Clicked(object sender, EventArgs e)
         {
             
             // TEMPORARY LIST
@@ -54,6 +54,14 @@ namespace STI_Finfo.Views
             {
                 await Navigation.PushAsync(new TableRequest());
             }
+        }
+        private async void NoID_Clicked(object sender, EventArgs e)
+        {
+
+          
+            
+                await Navigation.PushAsync(new NoIDTable());
+           
         }
     }
 }

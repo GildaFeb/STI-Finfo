@@ -12,8 +12,8 @@
                             <StackLayout>
                                 <Label Text="Request" FontAttributes="Bold" TextColor="White" FontSize="40" HorizontalOptions="Center" Margin="20,30,20,20">
                                 </Label>
-                                <Button Text="NO ID"  FontAttributes="Bold" Margin="20,30,20,10" BackgroundColor="#e0cc7b" TextColor="#003366"/>
-                                <Button Text="GUEST" FontAttributes="Bold" Margin="20,0,20,10" BackgroundColor="#daaf00" Clicked="NoID_Clicked"/>
+                                <Button Text="NO ID"  FontAttributes="Bold" Margin="20,30,20,10" BackgroundColor="#e0cc7b" Clicked="NoID_Clicked" TextColor="#003366"/>
+                                <Button Text="GUEST" FontAttributes="Bold" Margin="20,0,20,10" BackgroundColor="#e0cc7b" Clicked="Guest_Clicked"/>
                                 <Image Source="secu_icon.png" />
                             </StackLayout>
                         </StackLayout>

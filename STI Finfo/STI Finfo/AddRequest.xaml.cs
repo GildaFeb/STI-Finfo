@@ -9,13 +9,14 @@ using Xamarin.Forms.Xaml;
 
 namespace STI_Finfo
 {
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddRequest : ContentPage
     {
         
         public AddRequest(Request details)
         {
-           
+
             InitializeComponent();
             if (details != null)
             {
@@ -26,12 +27,13 @@ namespace STI_Finfo
             
         }
 
+       
         private void PopulateDetails(Request details)
         {
             Last.Text = details.LastName;
             first.Text = details.FirstName;
            middle.Text = details.MiddleName;
-            suffix.Text = details.Suffix;
+           
             age.Text= details.Age;
             number.Text = details.Number;
             address.Text = details.Address;
@@ -42,7 +44,7 @@ namespace STI_Finfo
 
             var save = this.FindByName<Button>("saveBtn");
             save.Text = "Update";
-            this.Title = "Edit Employee";
+            this.Title = "Edit request";
         }
 
         private void SaveRequests(object sender, EventArgs e)
@@ -104,5 +106,6 @@ namespace STI_Finfo
                 }
             }
         }
+        
     }
 }

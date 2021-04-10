@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:sti_finfo="clr-namespace:STI_Finfo" 
+             x:DataType="sti_finfo:AppShell"
+             x:Class="STI_Finfo.AddNoID">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout>
+                <Grid  HorizontalOptions="Center">
+                    <StackLayout  Margin="30,0,30,40">
+                        <Image Source="no_id.png" Margin="100,45,100,60" ></Image>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            <!-- GUIDE -->
+            <StackLayout Margin="0,-90,0,0">
+                <Grid HorizontalOptions="CenterAndExpand" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Text="No ID Form" Margin="0,-20,0,0" TextColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="26" Grid.Row="0"></Label>
+                    <Label Text="Do not forget to bring your ID next time" TextColor="#ba9400" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="18" Grid.Row="1" Margin="0,-20,0,0"></Label>
+                    <Label Text="Please complete the form below" TextColor="#ba9400" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Italic" FontSize="15" Grid.Row="2"></Label>
+                </Grid>
+            </StackLayout>
+            <StackLayout>
+                <Frame WidthRequest="700" Margin="7,0,5,7"  HasShadow="true" BackgroundColor="#cccccc" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="500" CornerRadius="10">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <!--- Student No.-->
+                            <StackLayout Grid.Column="0" Grid.ColumnSpan="3">
+                                <Label Text="Student no."  TextColor="#003366" Margin="0,0,0,-2"></Label>
+                                <Frame Margin="0,-3,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="50" Padding="10,-2,10,-1" >
+                                    <Entry x:Name="studentnumber" Placeholder="e.g., 2000175865" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                        <Grid>
+                            <!--- Email -->
+                            <StackLayout Grid.Column="0" Grid.ColumnSpan="3" >
+                                <Label Text="Email"  TextColor="#003366" ></Label>
+                                <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="50" Padding="10,-2,10,-1" >
+                                    <Entry x:Name="account"  Placeholder="e.g., STICollege.sti.edu.ph" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                        <Grid>
+                            <!--- REASON -->
+                            <StackLayout>
+                                <Label Text="Reason for having no ID"  TextColor="#003366"></Label>
+                                <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
+                                    <Entry x:Name="reasons"  Placeholder="e.g., I forgot my ID in house" PlaceholderColor="#cccccc" Margin="-2,2,-2,6" FontSize="15" />
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                        <Grid>
+                            <!--- TIME AND DATE -->
+                            <StackLayout>
+                                <Label Text="TIME AND DATE"  TextColor="#003366"></Label>
+                                <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
+                                    <Entry IsEnabled="False" Placeholder="Guard will fill this section." PlaceholderColor="DarkRed" Margin="-2,2,-2,6" FontSize="15" />
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                        <!-- BUTTON SUBMIT-->
+                        <Grid>
+                            <Button Text="SUBMIT"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="50"/>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Frame CornerRadius="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="8,28,8,20" BackgroundColor="#003366" HeightRequest="130">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0" >
+                                        <Image Source="professor.png"  Margin="0,0,0,-20" HorizontalOptions="Center" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                        <Label HorizontalOptions="Center" Text="The value of identity of course is that so often with it comes purpose." FontAttributes="Bold" FontSize="Micro" TextColor="White" Margin="-5,10,0,0" Padding="0,0,0,0"></Label>
+                                        <Label Text=" - Richard Grant" FontAttributes="Italic" FontSize="10" TextColor="#e0cc7b" Margin="-5,1,0,5"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

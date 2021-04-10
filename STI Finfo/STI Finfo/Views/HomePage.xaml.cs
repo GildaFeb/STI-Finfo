@@ -20,7 +20,7 @@ namespace STI_Finfo.Views
         }
         private async void GuestButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TableRequest());
+            await Navigation.PushAsync(new GuestForm());
         }
         private async void SecurityButton_Clicked(object sender, EventArgs e)
         {
@@ -31,9 +31,6 @@ namespace STI_Finfo.Views
             await Navigation.PushAsync(new NoIDForm());
         }
         
-        private void Image_SizeChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

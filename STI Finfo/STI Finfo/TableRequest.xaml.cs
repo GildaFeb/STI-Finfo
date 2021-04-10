@@ -13,16 +13,7 @@ namespace STI_Finfo
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TableRequest : ContentPage
     {
-        SearchBar searchBar = new SearchBar
-        {
-            Placeholder = "Search items...",
-            PlaceholderColor = Color.Orange,
-            TextColor = Color.Orange,
-            TextTransform = TextTransform.Lowercase,
-            HorizontalTextAlignment = TextAlignment.Center,
-            FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(SearchBar)),
-            FontAttributes = FontAttributes.Italic
-        };
+        
 
         private ViewCell lastCell;
         public TableRequest()
@@ -79,11 +70,7 @@ namespace STI_Finfo
             }
         }
 
-        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            SearchBar searchBar = (SearchBar)sender;
-            searchBar.TextChanged += SearchBar_TextChanged;
-            
-        }
+       
+
     }
 }
