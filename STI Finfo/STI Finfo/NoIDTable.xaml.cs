@@ -44,7 +44,7 @@ namespace STI_Finfo
         private async void DeleteNoID(object sender, EventArgs e)
         {
 
-            bool res = await DisplayAlert("Message", "Do you want to delete request?", "Okay", "Cancel");
+            bool res = await DisplayAlert("Message", "Do you want to delete request?", "Yes", "Cancel");
             if (res)
             {
                 var menu = sender as MenuItem;

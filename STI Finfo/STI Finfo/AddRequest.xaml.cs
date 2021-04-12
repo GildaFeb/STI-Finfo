@@ -52,9 +52,11 @@ namespace STI_Finfo
 
         private void SaveRequests(object sender, EventArgs e)
         {
+            this.Title = "ADD GUEST";
             var save = this.FindByName<Button>("saveBtn");
-            if (save.Text == "ADD REQUEST")
+            if (save.Text == "ADD TO REQUEST LIST")
             {
+                
                 Request request = new Request
                 {
                     LastName = Last.Text,

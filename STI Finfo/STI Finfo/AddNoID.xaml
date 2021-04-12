@@ -75,11 +75,11 @@
                         </Grid>
                         <!-- BUTTON SUBMIT-->
                         <Grid>
-                            <Button Text="ADD NO ID" x:Name="saveB" Clicked="SaveNoID"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,20,10,-5" WidthRequest="10000" CornerRadius="5" HeightRequest="50"/>
+                            <Button Text="ADD TO REQUEST LIST" x:Name="saveB" Clicked="SaveNoID"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,20,10,-5" WidthRequest="10000" CornerRadius="5" HeightRequest="50"/>
                             
                         </Grid>
                         <Grid>
-                            <Button Text="ADD AND SUBMIT" x:Name="ToAdmin"  HorizontalOptions="CenterAndExpand" Margin="10,10,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="50">
+                            <Button Text="SUBMIT REPORT" x:Name="ToAdmin"  HorizontalOptions="CenterAndExpand" Margin="10,10,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="50">
                                 <Button.Background>
                                     <LinearGradientBrush EndPoint="0,2">
                                         <GradientStop Color="#01579b" Offset="0.1" />

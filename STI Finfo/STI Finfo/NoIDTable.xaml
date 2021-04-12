@@ -16,7 +16,7 @@
                     <Label  Text="Click list to submit or update" FontSize="13" TextColor="Wheat"/>
                 </StackLayout>
             </Frame>
-            <Button Text="Add Request" Padding="34,0,34,0" Margin="5,-35,17,0" HorizontalOptions="End"  TextColor="#2c384a" Clicked="AddNoID" CornerRadius="20">
+            <Button Text="Add Student" Padding="34,0,34,0" Margin="5,-35,17,0" HorizontalOptions="End"  TextColor="#2c384a" Clicked="AddNoID" CornerRadius="20">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,2">
                         <GradientStop Color="#ffcc00" Offset="0.1" />

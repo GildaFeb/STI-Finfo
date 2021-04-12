@@ -42,11 +42,11 @@ namespace STI_Finfo
 
         private void SaveNoID(object sender, EventArgs e)
         {
-
+            this.Title = "ADD STUDENT";
             var save = this.FindByName<Button>("saveB");
-            if (save.Text == "ADD NO ID")
+            if (save.Text == "ADD TO REQUEST LIST")
             {
-                this.Title="ADD NO ID STUDENT"
+                
                 NoID requestss = new NoID
                 {
                     StudentNumber = studentnumber.Text,
