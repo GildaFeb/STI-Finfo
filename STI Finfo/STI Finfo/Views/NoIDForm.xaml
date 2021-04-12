@@ -7,8 +7,8 @@
             <StackLayout>
                 <StackLayout>
                     <Grid  HorizontalOptions="Center">
-                        <StackLayout  Margin="30,0,30,40">
-                            <Image Source="no_id.png" Margin="100,45,100,60" ></Image>
+                        <StackLayout  Margin="13,0,13,40">
+                            <Image Source="professor.png" Margin="100,35,100,60" ></Image>
                         </StackLayout>
                     </Grid>
                 </StackLayout>
@@ -26,7 +26,7 @@
                     </Grid>
                 </StackLayout>
                 <StackLayout>
-                    <Frame WidthRequest="700" Margin="7,0,5,7"  HasShadow="true" BackgroundColor="#cccccc" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="500" CornerRadius="10">
+                    <Frame WidthRequest="700" Margin="7,0,5,7"  HasShadow="true" BackgroundColor="#cccccc" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="450" CornerRadius="10">
                         <StackLayout>
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -63,18 +63,10 @@
                                     </Frame>
                                 </StackLayout>
                             </Grid>
-                            <Grid>
-                                <!--- TIME AND DATE -->
-                                <StackLayout>
-                                    <Label Text="TIME AND DATE"  TextColor="#003366"></Label>
-                                    <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
-                                        <Entry IsEnabled="False" Placeholder="Guard will fill this section." PlaceholderColor="DarkRed" Margin="-2,2,-2,6" FontSize="15" />
-                                    </Frame>
-                                </StackLayout>
-                            </Grid>
+                          
                             <!-- BUTTON SUBMIT-->
                             <Grid>
-                                <Button Text="SUBMIT"   BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,5,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="50"/>
+                                <Button Text="SUBMIT"   BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,23,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="50"/>
                             </Grid>
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -87,18 +79,18 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="8,28,8,20" BackgroundColor="#003366" HeightRequest="130">
+                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="8,10,8,20" BackgroundColor="#003366" HeightRequest="130">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
                                         <StackLayout Grid.Column="0" >
-                                            <Image Source="professor.png"  Margin="0,0,0,-20" HorizontalOptions="Center" />
+                                            <Image Source="no_id.png"  Margin="10,0,10,-5" HorizontalOptions="Center" />
                                         </StackLayout>
                                         <StackLayout Grid.Column="1" VerticalOptions="Center">
-                                            <Label HorizontalOptions="Center" Text="The value of identity of course is that so often with it comes purpose." FontAttributes="Bold" FontSize="Micro" TextColor="White" Margin="-5,10,0,0" Padding="0,0,0,0"></Label>
-                                            <Label Text=" - Richard Grant" FontAttributes="Italic" FontSize="10" TextColor="#e0cc7b" Margin="-5,1,0,5"/>
+                                            <Label HorizontalOptions="Center" Text="The value of identity of course is that so often with it comes purpose." FontAttributes="Bold" FontSize="Micro" TextColor="White" Margin="0,10,0,0" Padding="0,0,0,0"></Label>
+                                            <Label Text=" - Richard Grant" FontAttributes="Italic" FontSize="10" TextColor="#e0cc7b" Margin="0,1,0,5"/>
                                         </StackLayout>
                                     </Grid>
                                 </Frame>

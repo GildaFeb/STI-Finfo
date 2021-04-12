@@ -43,14 +43,17 @@ namespace STI_Finfo
 
 
             var save = this.FindByName<Button>("saveBtn");
-            save.Text = "Update";
-            this.Title = "Edit request";
+            save.Text = "UPDATE ONLY";
+            var submit = this.FindByName<Button>("ToAdmin");
+            submit.Text = "UPDATE AND ACCEPT";
+            this.Title = "UPDATE AND ACCEPT";
+           
         }
 
         private void SaveRequests(object sender, EventArgs e)
         {
             var save = this.FindByName<Button>("saveBtn");
-            if (save.Text == "SUBMIT")
+            if (save.Text == "ADD REQUEST")
             {
                 Request request = new Request
                 {
@@ -71,11 +74,12 @@ namespace STI_Finfo
                 bool res = DependencyService.Get<ISQLite>().SaveRequest(request);
                 if (res)
                 {
+                   
                     Navigation.PopAsync();
                 }
                 else
                 {
-                    DisplayAlert("Message", "Data Failed To Savessss", "Ok");
+                    DisplayAlert("Message", "Data Failed To Savessss", "Okay");
                 }
             }
             else
@@ -95,14 +99,16 @@ namespace STI_Finfo
                     Transaction = transaction.Text,
                 };
 
-                bool res = DependencyService.Get<ISQLite>().UpdateRequest(RequestDetails);
+                bool res = DependencyService.Get<ISQLite>().UpdateRequest(RequestDetails); 
+                
                 if (res)
                 {
+              
                     Navigation.PopAsync();
                 }
                 else
                 {
-                    DisplayAlert("Message", "Data Failed To Update", "Ok");
+                    DisplayAlert("Message", "Data Failed To Update", "Okay");
                 }
             }
         }

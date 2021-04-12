@@ -106,7 +106,7 @@ namespace STI_Finfo.Droid
         }
         public void DeleteNoID(int Id)
         {
-            string sql = $"DELETE FROM NoID WHERE Id={Id}";
+            string sql = $"DELETE FROM NoID WHERE NoId={Id}";
             con.Execute(sql);
         }
     }

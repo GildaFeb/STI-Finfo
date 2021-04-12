@@ -147,41 +147,10 @@
                                     </StackLayout>
                                 </Frame>
                             </Grid>
-                            <Grid >
-                                <!--- DATE TIME ENTERED -->
-                                <Frame Margin="0,7,0,0">
-                                    <StackLayout>
-                                        <Label TextColor="#003366" Text="Date and Time Entered"/>
-                                        <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="100" Padding="10,-2,5,2" >
-                                            <Grid Margin="0,0,0,0">
-                                                <ScrollView Margin="-2,0,2,0" Orientation="Vertical" Padding="2,2,2,2"  >
-                                                    <Entry IsEnabled="False"  Placeholder="Guard will fill this section." PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"   />
-
-                                                </ScrollView>
-                                            </Grid>
-                                        </Frame>
-                                    </StackLayout>
-                                </Frame>
-                            </Grid>
-                            <Grid >
-                                <!--- DATE TIME EXITED -->
-                                <Frame Margin="0,7,0,0">
-                                    <StackLayout>
-                                        <Label TextColor="#003366" Text="Date and Time Exited"/>
-                                        <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="100" Padding="10,-2,5,2" >
-                                            <Grid Margin="0,0,0,0">
-                                                <ScrollView Margin="-2,0,2,0" Orientation="Vertical" Padding="2,2,2,2"  >
-                                                    <Entry IsEnabled="False"  Placeholder="Guard will fill this section. " PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"   />
-
-                                                </ScrollView>
-                                            </Grid>
-                                        </Frame>
-                                    </StackLayout>
-                                </Frame>
-                            </Grid>
+                            
                             <!-- BUTTON SUBMIT-->
                             <Grid>
-                                <Button Text="SUBMIT"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="60"/>
+                                <Button Text="SUBMIT"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,5" WidthRequest="10000" CornerRadius="5" HeightRequest="60"/>
                             </Grid>
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -194,19 +163,19 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="18,4,8,30" HeightRequest="170" BackgroundColor="#003366" VerticalOptions="Center">
+                                <Frame CornerRadius="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="18,4,8,30" HeightRequest="120" BackgroundColor="#003366" VerticalOptions="Center">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
                                         <StackLayout Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"> 
-                                            <Image Source="talk.png"  Margin="-10,-10,0,-10" HorizontalOptions="Center" VerticalOptions="Center" />
+                                            <Image Source="talk.png"  Margin="-5,-15,0,-10" HorizontalOptions="Center" VerticalOptions="Center" />
                                         </StackLayout>
                                         <StackLayout Grid.Column="1" VerticalOptions="Center" >
                                             <StackLayout Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Center" >
-                                                <Label HorizontalOptions="Center" Text="THANK YOU FOR YOUR COOPERATION" FontAttributes="Bold" FontSize="15" TextColor="White" Margin="2,10,0,0" Padding="0,0,0,0"></Label>
-                                                <Label Text="Aim high with STI!" FontAttributes="Italic" FontSize="10" TextColor="#e0cc7b" Margin="2,-3,0,5"/>
+                                                <Label HorizontalOptions="Center" Text="THANK YOU FOR YOUR COOPERATION" FontAttributes="Bold" FontSize="15" TextColor="White" Margin="5,10,0,0" Padding="0,0,0,0"></Label>
+                                                <Label Text="Aim high with STI!" FontAttributes="Italic" FontSize="10" TextColor="#e0cc7b" Margin="5,-3,0,5"/>
                                             </StackLayout>
                                            
                                         </StackLayout>

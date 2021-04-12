@@ -32,16 +32,21 @@ namespace STI_Finfo
 
 
 
-            var save = this.FindByName<Button>("saveBtn");
-            save.Text = "Update";
-            this.Title = "Edit request";
+            var save = this.FindByName<Button>("saveB");
+            const string V = "UPDATE ONLY";
+            save.Text = V;
+            var submit = this.FindByName<Button>("ToAdmin");
+            submit.Text = "UPDATE AND ACCEPT";
+            this.Title = "UPDATE AND ACCEPT";
         }
 
         private void SaveNoID(object sender, EventArgs e)
         {
+
             var save = this.FindByName<Button>("saveB");
-            if (save.Text == "SUBMIT")
+            if (save.Text == "ADD NO ID")
             {
+                this.Title="ADD NO ID STUDENT"
                 NoID requestss = new NoID
                 {
                     StudentNumber = studentnumber.Text,

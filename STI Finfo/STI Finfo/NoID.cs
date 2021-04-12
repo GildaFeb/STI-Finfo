@@ -13,4 +13,6 @@ namespace STI_Finfo
         public string Account { get; set; }
         public string Reasons { get; set; }
     }
+
+   
 }

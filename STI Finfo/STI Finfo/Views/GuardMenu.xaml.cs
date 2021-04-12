@@ -136,7 +136,7 @@ namespace STI_Finfo.Views
             {
                 StudentNumber = "02000176925",
                 Account = "lacanienta.176925@sjdelmonte.sti.edu.ph",
-                Reasons = "hgjgjhhjh",
+                Reasons = "I cannot find my ID",
 
 
             };

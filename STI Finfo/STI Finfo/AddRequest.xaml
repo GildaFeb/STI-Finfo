@@ -5,11 +5,15 @@
 
     <ScrollView>
         <StackLayout BackgroundColor="White">
-   
+            <StackLayout>
+                <Grid Margin="40,-45,40,40" HorizontalOptions="Center">
+                    <Image Source="teacher.png" Margin="50,59,50,50" ></Image>
+                </Grid>
+            </StackLayout>
             <!-- GUIDE -->
             <StackLayout Margin="0,0,0,0">
                 <Grid HorizontalOptions="CenterAndExpand" >
-                    <Label Text="Guest Form" Margin="0,50,0,0" TextColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="26"></Label>
+                    <Label Text="Guest Form" Margin="0,15,0,0" TextColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="26"></Label>
                     <Label Text="Please complete the form below" TextColor="#ba9400" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Italic" FontSize="15"></Label>
                 </Grid>
             </StackLayout>
@@ -174,9 +178,21 @@
                         </Grid>
                         <!-- BUTTON SUBMIT-->
                         <Grid>
-                            <Button Text="SUBMIT"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="60" Clicked="SaveRequests" x:Name="saveBtn"/>
+                            <Button Text="ADD GUEST"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="60" Clicked="SaveRequests" x:Name="saveBtn"/>
+                          
+
                         </Grid>
-                       
+                        <Grid>
+                            <Button Text="UPDATE AND ACCEPT" x:Name="ToAdmin"  BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,8,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="60" >
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0,2">
+                                        <GradientStop Color="#01579b" Offset="0.1" />
+                                        <GradientStop Color="#2c384a" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </Grid>
+
                     </StackLayout>
                 </Frame>
             </StackLayout>

@@ -24,6 +24,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+           
             <ScrollView HorizontalOptions="CenterAndExpand">
                 <StackLayout Margin="15,-2,15,-2" >
                     <ListView x:Name="NoIDList" SeparatorVisibility="None" HorizontalScrollBarVisibility="Never" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" ItemTapped="EditNoID"  SeparatorColor="#003366">
