@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <ScrollView>
             <AbsoluteLayout Margin="0,0,0,-100" BackgroundColor="White">
-                <Image Source="gray.png"  Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"  />
+                <Image Source="guardmenu.png"  Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"  />
                
                     <Frame Margin="15,60,15,-300" HeightRequest="450" HorizontalOptions="Center"  BackgroundColor="White" >
                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >

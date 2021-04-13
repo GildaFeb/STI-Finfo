@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <ScrollView>
             <AbsoluteLayout Margin="0,0,0,-100">
-                <Image Source="bg_guard.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"  />
+                <Image Source="guardui.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"  />
                 <Grid Margin="0,0,0,-100">
                     <Frame Margin="20,30,20,-300" BackgroundColor="White" HeightRequest="500">
                         

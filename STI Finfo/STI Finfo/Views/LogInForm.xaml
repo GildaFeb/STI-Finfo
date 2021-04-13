@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <ScrollView>
             <AbsoluteLayout Margin="0,0,0,-100">
-                <Image Source="orangeyellow.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7"/>
+                <Image Source="gray.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7"/>
                 <Grid Margin="0,0,0,-100">
                     <StackLayout Padding="2" >
                         <Grid Opacity=".9">

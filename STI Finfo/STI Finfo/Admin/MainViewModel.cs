@@ -1,81 +1,167 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
+
 
 namespace STI_Finfo.Admin
 {
     public class MainViewModel
-    {
-        public  ObservableCollection<Lists> ListItems;
 
-        
+    {
+        public class List
+        {
+            private string expImage;
+
+            public string GetExpImage()
+            {
+                return expImage;
+            }
+
+            public void SetExpImage(string value)
+            {
+                expImage = value;
+            }
+
+            public ObservableCollection<ProductDetails> Product_Details { get; set; }
+            public string Day { get; set; }
+            public bool IsVisible { get; set; }
+            public string CollImage { get; set; }
+            public string ExpImage { get; set; }
+        }
+        public class ProductDetails
+        {
+            public string Key { get; set; }
+            public string Value { get; set; }
+        }
+
+        private List _oldList;
+        public ObservableCollection<List> Lists { get; set; }
+
         public MainViewModel()
         {
-            ListItems = new ObservableCollection<Lists>
+            Lists = new ObservableCollection<List>
             {
-                new Lists
+                new List
                 {
-
-                    Title="Todayyy",
+                    Day = "Today",
+                    CollImage="down2.png",
+                    ExpImage="down3.png",
                   
-                    IsVisible= false,
-
+                    IsVisible = false,
+                      Product_Details= new ObservableCollection<ProductDetails>
+                    {
+                        new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        },
+                         new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        },
+                          new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        }
+                    }
                 },
-                 new Lists
+                new List
                 {
-
-                    Title="Yesterday",
-
+                    Day = "Yesterday",
+                     CollImage="down2.png",
+                    ExpImage="down3.png",
+                    IsVisible = false,
+                      Product_Details= new ObservableCollection<ProductDetails>
+                    {
+                        new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        },
+                         new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        },
+                          new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        }
+                    }
                 },
-                  new Lists
+                new List
                 {
-
-                    Title="Last week",
-
-                    
-
-                }
+                      CollImage="down2.png",
+                    ExpImage="down3.png",
+                    Day = "Last week",
+                    IsVisible = false,
+                      Product_Details= new ObservableCollection<ProductDetails>
+                    {
+                        new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        },
+                         new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        },
+                          new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        }
+                    }
+                },
+                 new List
+                {
+                     CollImage="down2.png",
+                    ExpImage="down3.png",
+                    Day = "Last Month",
+                    IsVisible = false,
+                      Product_Details= new ObservableCollection<ProductDetails>
+                    {
+                        new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        },
+                         new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        },
+                          new ProductDetails
+                        {
+                            Key="Anil", Value="wow"
+                        }
+                    }
+                },
             };
-
         }
-        public Lists _oldLists;
 
-
-
-        public void HideOrShowList(Lists list)
+        public void ShoworHiddenProducts(List list)
         {
-            
-            if (_oldLists == list)
+            if (_oldList == list)
             {
-                // HIDE CLICK TWICE
                 list.IsVisible = !list.IsVisible;
-                UpdateLists(list);
-
-
+                UpDateProducts(list);
             }
             else
             {
-
-                if (_oldLists != null)
+                if (_oldList != null)
                 {
-                    // HIDE PREVIEW ITEM
-                    _oldLists.IsVisible = false;
-                    UpdateLists(list);
+                    _oldList.IsVisible = false;
+                    UpDateProducts(_oldList);
+
                 }
+                list.IsVisible = true;
+                UpDateProducts(list);
             }
-            list.IsVisible = true;
-            UpdateLists(list);
+            _oldList = list;
         }
 
-        private void UpdateLists(Lists list)
+        private void UpDateProducts(List product)
         {
-            var index = ListItems.IndexOf(list);
-            ListItems.Remove(list);
-            ListItems.Insert(index,list);
+            var Index = Lists.IndexOf(product);
+            Lists.Remove(product);
+            Lists.Insert(Index, product);
+
         }
-
-
-       
     }
+
+   
 }

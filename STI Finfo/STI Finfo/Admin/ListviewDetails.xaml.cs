@@ -17,11 +17,12 @@ namespace STI_Finfo.Admin
         {
             InitializeComponent();
         }
-        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void ListViewItem_Tabbed(object sender, ItemTappedEventArgs e)
         {
-            var xx = BindingContext as MainViewModel;
-            var lists= e.Item as Lists; 
-            xx.HideOrShowList(lists);
+            var list = e.Item as List;
+            var vm = BindingContext as MainViewModel;
+            vm?.ShoworHiddenProducts(list);
+
         }
     }
 }

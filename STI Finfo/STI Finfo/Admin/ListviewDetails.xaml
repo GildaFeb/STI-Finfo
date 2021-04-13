@@ -3,22 +3,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local11="clr-namespace:STI_Finfo.Admin" 
              x:Class="STI_Finfo.Admin.ListviewDetails"
-            >
+             BackgroundImageSource="gray.png"
+           >
     <ContentPage.BindingContext>
-        <local11:MainViewModel/>
+        <local11:MainViewModel></local11:MainViewModel>
     </ContentPage.BindingContext>
 
-    <ListView ItemsSource="{Binding ListItems}" HasUnevenRows="True" ItemTapped="ListView_ItemTapped" Margin="40,80">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout BackgroundColor="yellow"  >
-                        <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="40" TextColor="black"></Label>
-                        <Button Text="Details" IsVisible="{Binding IsVisible}" TextColor="green"/>
+    <ScrollView>
+        <StackLayout Margin="15,0,15,0">
+            <Frame HeightRequest="200">
+                <AbsoluteLayout Margin="-10,-10,-10,-10">
+                    <Image Source="bg4.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Margin="0,0,0,0" />
+                </AbsoluteLayout>
+            </Frame>
+            <ListView Margin="0,0,0,0" 
+              VerticalOptions="FillAndExpand"
+              ItemTapped="ListViewItem_Tabbed"  
+              ItemsSource="{Binding Lists}"  
+              HasUnevenRows="True"  
+              >
+                <ListView.ItemTemplate SeparatorVisibility="None">
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5">
+                                <!--  ====================  LIST VIEW FOR DAYS ===========  -->
 
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                                <Frame HasShadow="True" >
+                                    <Grid >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Day}"  
+                               FontSize="14"
+                               TextColor="Black"
+                               HorizontalOptions="Start"
+                               VerticalOptions="End" 
+                               Grid.Row="0"
+                               Grid.Column="0"/>
+                                        <Image Source="{Binding CollImage}" HeightRequest="18" WidthRequest="18" HorizontalOptions="End" Margin="5,5,5,5"   Grid.Row="0"  Grid.Column="1"     ></Image>
+                                        <Image Source="{Binding ExpImage}"  HeightRequest="18"  WidthRequest="18"  IsVisible="{Binding IsVisible}" Margin="5,5,5,5"   HorizontalOptions="End"  Grid.Row="0"  Grid.Column="1"></Image>
+
+
+
+
+                                    </Grid>
+                                </Frame>
+
+                                <!--  ====================  LIST OF DATA COLUMNS ===========  -->
+                                <ScrollView IsVisible="{Binding IsVisible}">
+                                    <ListView ItemsSource="{Binding Product_Details}"  HasUnevenRows="False"
+                                  HeightRequest="200" Margin="10" SeparatorVisibility="None">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <Grid Margin="15,0,15,0" >
+                                                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                                            <Label Text="{Binding Key}"/>
+                                                            <Label Text="{Binding Value}"/>
+                                                        </StackLayout>
+                                                    </Grid>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </ScrollView>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

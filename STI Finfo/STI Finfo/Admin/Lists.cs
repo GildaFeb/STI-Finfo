@@ -4,7 +4,7 @@ using System.Text;
 
 namespace STI_Finfo.Admin
 {
-   public  class Lists
+   public class Lists
     {
         public string Title { get; set; }
         public bool IsVisible { get; set; }

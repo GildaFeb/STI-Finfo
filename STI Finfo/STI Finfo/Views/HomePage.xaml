@@ -74,7 +74,7 @@
                                                     </StackLayout>
                                                     <!-- NO ID -->
                                                     <StackLayout>
-                                                        <Button  Text="No ID" TextColor="DarkSlateGray" Clicked="NoIDButton_Clicked" CornerRadius="5" BackgroundColor="#ffcc00" Margin="9,0,9,0">
+                                                        <Button   Text="No ID" TextColor="DarkSlateGray" Clicked="NoIDButton_Clicked" CornerRadius="5" BackgroundColor="#ffcc00" Margin="9,0,9,0">
                                                             <Button.Background>
                                                                 <LinearGradientBrush EndPoint="0,2">
                                                                     <GradientStop Color="#ffcc00" Offset="0.1" />
