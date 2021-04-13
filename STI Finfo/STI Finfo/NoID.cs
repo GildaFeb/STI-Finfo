@@ -12,6 +12,8 @@ namespace STI_Finfo
         public string StudentNumber { get; set; }
         public string Account { get; set; }
         public string Reasons { get; set; }
+
+        public string DateTime1 { get; set; }
     }
 
    
