@@ -8,8 +8,8 @@
                 <Image Source="orangeyellow.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7"/>
                 <Grid Margin="0,0,0,-100">
                     <StackLayout Padding="2" >
-                        <Grid>
-                            <StackLayout Margin="10,20,10,0" Opacity=".9">
+                        <Grid Opacity=".9">
+                            <StackLayout Margin="10,20,10,0" >
                                 <Frame  HasShadow="True" HeightRequest="500" HorizontalOptions="FillAndExpand" CornerRadius="10">
                                     <StackLayout HorizontalOptions="FillAndExpand" >
                                         <!--  LOG IN  -->

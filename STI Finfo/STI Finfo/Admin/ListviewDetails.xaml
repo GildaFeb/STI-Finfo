@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local11="clr-namespace:STI_Finfo.Admin" 
+             x:Class="STI_Finfo.Admin.ListviewDetails"
+            >
+    <ContentPage.BindingContext>
+        <local11:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <ListView ItemsSource="{Binding ListItems}" HasUnevenRows="True" ItemTapped="ListView_ItemTapped" Margin="40,80">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout BackgroundColor="yellow"  >
+                        <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="40" TextColor="black"></Label>
+                        <Button Text="Details" IsVisible="{Binding IsVisible}" TextColor="green"/>
+
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

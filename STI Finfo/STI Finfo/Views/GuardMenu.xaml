@@ -1,21 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="STI_Finfo.Views.GuardMenu">
     <ContentPage.Content>
         <ScrollView>
             <AbsoluteLayout Margin="0,0,0,-100">
                 <Image Source="bg_guard.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"  />
                 <Grid Margin="0,0,0,-100">
-                    <Frame Margin="20,30,20,-300" BackgroundColor="#003366">
+                    <Frame Margin="20,30,20,-300" BackgroundColor="White" HeightRequest="500">
+                        
                         <StackLayout>
+                            <Image Source="secu_icon.png" />
                             <StackLayout>
-                                <Label Text="Request" FontAttributes="Bold" TextColor="White" FontSize="40" HorizontalOptions="Center" Margin="20,30,20,20">
+
+                                <Label Text="Request" FontAttributes="Bold" TextColor="#003663" FontSize="40" HorizontalOptions="Start" Margin="20,-10,20,-30">
                                 </Label>
-                                <Button Text="NO ID"  FontAttributes="Bold" Margin="10,30,10,10" CornerRadius="20" BackgroundColor="#e0cc7b" Clicked="NoID_Clicked" TextColor="#003366"/>
-                                <Button Text="GUEST" FontAttributes="Bold" Margin="10,0,10,10" CornerRadius="20" BackgroundColor="#e0cc7b" Clicked="Guest_Clicked" TextColor="#003366"/>
-                                <Image Source="secu_icon.png" />
                             </StackLayout>
+                            <StackLayout>
+                                <Button Text="NO ID" CornerRadius="3"  FontAttributes="Bold" Margin="10,30,10,10" BackgroundColor="#003366" Clicked="NoID_Clicked" TextColor="White"/>
+                                <Button Text="GUEST" CornerRadius="3" FontAttributes="Bold" Margin="10,0,10,10" BackgroundColor="#003663" Clicked="Guest_Clicked" TextColor="White"/>
+                            </StackLayout>
+                            
                         </StackLayout>
                     </Frame>
                 </Grid>

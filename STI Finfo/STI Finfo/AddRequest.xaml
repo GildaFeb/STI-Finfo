@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sti_finfo="clr-namespace:STI_Finfo" x:DataType="sti_finfo:AppShell"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:sti_finfo="clr-namespace:STI_Finfo" 
+             x:DataType="sti_finfo:AppShell"
              x:Class="STI_Finfo.AddRequest">
 
     <ScrollView>
@@ -106,6 +108,14 @@
                                 <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
                                     <Entry  Placeholder="e.g., example@email.com" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6"  x:Name="email" />
                                 </Frame>
+
+
+
+
+
+
+
+
                             </StackLayout>
                         </Grid>
                         <Grid >
@@ -132,6 +142,7 @@
                                 <StackLayout>
                                     <Frame BackgroundColor="#003366">
                                         <Label TextColor="White" Text="What is/are your transaction/s inside the campus?"/>
+                                        
                                     </Frame>
                                     <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="100" Padding="10,-2,5,2" >
                                         <Grid Margin="0,0,0,0">

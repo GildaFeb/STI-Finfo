@@ -1,4 +1,5 @@
 ﻿
+using STI_Finfo.Admin;
 using STI_Finfo.Views;
 using System;
 using Xamarin.Forms;
@@ -15,7 +16,7 @@ namespace STI_Finfo
             DependencyService.Get<ISQLite>().GetConnectionWithCreateDatabase();
             
             MainPage = new AppShell();
-          
+            
         }
 
         protected override void OnStart()

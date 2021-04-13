@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STI_Finfo.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace STI_Finfo.Views
         }
         private async void GuestButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GuestForm());
+            await Navigation.PushAsync(new AdminMenu());
         }
         private async void SecurityButton_Clicked(object sender, EventArgs e)
         {
