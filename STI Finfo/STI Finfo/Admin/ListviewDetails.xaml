@@ -56,7 +56,7 @@
                                 <!--  ====================  LIST OF DATA COLUMNS ===========  -->
                                 <ScrollView IsVisible="{Binding IsVisible}">
                                     <ListView ItemsSource="{Binding Product_Details}"  HasUnevenRows="False"
-                                  HeightRequest="200" Margin="10" SeparatorVisibility="None">
+                                  HeightRequest="200" Margin="10" >
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <ViewCell>

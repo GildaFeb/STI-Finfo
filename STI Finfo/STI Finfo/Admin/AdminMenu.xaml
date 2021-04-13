@@ -1,39 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="STI_Finfo.Admin.AdminMenu">
+             x:Class="STI_Finfo.Admin.AdminMenu"
+             BackgroundImageSource="admin.png" >
     <ContentPage.Content>
-        <ScrollView>
-            <AbsoluteLayout Margin="0,0,0,-100" BackgroundColor="White">
-                <Image Source="guardmenu.png"  Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"  />
+        <ScrollView HorizontalOptions="Center">
+         
                
-                    <Frame Margin="15,60,15,-300" HeightRequest="450" HorizontalOptions="Center"  BackgroundColor="White" >
-                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
-                            <StackLayout>
-                                <Label Text="MONITORING PAGE" VerticalOptions="Start" FontAttributes="Bold" TextColor="#2c384a" FontSize="35" HorizontalOptions="Center" Margin="20,30,20,20">
-                                </Label>
-                                <Button  Text="NO ID"  FontAttributes="Bold" Margin="10,50,10,10" CornerRadius="20" BackgroundColor="#003366" Clicked="NoID_Admin_Clicked" TextColor="White">
-                                    <Button.Background>
-                                        <LinearGradientBrush EndPoint="0,2">
-                                            <GradientStop Color="#2c384a" Offset="0.1" />
-                                            <GradientStop Color="#27313e" Offset="1.0" />
-                                        </LinearGradientBrush>
-                                    </Button.Background>
-                                </Button>
-                                <Button Text="GUEST" FontAttributes="Bold" Margin="10,0,10,10" CornerRadius="20" BackgroundColor="#003366" Clicked="Guest_Admin_Clicked" TextColor="White">
-                                    <Button.Background>
-                                        <LinearGradientBrush EndPoint="0,2">
-                                            <GradientStop Color="#2c384a" Offset="0.1" />
-                                            <GradientStop Color="#27313e" Offset="1.0" />
-                                        </LinearGradientBrush>
-                                    </Button.Background>
-                                </Button>
-                                
-                            </StackLayout>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="2,50,2,0">
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="2,0,2,0">
+                        <StackLayout>
+                            <Label Text="MONITORING PAGE" VerticalOptions="Start" FontFamily="Helvetica" FontAttributes="Bold" TextColor="White" FontSize="30" HorizontalOptions="Start" Margin="30,9 ,20,-10">
+                            </Label>
+                            <Label Text="April 14, 2021 13:34:02" Margin="30,0,0,0" TextColor="#2c384a" VerticalOptions="Start" FontAttributes="Bold"  FontSize="13" HorizontalOptions="Start">
+                            </Label>
                         </StackLayout>
-                    </Frame>
-                
-            </AbsoluteLayout>
+                        <StackLayout Margin="12,100,12,0">
+                            <Button  Text="NO ID" WidthRequest="300"  FontAttributes="Bold" Margin="12,150,12,10" CornerRadius="20" BackgroundColor="#003366" Clicked="NoID_Admin_Clicked" TextColor="White">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0,2">
+                                        <GradientStop Color="#2c384a" Offset="0.1" />
+                                        <GradientStop Color="#27313e" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Text="GUEST" WidthRequest="300" FontAttributes="Bold" Margin="12,0,12,10" CornerRadius="20" BackgroundColor="#003366" Clicked="Guest_Admin_Clicked" TextColor="White">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0,2">
+                                        <GradientStop Color="#2c384a" Offset="0.1" />
+                                        <GradientStop Color="#27313e" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+         
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

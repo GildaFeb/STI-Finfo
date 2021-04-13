@@ -5,11 +5,9 @@
     <StackLayout>
         <ScrollView>
             <AbsoluteLayout BackgroundColor="Black" Margin="0,0,0,-100" >
-                <Image Source="sti_bg6.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7" Margin="0,0,0,0" />
+                <Image Source="main.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".9" Margin="0,0,0,0" />
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
@@ -18,80 +16,70 @@
                     </Grid.ColumnDefinitions>
                     <StackLayout Grid.Row="0" Grid.Column="0" InputTransparent="True" Margin="0,0,0,50">
                         <Frame Margin="30,120,0,0" Padding="0,0,0,0">
-                            
                         </Frame>
                     </StackLayout>
-                    <Frame Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Padding="0,0,0,0" HeightRequest="1200" CornerRadius="30" BackgroundColor="#cccccc" Margin="0,-100,0,0" HasShadow="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300">
-                        <StackLayout WidthRequest="500" BackgroundColor="#cccccc">
-                            <ScrollView>
-                                <StackLayout WidthRequest="900">
-                                    <StackLayout>
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                            </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition/>
-                                                <ColumnDefinition/>
-                                                <ColumnDefinition/>
-                                            </Grid.ColumnDefinitions>
-                                            <!--- SECURITY BUTTON -->
-                                            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,0,10">
-                                                <Frame HasShadow="True" BackgroundColor="#cccccc">
-                                                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                                    <Button Text="Security" Padding="90,15,90,15" BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30" Clicked="SecurityButton_Clicked" >
-                                                    </Button>
-                                                </StackLayout>
-                                                </Frame>
-                                            </Grid>
-                                            <!--- APP NAME -->
-                                            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#003366" Margin="0,-20">
-                                                <StackLayout BackgroundColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" Margin="10,0,10,0"  >
-                                                    <Label Padding="0,0,0,0">
-                                                        <Label.FormattedText>
-                                                            <FormattedString>
-                                                                <Span Text="STI Collge San Jose Del Monte  &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
-                                                                <Span Text="Online Monitoring Form &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
-                                                                <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="Yellow" FontAttributes="Italic" />
-                                                            </FormattedString>
-                                                        </Label.FormattedText>
-                                                    </Label>
-                                                </StackLayout>
-                                            </Grid>
-                                            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,60,0,0" >
-                                                <StackLayout>
-                                                    <!-- GUEST -->
-                                                    <StackLayout>
-                                                        <Button Text="GUEST" TextColor="WhiteSmoke" Clicked="GuestButton_Clicked"  CornerRadius="5" Margin="9,0,10,0"  >
-                                                            <Button.Background>
-                                                                <LinearGradientBrush EndPoint="0,2">
-                                                                    <GradientStop Color="#01579b" Offset="0.1" />
-                                                                    <GradientStop Color="#2c384a" Offset="1.0" />
-                                                                </LinearGradientBrush>
-                                                            </Button.Background>
-                                                        </Button>
-                                                    </StackLayout>
-                                                    <!-- NO ID -->
-                                                    <StackLayout>
-                                                        <Button   Text="No ID" TextColor="DarkSlateGray" Clicked="NoIDButton_Clicked" CornerRadius="5" BackgroundColor="#ffcc00" Margin="9,0,9,0">
-                                                            <Button.Background>
-                                                                <LinearGradientBrush EndPoint="0,2">
-                                                                    <GradientStop Color="#ffcc00" Offset="0.1" />
-                                                                    <GradientStop Color="#b08d00" Offset="1.0" />
-                                                                </LinearGradientBrush>
-                                                            </Button.Background>
-
-                                                        </Button>
-                                                    </StackLayout>
-                                                </StackLayout>
-                                            </Grid>
-                                        </Grid>
+                    <StackLayout  Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Padding="0,0,0,0" HeightRequest="1200" Margin="0,-120,0,0"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="1300" >
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <!--- SECURITY BUTTON -->
+                                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,40,0,-30">
+                                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Button Text="Security" Padding="90,15,90,15" BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30" Clicked="SecurityButton_Clicked" >
+                                        </Button>
                                     </StackLayout>
-                                </StackLayout>
-                            </ScrollView>
+                                </Grid>
+                                <!--- APP NAME -->
+                                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#003366" Margin="0,-10">
+                                    <StackLayout BackgroundColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" Margin="10,0,10,0"  >
+                                        <Label Padding="0,0,0,0">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="STI Collge San Jose Del Monte  &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
+                                                    <Span Text="Online Monitoring Form &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
+                                                    <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="Yellow" FontAttributes="Italic" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,50,0,0" >
+                                    <StackLayout>
+                                        <!-- GUEST -->
+                                        <StackLayout>
+                                            <Button Text="GUEST" TextColor="WhiteSmoke" Clicked="GuestButton_Clicked"  CornerRadius="5" Margin="9,0,10,0"  >
+                                                <Button.Background>
+                                                    <LinearGradientBrush EndPoint="0,2">
+                                                        <GradientStop Color="#01579b" Offset="0.1" />
+                                                        <GradientStop Color="#2c384a" Offset="1.0" />
+                                                    </LinearGradientBrush>
+                                                </Button.Background>
+                                            </Button>
+                                        </StackLayout>
+                                        <!-- NO ID -->
+                                        <StackLayout>
+                                            <Button   Text="No ID" TextColor="DarkSlateGray" Clicked="NoIDButton_Clicked" CornerRadius="5" BackgroundColor="White" Margin="9,0,9,0">
+                                                <Button.Background>
+                                                    <LinearGradientBrush EndPoint="0,2">
+                                                        <GradientStop Color="#ffcc00" Offset="0.1" />
+                                                        <GradientStop Color="#b08d00" Offset="1.0" />
+                                                    </LinearGradientBrush>
+                                                </Button.Background>
+                                            </Button>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </Grid>
                         </StackLayout>
-                    </Frame>
+                    </StackLayout>
                 </Grid>
             </AbsoluteLayout>
         </ScrollView>

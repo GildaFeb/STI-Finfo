@@ -1,30 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             x:Class="STI_Finfo.Views.GuardMenu">
+             x:Class="STI_Finfo.Views.GuardMenu"
+             BackgroundImageSource="guardmenu.png">
     <ContentPage.Content>
         <ScrollView>
-            <AbsoluteLayout Margin="0,0,0,-100">
-                <Image Source="guardui.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"  />
+            <StackLayout Margin="0,0,0,-100">
                 <Grid Margin="0,0,0,-100">
-                    <Frame Margin="20,30,20,-300" BackgroundColor="White" HeightRequest="500">
-                        
+                    <ScrollView>
                         <StackLayout>
-                            <Image Source="secu_icon.png" />
                             <StackLayout>
-
-                                <Label Text="Request" FontAttributes="Bold" TextColor="#003663" FontSize="40" HorizontalOptions="Start" Margin="20,-10,20,-30">
+                                <Label Text="Request" FontAttributes="Bold" TextColor="White" FontSize="38" HorizontalOptions="Start" Margin="20,50,20,-30">
                                 </Label>
                             </StackLayout>
-                            <StackLayout>
-                                <Button Text="NO ID" CornerRadius="3"  FontAttributes="Bold" Margin="10,30,10,10" BackgroundColor="#003366" Clicked="NoID_Clicked" TextColor="White"/>
-                                <Button Text="GUEST" CornerRadius="3" FontAttributes="Bold" Margin="10,0,10,10" BackgroundColor="#003663" Clicked="Guest_Clicked" TextColor="White"/>
+                            <StackLayout Margin="0,-5,0,0">
+                                <Image Source="secu_icon.png" HeightRequest="250"  />
                             </StackLayout>
-                            
+                            <StackLayout Margin="0,25,0,0">
+                                <Button Text="NO ID" CornerRadius="3"  FontAttributes="Bold" Margin="15,30,15,10" BackgroundColor="#003366" Clicked="NoID_Clicked" TextColor="White"/>
+                                <Button Text="GUEST" CornerRadius="3" FontAttributes="Bold" Margin="15,0,15,10" BackgroundColor="#003663" Clicked="Guest_Clicked" TextColor="White"/>
+                            </StackLayout>
                         </StackLayout>
-                    </Frame>
+                    </ScrollView>
                 </Grid>
-            </AbsoluteLayout>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

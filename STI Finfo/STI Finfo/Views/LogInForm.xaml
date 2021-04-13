@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="STI_Finfo.Views.LogInForm">
+             x:Class="STI_Finfo.Views.LogInForm"
+             BackgroundImageSource="gray.png">
     <ContentPage.Content>
         <ScrollView>
             <AbsoluteLayout Margin="0,0,0,-100">
-                <Image Source="gray.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7"/>
+             
                 <Grid Margin="0,0,0,-100">
                     <StackLayout Padding="2" >
                         <Grid Opacity=".9">
@@ -13,14 +14,14 @@
                                 <Frame  HasShadow="True" HeightRequest="500" HorizontalOptions="FillAndExpand" CornerRadius="10">
                                     <StackLayout HorizontalOptions="FillAndExpand" >
                                         <!--  LOG IN  -->
-                                        <StackLayout Margin="0,10,0,5">
+                                        <StackLayout Margin="0,35,0,5">
                                             <Label TextColor="#003366" Text="Log in" FontFamily="helvetica" FontSize="60" FontAttributes="Bold" >
                                             </Label>
                                             <Label TextColor="#003366" Text="Remember! This section is for security monitoring only." FontFamily="helvetica" FontSize="Medium" FontAttributes="Bold" >
                                             </Label>
                                         </StackLayout>
                                         <!-- USERNAME -->
-                                        <StackLayout Margin="0,50,0,0">
+                                        <StackLayout Margin="0,40,0,0">
                                             <Frame CornerRadius="10" HeightRequest="50" Padding="0" Margin="0" HorizontalOptions="FillAndExpand" HasShadow="True">
                                                 <StackLayout Orientation="Horizontal" Margin="-2,-2,-2,-2">
                                                     <Image Source="username.png" Margin="0,0,-10,0"></Image>
@@ -46,7 +47,7 @@
                                             </StackLayout>
                                         </FlexLayout>
                                         <!-- Button -->
-                                        <StackLayout Margin="0,20,0,0">
+                                        <StackLayout Margin="0,0,0,0">
                                             <Button x:Name="SignInBtn" CornerRadius="20" Margin="0,30,0,5" Text="Log in" TextColor="white" Clicked="LogIn_Clicked" >
                                                 <Button.Background>
                                                     <LinearGradientBrush EndPoint="0,1">
