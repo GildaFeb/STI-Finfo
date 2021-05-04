@@ -43,7 +43,7 @@
                                         <Label Padding="0,0,0,0">
                                             <Label.FormattedText>
                                                 <FormattedString>
-                                                    <Span Text="STI Collge San Jose Del Monte  &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
+                                                    <Span Text="STI College San Jose Del Monte  &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
                                                     <Span Text="Online Monitoring Form &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
                                                     <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="Yellow" FontAttributes="Italic" />
                                                 </FormattedString>
@@ -66,7 +66,7 @@
                                         </StackLayout>
                                         <!-- NO ID -->
                                         <StackLayout>
-                                            <Button   Text="No ID" TextColor="DarkSlateGray" Clicked="NoIDButton_Clicked" CornerRadius="5" BackgroundColor="White" Margin="9,0,9,0">
+                                            <Button   Text="No ID" TextColor="White" Clicked="NoIDButton_Clicked" CornerRadius="5" BackgroundColor="White" Margin="9,0,9,0">
                                                 <Button.Background>
                                                     <LinearGradientBrush EndPoint="0,2">
                                                         <GradientStop Color="#ffcc00" Offset="0.1" />

@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local11="clr-namespace:STI_Finfo.Admin" 
              x:Class="STI_Finfo.Admin.ListviewDetails"
-             BackgroundImageSource="adminss.png"
+             BackgroundImageSource="gray.png"
            >
     <ContentPage.BindingContext>
         <local11:MainViewModel></local11:MainViewModel>
     </ContentPage.BindingContext>
 
     <ScrollView>
-        <StackLayout Margin="15,90,15,0">
+        <StackLayout Margin="15,50,15,0">
             <Frame HeightRequest="120" CornerRadius="3" BackgroundColor="White" >
                 <Grid>
                     <Grid.RowDefinitions>
@@ -20,12 +20,12 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <StackLayout Grid.Column="0" Margin="0,20,-40,0">
+                    <StackLayout Grid.Column="0" Margin="0,20,-70,0">
                         <Label Text="Guest Monitoring" FontSize="20" FontAttributes="Bold" TextColor="#003366"/>
-                        <Label Text="Not student nor teacher" FontSize="15" TextColor="Black"/>
+                        <Label Text="Not A Student nor Teacher in STI College San Jose Del Monte" FontSize="12" TextColor="Black"/>
                     </StackLayout>
                     <StackLayout Grid.Column="2" Margin="-20,-40,0,20">
-                        <Image Source="apt.png" HeightRequest="190"/>
+                        <Image Source="apt.png" HeightRequest="175"/>
                     </StackLayout>
                 </Grid>
             </Frame>

@@ -109,13 +109,6 @@
                                     <Entry  Placeholder="e.g., example@email.com" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6"  x:Name="email" />
                                 </Frame>
 
-
-
-
-
-
-
-
                             </StackLayout>
                         </Grid>
                         <Grid >
@@ -155,37 +148,23 @@
                                 </StackLayout>
                             </Frame>
                         </Grid>
-                        <Grid >
-                            <!--- DATE TIME ENTERED -->
-                            <Frame Margin="0,7,0,0">
-                                <StackLayout>
-                                    <Label TextColor="#003366" Text="Date and Time Entered"/>
-                                    <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="70" Padding="10,-2,5,2" >
-                                        <Grid Margin="0,0,0,0">
-                                            <ScrollView Margin="2,0,2,0" Orientation="Vertical" Padding="2,2,2,2"  >
-                                                <Entry   Placeholder=" Click here to set date and time " PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"   />
-
-                                            </ScrollView>
-                                        </Grid>
-                                    </Frame>
-                                </StackLayout>
-                            </Frame>
+                        <Grid>
+                            <!--- TIME IN -->
+                            <StackLayout Margin="0,5,0,0">
+                                <Button Clicked="TimeIn_Clicked" Text="Add Time In" FontSize="13" TextColor="White"></Button>
+                                <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
+                                    <Entry  x:Name="TimeIn"  Margin="1,0,2,0" FontSize="15" />
+                                </Frame>
+                            </StackLayout>
                         </Grid>
-                        <Grid >
-                            <!--- DATE TIME EXITED -->
-                            <Frame Margin="0,7,0,0">
-                                <StackLayout>
-                                    <Label TextColor="#003366" Text="Date and Time Exited"/>
-                                    <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="70" Padding="10,-2,5,2" >
-                                        <Grid Margin="0,0,0,0">
-                                            <ScrollView Margin="2,0,2,0" Orientation="Vertical" Padding="2,2,2,2"  >
-                                                <Entry   Placeholder=" Click here to set date and time " PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"   />
-
-                                            </ScrollView>
-                                        </Grid>
-                                    </Frame>
-                                </StackLayout>
-                            </Frame>
+                        <Grid>
+                            <!--- TIME OUT -->
+                            <StackLayout Margin="0,5,0,0">
+                                <Button Clicked="TimeOut_Clicked" FontSize="13"  Text="Add Time Out"  TextColor="White"></Button>
+                                <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
+                                    <Entry   x:Name="TimeOut" FontSize="15" Margin="1,0,2,0"  />
+                                </Frame>
+                            </StackLayout>
                         </Grid>
                         <!-- BUTTON SUBMIT-->
                         <Grid>

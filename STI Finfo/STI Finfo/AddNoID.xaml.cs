@@ -23,15 +23,16 @@ namespace STI_Finfo
 
 
         }
-
+       
         private void PopulateDetails(NoID details)
         {
+           
             studentnumber.Text = details.StudentNumber;
             account.Text = details.Account;
             reasons.Text = details.Reasons;
-
-
-
+           
+            
+            
             var save = this.FindByName<Button>("saveB");
             const string V = "UPDATE ONLY";
             save.Text = V;
@@ -46,13 +47,13 @@ namespace STI_Finfo
             var save = this.FindByName<Button>("saveB");
             if (save.Text == "ADD TO REQUEST LIST")
             {
-                
+
                 NoID requestss = new NoID
                 {
                     StudentNumber = studentnumber.Text,
                     Account = account.Text,
                     Reasons = reasons.Text,
-
+                    DateNoID = DateNoID.Text
                 };
 
                 bool res = DependencyService.Get<ISQLite>() .SaveNoID(requestss);
@@ -87,6 +88,12 @@ namespace STI_Finfo
             }
         }
 
+        private void Date_Clicked(object sender, EventArgs e)
+        {
+            var dateNoID = this.FindByName<Label>("DateNoID");
+            dateNoID.Text =  DateTime.Now.ToString("T");
+            return;
+        }
     }
 }
 

@@ -52,15 +52,15 @@ namespace STI_Finfo.Admin
                     {
                         new NoID
                         {
-                             StudentNumber="02000176962", Account="Iwanha.02000176962@sjdelmonte.sti.edu.ph", Reasons="I forgot to bring my ID", DateTime1="April 12,2020 12:23:03"
+                             StudentNumber="02000176962", Account="Iwanha.02000176962@sjdelmonte.sti.edu.ph", Reasons="I forgot to bring my ID", DateNoID="April 12,2020 12:23:03"
                         },
                          new NoID
                         {
-                              StudentNumber="02000453524", Account="Ressy.020003524@sjdelmonte.sti.edu.ph", Reasons="I accidentally throw my ID to trashbin",DateTime1="April 12,2020 13:45:13"
+                              StudentNumber="02000453524", Account="Ressy.020003524@sjdelmonte.sti.edu.ph", Reasons="I accidentally throw my ID to trashbin",DateNoID="April 12,2020 13:45:13"
                         },
                           new NoID
                         {
-                              StudentNumber="02000562436", Account="Napol.02000562436", Reasons="I do not know where I put my ID",DateTime1="April 12,2020 14:59:03"
+                              StudentNumber="02000562436", Account="Napol.02000562436", Reasons="I do not know where I put my ID",DateNoID="April 12,2020 14:59:03"
                         }
                     }
                 },
@@ -74,23 +74,23 @@ namespace STI_Finfo.Admin
                     {
                        new NoID
                         {
-                             StudentNumber="Park Bomi", Account="Cahier", Reasons="Pay tuition", DateTime1="April 12, 2020 12:23:03"
+                             StudentNumber="Park Bomi", Account="Cahier", Reasons="Pay tuition", DateNoID="April 12, 2020 12:23:03 - 15:40:33"
                         },
                          new NoID
                         {
-                              StudentNumber="Kim Chorong", Account="Registrar", Reasons="Pass requirements",DateTime1="April 12, 2020 13:45:13"
+                              StudentNumber="Kim Chorong", Account="Registrar", Reasons="Pass requirements",DateNoID="April 12, 2020 13:45:13 - 19:09:22"
                         },
                           new NoID
                         {
-                              StudentNumber="Naeun Kim", Account="Faculty", Reasons="Pass requirements",DateTime1="April 12, 2020 14:59:03"
+                              StudentNumber="Naeun Kim", Account="Faculty", Reasons="Pass requirements",DateNoID="April 12, 2020 14:59:03 - 19:25:22"
                         },
                           new NoID
                         {
-                              StudentNumber="Jackson Wang", Account="Front desk", Reasons="Inquire",DateTime1="April 12, 2020 13:45:13"
+                              StudentNumber="Jackson Wang", Account="Front desk", Reasons="Inquire",DateNoID="April 12, 2020 13:45:13 - 20:09:62"
                         },
                           new NoID
                         {
-                              StudentNumber="Aeilee Amy", Account="Tatok.982436@sjdelmonte.sti.edu.ph", Reasons="I accidentally broke my ID",DateTime1="April 12,2020 14:59:03"
+                              StudentNumber="Aeilee Amy", Account="Tatok.982436@sjdelmonte.sti.edu.ph", Reasons="I accidentally broke my ID",DateNoID="April 12,2020 14:59:03 - 20:09:45"
                         }
                     }
                 },
@@ -104,15 +104,15 @@ namespace STI_Finfo.Admin
                     {
                         new NoID
                         {
-                             StudentNumber="02000322262", Account="Efren.322262@sjdelmonte.sti.edu.ph", Reasons="I forgot to bring my ID", DateTime1="April 12,2020 12:23:03"
+                             StudentNumber="02000322262", Account="Efren.322262@sjdelmonte.sti.edu.ph", Reasons="I forgot to bring my ID", DateNoID="April 12,2020 12:23:03"
                         },
                          new NoID
                         {
-                              StudentNumber="02000233524", Account="Vico.2324@sjdelmonte.sti.edu.ph", Reasons="My bag was snatched together with my ID",DateTime1="April 12,2020 13:45:13"
+                              StudentNumber="02000233524", Account="Vico.2324@sjdelmonte.sti.edu.ph", Reasons="My bag was snatched together with my ID",DateNoID="April 12,2020 13:45:13"
                         },
                           new NoID
                         {
-                              StudentNumber="02000562432", Account="Llamez.562432@sjdelmonte.sti.edu.ph", Reasons="I do not know where I put my ID",DateTime1="April 12,2020 14:59:03"
+                              StudentNumber="02000562432", Account="Llamez.562432@sjdelmonte.sti.edu.ph", Reasons="I do not know where I put my ID",DateNoID="April 12,2020 14:59:03"
                         },
                     }
                 },

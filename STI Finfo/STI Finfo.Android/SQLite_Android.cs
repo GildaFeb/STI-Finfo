@@ -39,18 +39,50 @@ namespace STI_Finfo.Droid
             return res;
         }
         public List<Request> GetRequest()
+
         {
             string sql = "SELECT * FROM Request";
             List<Request> request = con.Query<Request>(sql);
             return request;
         }
+
+        // TODAYYYYYYY
+        public List<Request> GetToday()
+        { 
+            string sql = "SELECT * FROM Request";
+            List<Request> request = con.Query<Request>(sql);
+            return request;
+        }
+
+
+        // YESTERDAY
+        public List<Request> GetYesterday()
+        {  
+            string sql = "SELECT * FROM Request";
+            List<Request> request = con.Query<Request>(sql);
+            return request;
+        }
+
+
+        // LAST MONTH
+        public List<Request> GetLastMonth()
+        {
+            string sql = "SELECT * FROM Request";
+            List<Request> request = con.Query<Request>(sql);
+            return request;
+        }
+
+
+
         public bool UpdateRequest(Request request)
         {
             bool res = false;
             try
             {
-                string sql = $"UPDATE Request SET Name='{request.LastName}',Address='{request.FirstName}',PhoneNumber='{request.MiddleName}'," +
-                                $"Email='{request.Suffix}' WHERE Id={request.Id}";
+                string sql = $"UPDATE Request SET LastName='{request.LastName}',Firstname='{request.FirstName}',MiddleName='{request.MiddleName}'," +
+                                $"Suffix='{request.Suffix}', Age='{request.Age}',Number='{request.Number}',Address='{request.Address}' " +
+                                $"Email='{request.Email}',Department='{request.Department}', Transaction='{request.Transaction}'" +
+                                $"Exit='{request.Exit}',Enter='{request.Enter}' WHERE Id={request.Id}";
                 con.Execute(sql);
                 res = true;
             }
@@ -92,9 +124,10 @@ namespace STI_Finfo.Droid
         public bool UpdateNoID(NoID noID)
         {
             bool res = false;
+
             try
             {
-                string sql = $"UPDATE NoID SET Name='{noID.StudentNumber}',Address='{noID.Account}',PhoneNumber='{noID.Reasons}' WHERE Id={noID.NoId}";
+                string sql = $"UPDATE NoID SET StudentNumber='{noID.StudentNumber}', Account='{noID.Account}', Reasons='{noID.Reasons}', DateNoID='{noID.DateNoID}' WHERE Id={noID.NoId}";
                 con.Execute(sql);
                 res = true;
             }

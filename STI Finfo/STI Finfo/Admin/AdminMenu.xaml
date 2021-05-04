@@ -5,9 +5,7 @@
              BackgroundImageSource="admin.png" >
     <ContentPage.Content>
         <ScrollView HorizontalOptions="Center">
-         
-               
-                <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="2,50,2,0">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="2,50,2,0">
                     <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="2,0,2,0">
                         <StackLayout>
                             <Label Text="MONITORING PAGE" VerticalOptions="Start" FontFamily="Helvetica" FontAttributes="Bold" TextColor="White" FontSize="30" HorizontalOptions="Start" Margin="30,9 ,20,-10">

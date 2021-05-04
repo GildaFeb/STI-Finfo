@@ -114,6 +114,17 @@ namespace STI_Finfo
                 }
             }
         }
-        
+        private void TimeIn_Clicked(object sender, EventArgs e)
+        {
+            var inTime = this.FindByName<Entry>("TimeIn");
+            inTime.Text = DateTime.Now.ToString("T");
+            return;
+        }
+        private void TimeOut_Clicked(object sender, EventArgs e)
+        {
+            var OutTime = this.FindByName<Entry>("TimeOut");
+            OutTime.Text = DateTime.Now.ToString("T");
+            return;
+        }
     }
 }
