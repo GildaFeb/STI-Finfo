@@ -82,7 +82,7 @@ namespace STI_Finfo.Droid
                 string sql = $"UPDATE Request SET LastName='{request.LastName}',Firstname='{request.FirstName}',MiddleName='{request.MiddleName}'," +
                                 $"Suffix='{request.Suffix}', Age='{request.Age}',Number='{request.Number}',Address='{request.Address}' " +
                                 $"Email='{request.Email}',Department='{request.Department}', Transaction='{request.Transaction}'" +
-                                $"Exit='{request.Exit}',Enter='{request.Enter}' WHERE Id={request.Id}";
+                                $"TimeIn='{request.TimeIn}',TimeOut='{request.TimeOut}' WHERE Id={request.Id}";
                 con.Execute(sql);
                 res = true;
             }

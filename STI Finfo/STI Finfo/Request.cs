@@ -21,6 +21,8 @@ namespace STI_Finfo
         public string Transaction { get; set; }
         public string Exit { get; set; }
         public string Enter { get; set; }
+        public string TimeIn { get; set; }
+        public string TimeOut{ get; set; }
         public bool IsVisible { get; set; }
 
 

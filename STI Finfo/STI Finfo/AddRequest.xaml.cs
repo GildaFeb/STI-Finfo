@@ -33,14 +33,15 @@ namespace STI_Finfo
             Last.Text = details.LastName;
             first.Text = details.FirstName;
            middle.Text = details.MiddleName;
-           
+          
             age.Text= details.Age;
             number.Text = details.Number;
             address.Text = details.Address;
             email.Text = details.Email;
             transaction.Text = details.Transaction;
             department.Text = details.Department;
-
+            TimeIn.Text = details.TimeIn; 
+            TimeOut.Text = details.TimeOut;
 
             var save = this.FindByName<Button>("saveBtn");
             save.Text = "UPDATE ONLY";
@@ -56,7 +57,7 @@ namespace STI_Finfo
             var save = this.FindByName<Button>("saveBtn");
             if (save.Text == "ADD TO REQUEST LIST")
             {
-                
+
                 Request request = new Request
                 {
                     LastName = Last.Text,
@@ -69,7 +70,8 @@ namespace STI_Finfo
                     Email = email.Text,
                     Department = department.Text,
                     Transaction = transaction.Text,
-                    
+                    TimeIn = TimeIn.Text,
+                    TimeOut = TimeOut.Text
 
                 };
 
