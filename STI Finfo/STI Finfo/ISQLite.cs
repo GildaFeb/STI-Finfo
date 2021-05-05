@@ -14,12 +14,23 @@ namespace STI_Finfo
         bool UpdateRequest(Request request);
         void DeleteRequest(int Id);
         // NO ID
-        bool SaveNoID(NoID request);
+        bool AdminSaveNoID(NoID request);
 
         List<NoID> GetNoID();
 
         bool UpdateNoID(NoID noID);
         void DeleteNoID(int id);
-      
+
+        // ADMIN NO ID
+
+       
+        bool AdminSaveNoID(AdminNoID request);
+
+        List<AdminNoID> AdminGetNoID();
+
+        bool AdminUpdateNoID(AdminNoID noID);
+        void AdminDeleteNoID(int id);
+
+
     }
 }

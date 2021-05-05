@@ -22,6 +22,7 @@ namespace STI_Finfo.Droid
             con = new SQLiteConnection(path);
             con.CreateTable<Request>();
             con.CreateTable<NoID>();
+            con.CreateTable<AdminNoID>();
             return con;
         }
         public bool SaveRequest(Request request)
@@ -101,7 +102,7 @@ namespace STI_Finfo.Droid
 
         // no id
 
-        public bool SaveNoID(NoID noID)
+        public bool AdminSaveNoID(NoID noID)
         {
             bool res;
             try
@@ -123,24 +124,82 @@ namespace STI_Finfo.Droid
         }
         public bool UpdateNoID(NoID noID)
         {
-            bool res = false;
-
+            bool res;
             try
             {
-                string sql = $"UPDATE NoID SET StudentNumber='{noID.StudentNumber}', Account='{noID.Account}', Reasons='{noID.Reasons}', DateNoID='{noID.DateNoID}' WHERE Id={noID.NoId}";
+                string sql= "UPDATE NoID SET DateNoID = '" + DateTime.Parse(noID.DateNoID) + "', StudentNumber='"+ noID.StudentNumber + "', Reasons='" + noID.Reasons + "', Account='" + noID.Account + "' WHERE NoId = '" + noID.NoId + "'";
                 con.Execute(sql);
                 res = true;
+                return res;
             }
-            catch (Exception)
+            catch
             {
-
+                res = false;
+                return res;
             }
-            return res;
+            
         }
         public void DeleteNoID(int Id)
         {
             string sql = $"DELETE FROM NoID WHERE NoId={Id}";
             con.Execute(sql);
         }
+
+
+
+
+
+
+        // ------------------ ADMIN -------------------
+
+
+        public bool AdminSaveNoID(AdminNoID noID)
+        {
+            bool res;
+            try
+            {
+                con.Insert(noID);
+                res = true;
+            }
+            catch
+            {
+                res = false;
+            }
+            return res;
+        }
+        public List<AdminNoID> AdminGetNoID()
+        {
+            string sql = "SELECT * FROM AdminNoID";
+            List<AdminNoID> noID = con.Query<AdminNoID>(sql);
+            return noID;
+        }
+        public bool AdminUpdateNoID(AdminNoID noID)
+        {
+            bool res;
+            try
+            {
+                string sql = "UPDATE AdminNoID SET AdminDateNoID = '" + DateTime.Parse(noID.AdminDateNoID) + "', AdminStudentNumber='" + noID.AdminStudentNumber + "', AdminReasons='" + noID.AdminReasons + "', AdminAccount='" + noID.AdminAccount + "' WHERE AdminNoId = '" + noID.AdminNoId + "'";
+                con.Execute(sql);
+                res = true;
+                return res;
+            }
+            catch
+            {
+                res = false;
+                return res;
+            }
+
+        }
+        public void AdminDeleteNoID(int Id)
+        {
+            string sql = $"DELETE FROM AdminNoID WHERE AdminNoId={Id}";
+            con.Execute(sql);
+        }
+
+
+
+
+
+
     }
 }

@@ -30,68 +30,81 @@ namespace STI_Finfo
             studentnumber.Text = details.StudentNumber;
             account.Text = details.Account;
             reasons.Text = details.Reasons;
-           
+            DateID.Text = details.DateNoID; 
             
             
             var save = this.FindByName<Button>("saveB");
-            const string V = "UPDATE ONLY";
-            save.Text = V;
-            var submit = this.FindByName<Button>("ToAdmin");
-            submit.Text = "UPDATE AND ACCEPT";
-            this.Title = "UPDATE AND ACCEPT";
+            save.Text = "UPDATE AND SUBMIT REPORT";
+            this.Title = "UPDATE AND SUBMIT REPORT";
         }
 
-        private void SaveNoID(object sender, EventArgs e)
+        private async void SaveNoID(object sender, EventArgs e)
         {
-            this.Title = "ADD STUDENT";
-            var save = this.FindByName<Button>("saveB");
-            if (save.Text == "ADD TO REQUEST LIST")
+            var result = await DisplayAlert("Alert!", "Update and submit report. Do you want to continue?", "Yes", "No");
+
+            if (result)
             {
-
-                NoID requestss = new NoID
+                // ----------------- ADD TO LIST  ----------------------
+                this.Title = "ADD STUDENT";
+                var save = this.FindByName<Button>("saveB");
+                if (save.Text == "ADD TO REQUEST LIST")
                 {
-                    StudentNumber = studentnumber.Text,
-                    Account = account.Text,
-                    Reasons = reasons.Text,
-                    DateNoID = DateNoID.Text
-                };
+                    NoID requestss = new NoID
+                    {
+                        StudentNumber = studentnumber.Text,
+                        Account = account.Text,
+                        Reasons = reasons.Text,
+                        DateNoID = DateID.Text
+                    };
 
-                bool res = DependencyService.Get<ISQLite>() .SaveNoID(requestss);
-                if (res)
-                {
-                    Navigation.PopAsync();
+                    bool res = DependencyService.Get<ISQLite>().AdminSaveNoID(requestss);
+                    if (res == true)
+                    {
+                        await DisplayAlert("Message", "Successfully Added to list ", "Okay");
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Message", "Failed to save", "Okay");
+                    }
                 }
-                else
+                else if (save.Text == "UPDATE AND SUBMIT REPORT")
                 {
-                    DisplayAlert("Message", "Failed to save", "Okay");
+                    // ----------------- SUBMIT TO ADMIN ----------------------
+                    AdminNoID NoIDDetails = new AdminNoID
+                    {
+                        AdminDateNoID = DateID.Text,
+                        AdminStudentNumber = studentnumber.Text,
+                        AdminAccount = account.Text,
+                        AdminReasons = reasons.Text
+
+                    };
+
+                    bool ADD = DependencyService.Get<ISQLite>().AdminSaveNoID(NoIDDetails);
+                    if (ADD == true)
+                    {
+                       await DisplayAlert("Message", "Successfully Submitted ", "Okay");
+                        var menu = sender as MenuItem;
+                        NoID details = menu.CommandParameter as NoID;
+                        DependencyService.Get<ISQLite>().DeleteNoID(details.NoId);
+                        await  Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Message", "Failed to save", "Okay");
+                    }
                 }
             }
             else
             {
-                // update request
-                NoID NoIDDetails = new NoID
-                {
-                    StudentNumber = studentnumber.Text,
-                    Account = account.Text,
-                    Reasons = reasons.Text,
-                };
-
-                bool res = DependencyService.Get<ISQLite>() .UpdateNoID(NoIDDetails);
-                if (res)
-                {
-                    Navigation.PopAsync();
-                }
-                else
-                {
-                    DisplayAlert("Message", "Data failed to update", "Okay");
-                }
+                
             }
         }
 
         private void Date_Clicked(object sender, EventArgs e)
         {
-            var dateNoID = this.FindByName<Label>("DateNoID");
-            dateNoID.Text =  DateTime.Now.ToString("T");
+            var dateNoID = this.FindByName<Entry>("DateID");
+            dateNoID.Text =  DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
             return;
         }
     }

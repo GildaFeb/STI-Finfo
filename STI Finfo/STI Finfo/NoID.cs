@@ -10,15 +10,30 @@ namespace STI_Finfo
     {
         [PrimaryKey, AutoIncrement]
         public int NoId { get; set; }
-        [Required, System.ComponentModel.DataAnnotations.MaxLength(11)]
+    
         public string StudentNumber { get; set; }
-        [Required, System.ComponentModel.DataAnnotations.MaxLength(50)]
+      
         public string Account { get; set; }
-        [Required, System.ComponentModel.DataAnnotations.MaxLength(50)]
+  
         public string Reasons { get; set; }
         
         public string DateNoID { get; set; }
+
+
+
     }
 
-   
+   public class AdminNoID
+    {
+        [PrimaryKey, AutoIncrement]
+        public int AdminNoId { get; set; }
+
+        public string AdminStudentNumber { get; set; }
+
+        public string AdminAccount { get; set; }
+
+        public string AdminReasons { get; set; }
+
+        public string AdminDateNoID { get; set; }
+    }
 }

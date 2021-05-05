@@ -38,7 +38,7 @@ namespace STI_Finfo.Views
 
                 };
 
-                bool res = DependencyService.Get<ISQLite>().SaveNoID(requestss);
+                bool res = DependencyService.Get<ISQLite>().AdminSaveNoID(requestss);
                 if (res)
                 {
                     Navigation.PopAsync();
