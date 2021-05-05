@@ -21,9 +21,10 @@ namespace STI_Finfo
         bool UpdateNoID(NoID noID);
         void DeleteNoID(int id);
 
+        bool DeleteNoIDss(NoID noID);
         // ADMIN NO ID
 
-       
+
         bool AdminSaveNoID(AdminNoID request);
 
         List<AdminNoID> AdminGetNoID();

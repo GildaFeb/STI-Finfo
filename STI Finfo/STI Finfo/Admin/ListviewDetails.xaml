@@ -11,7 +11,7 @@
 
     <ScrollView>
         <StackLayout Margin="15,50,15,0">
-            <Frame HeightRequest="120" CornerRadius="3" BackgroundColor="White" >
+            <Frame  CornerRadius="3" BackgroundColor="White" >
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -30,18 +30,15 @@
                 </Grid>
             </Frame>
             <ListView Margin="0,0,0,0" 
-              VerticalOptions="FillAndExpand"
+              VerticalOptions="Center"
               ItemTapped="ListViewItem_Tabbed"  
               ItemsSource="{Binding Lists}"  
-              HasUnevenRows="True"  
-              
-              >
+              HasUnevenRows="True" >
                 <ListView.ItemTemplate SeparatorVisibility="None" >
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="5">
                                 <!--  ====================  LIST VIEW FOR DAYS ===========  -->
-
                                 <Frame HasShadow="True"  >
                                     <Grid >
                                         <Grid.RowDefinitions>
@@ -60,38 +57,32 @@
                                Grid.Column="0" />
                                         <Image Source="{Binding CollImage}" HeightRequest="18" WidthRequest="18" HorizontalOptions="End" Margin="0,0,0,0"   Grid.Row="0"  Grid.Column="1"     ></Image>
                                         <Image Source="{Binding ExpImage}"  HeightRequest="18"  WidthRequest="18"  IsVisible="{Binding IsVisible}" Margin="0,0,0,0"   HorizontalOptions="End"  Grid.Row="0"  Grid.Column="1"></Image>
-
-
-
-
                                     </Grid>
                                 </Frame>
-
                                 <!--  ====================  LIST OF DATA COLUMNS ===========  -->
-                                <ScrollView IsVisible="{Binding IsVisible}">
-                                    <ListView ItemsSource="{Binding NoID_Details}"  HasUnevenRows="True"
-                                   BackgroundColor="White">
+                                <AbsoluteLayout IsVisible="{Binding IsVisible}" Margin="0,0,0,0" >
+                                    <ListView ItemsSource="{Binding NoID_Details}"   HasUnevenRows="true" BackgroundColor="White">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <ViewCell>
-                                                    <Grid Margin="0,0,0,0" >
-                                                        <StackLayout>
+                                                    <AbsoluteLayout Margin="0,0,0,-20"  >
+                                                        <StackLayout Margin="0,0,0,0" >
                                                             <StackLayout Orientation="Horizontal">
                                                                 <Label Text="Student number:" FontSize="10" FontAttributes="Bold" Margin="9,9,0,-4" TextColor="Black"/>
-                                                                <Label Text="{Binding StudentNumber,StringFormat='{0:F0}'}" FontSize="10" FontAttributes="None" Margin="5,9,0,-4" TextColor="Black"/>
-                                                                <Label Text="{Binding DateTime1,StringFormat='{0:F0}'}" FontSize="10" FontAttributes="None" Margin="0,9,10,0" TextColor="Gray" HorizontalOptions="EndAndExpand"/>
+                                                                <Label Text="{Binding AdminStudentNumber,StringFormat='{0:F0}'}" FontSize="10" FontAttributes="None" Margin="5,9,0,-4" TextColor="Black"/>
+                                                                <Label Text="{Binding AdminDateNoID}" FontSize="10" FontAttributes="None" Margin="0,9,0,0" TextColor="Gray" HorizontalOptions="EndAndExpand"/>
                                                             </StackLayout>
                                                             <StackLayout Orientation="Vertical">
-                                                                <Label Text="{Binding Account,StringFormat='0365 account: {0:F0}'}" FontSize="10" FontAttributes="None" Margin="9,-5,0,5" TextColor="Black"/>
-                                                                <Label Text="{Binding Reasons,StringFormat='Reason: {0:F0}'}" FontSize="10" FontAttributes="None" Margin="9,-12,0,9" TextColor="Black"/>
+                                                                <Label Text="{Binding AdminAccount,StringFormat='0365 account: {0:F0}'}" FontSize="10" FontAttributes="None" Margin="9,-5,0,5" TextColor="Black"/>
+                                                                <Label Text="{Binding AdminReasons,StringFormat='Reason: {0:F0}'}" FontSize="10" FontAttributes="None" Margin="9,-12,0,9" TextColor="Black"/>
                                                             </StackLayout>
                                                         </StackLayout>
-                                                    </Grid>
+                                                    </AbsoluteLayout>
                                                 </ViewCell>
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                     </ListView>
-                                </ScrollView>
+                                </AbsoluteLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

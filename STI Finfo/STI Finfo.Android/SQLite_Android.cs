@@ -47,32 +47,6 @@ namespace STI_Finfo.Droid
             return request;
         }
 
-        // TODAYYYYYYY
-        public List<Request> GetToday()
-        { 
-            string sql = "SELECT * FROM Request";
-            List<Request> request = con.Query<Request>(sql);
-            return request;
-        }
-
-
-        // YESTERDAY
-        public List<Request> GetYesterday()
-        {  
-            string sql = "SELECT * FROM Request";
-            List<Request> request = con.Query<Request>(sql);
-            return request;
-        }
-
-
-        // LAST MONTH
-        public List<Request> GetLastMonth()
-        {
-            string sql = "SELECT * FROM Request";
-            List<Request> request = con.Query<Request>(sql);
-            return request;
-        }
-
 
 
         public bool UpdateRequest(Request request)
@@ -98,7 +72,7 @@ namespace STI_Finfo.Droid
             string sql = $"DELETE FROM Request WHERE Id={Id}";
             con.Execute(sql);
         }  
-     
+       
 
         // no id
 
@@ -145,7 +119,23 @@ namespace STI_Finfo.Droid
             con.Execute(sql);
         }
 
+        public bool DeleteNoIDss(NoID noID)
+        {
+            bool res;
+            try
+            {
+                string sql = $"DELETE FROM NoID WHERE NoId={noID.NoId}";
+                con.Execute(sql);
+                res = true;
+                return res;
+            }
+            catch
+            {
+                res = false;
+                return res;
+            }
 
+        }
 
 
 
@@ -196,9 +186,36 @@ namespace STI_Finfo.Droid
             con.Execute(sql);
         }
 
+        // --------------------- GET STUDENT WITH NO ID TODAY -------------
 
 
 
+        // TODAYYYYYYY
+        public List<AdminNoID> GetToday()
+        {
+            
+            string sql = "select * from AdminNoID where cast(AdminDateNoID as Date) = cast(getdate() as Date)";
+            List<AdminNoID> request = con.Query<AdminNoID>(sql);
+            return request;
+        }
+
+
+        // YESTERDAY
+        public List<AdminNoID> GetYesterday()
+        {
+            string sql = "SELECT * FROM Request";
+            List<AdminNoID> request = con.Query<AdminNoID>(sql);
+            return request;
+        }
+
+
+        // LAST MONTH
+        public List<AdminNoID> GetLastWeek()
+        {
+            string sql = "SELECT * FROM Request";
+            List<AdminNoID> request = con.Query<AdminNoID>(sql);
+            return request;
+        }
 
 
     }

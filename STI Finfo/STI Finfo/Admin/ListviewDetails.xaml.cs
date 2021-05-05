@@ -24,5 +24,6 @@ namespace STI_Finfo.Admin
             vm?.ShoworHiddenProducts(list);
 
         }
+       
     }
 }

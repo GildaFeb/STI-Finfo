@@ -47,25 +47,25 @@ namespace STI_Finfo
                 // ----------------- ADD TO LIST  ----------------------
                 this.Title = "ADD STUDENT";
                 var save = this.FindByName<Button>("saveB");
-                if (save.Text == "ADD TO REQUEST LIST")
+                if (save.Text == "SUBMIT REPORT")
                 {
-                    NoID requestss = new NoID
+                    AdminNoID requestss = new AdminNoID
                     {
-                        StudentNumber = studentnumber.Text,
-                        Account = account.Text,
-                        Reasons = reasons.Text,
-                        DateNoID = DateID.Text
+                        AdminStudentNumber = studentnumber.Text,
+                        AdminAccount = account.Text,
+                        AdminReasons = reasons.Text,
+                        AdminDateNoID = DateID.Text
                     };
-
+                   
                     bool res = DependencyService.Get<ISQLite>().AdminSaveNoID(requestss);
-                    if (res == true)
+                    if (res == true )
                     {
-                        await DisplayAlert("Message", "Successfully Added to list ", "Okay");
+                        await DisplayAlert("Message", "Report Submitted Successfully ", "Okay");
                         await Navigation.PopAsync();
                     }
                     else
                     {
-                        await DisplayAlert("Message", "Failed to save", "Okay");
+                        await DisplayAlert("Message", "Failed to submit", "Okay");
                     }
                 }
                 else if (save.Text == "UPDATE AND SUBMIT REPORT")
@@ -79,19 +79,24 @@ namespace STI_Finfo
                         AdminReasons = reasons.Text
 
                     };
-
-                    bool ADD = DependencyService.Get<ISQLite>().AdminSaveNoID(NoIDDetails);
-                    if (ADD == true)
+                    NoID deleteToList = new NoID
                     {
-                       await DisplayAlert("Message", "Successfully Submitted ", "Okay");
-                        var menu = sender as MenuItem;
-                        NoID details = menu.CommandParameter as NoID;
-                        DependencyService.Get<ISQLite>().DeleteNoID(details.NoId);
+                        StudentNumber = studentnumber.Text,
+                        Account = account.Text,
+                        Reasons = reasons.Text,
+                        DateNoID = DateID.Text
+                    };
+                    bool delete = DependencyService.Get<ISQLite>().DeleteNoIDss(deleteToList);
+                    bool ADD = DependencyService.Get<ISQLite>().AdminSaveNoID(NoIDDetails);
+                    if (ADD == true && delete == true)
+                    {
+                       await DisplayAlert("Message", "Report Submitted Successfull ", "Okay");
+                        
                         await  Navigation.PopAsync();
                     }
                     else
                     {
-                        await DisplayAlert("Message", "Failed to save", "Okay");
+                        await DisplayAlert("Message", "Failed to submit", "Okay");
                     }
                 }
             }

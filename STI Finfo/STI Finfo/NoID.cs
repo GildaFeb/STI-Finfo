@@ -35,5 +35,10 @@ namespace STI_Finfo
         public string AdminReasons { get; set; }
 
         public string AdminDateNoID { get; set; }
+      
+
+      
+
+      
     }
 }
