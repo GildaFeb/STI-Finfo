@@ -39,7 +39,7 @@ namespace STI_Finfo.Admin
 
         public MainViewModel()
         {
-            ObservableCollection<AdminNoID> adminNoIDs = new ObservableCollection<AdminNoID>((IEnumerable<AdminNoID>)DependencyService.Get<ISQLite>().AdminGetNoID());
+            ObservableCollection<AdminNoID> adminNoIDs = new ObservableCollection<AdminNoID>((IEnumerable<AdminNoID>)DependencyService.Get<ISQLite>().GetNoIDToday());
             Lists = new ObservableCollection<List>
             {
                 new List

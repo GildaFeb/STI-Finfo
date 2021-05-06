@@ -71,12 +71,13 @@ namespace STI_Finfo.Droid
         {
             string sql = $"DELETE FROM Request WHERE Id={Id}";
             con.Execute(sql);
+            return;
         }  
        
 
         // no id
 
-        public bool AdminSaveNoID(NoID noID)
+        public bool SaveNoID(NoID noID)
         {
             bool res;
             try
@@ -96,46 +97,15 @@ namespace STI_Finfo.Droid
             List<NoID> noID = con.Query<NoID>(sql);
             return noID;
         }
-        public bool UpdateNoID(NoID noID)
-        {
-            bool res;
-            try
-            {
-                string sql= "UPDATE NoID SET DateNoID = '" + DateTime.Parse(noID.DateNoID) + "', StudentNumber='"+ noID.StudentNumber + "', Reasons='" + noID.Reasons + "', Account='" + noID.Account + "' WHERE NoId = '" + noID.NoId + "'";
-                con.Execute(sql);
-                res = true;
-                return res;
-            }
-            catch
-            {
-                res = false;
-                return res;
-            }
-            
-        }
+      
         public void DeleteNoID(int Id)
         {
-            string sql = $"DELETE FROM NoID WHERE NoId={Id}";
+            string sql = "DELETE FROM NoID WHERE NoId='"+Id+"'";
             con.Execute(sql);
+            return;
         }
 
-        public bool DeleteNoIDss(NoID noID)
-        {
-            bool res;
-            try
-            {
-                string sql = $"DELETE FROM NoID WHERE NoId={noID.NoId}";
-                con.Execute(sql);
-                res = true;
-                return res;
-            }
-            catch
-            {
-                res = false;
-                return res;
-            }
-
-        }
+      
 
 
 
@@ -154,68 +124,27 @@ namespace STI_Finfo.Droid
             catch
             {
                 res = false;
+               
             }
             return res;
         }
-        public List<AdminNoID> AdminGetNoID()
-        {
-            string sql = "SELECT * FROM AdminNoID";
-            List<AdminNoID> noID = con.Query<AdminNoID>(sql);
-            return noID;
-        }
-        public bool AdminUpdateNoID(AdminNoID noID)
-        {
-            bool res;
-            try
-            {
-                string sql = "UPDATE AdminNoID SET AdminDateNoID = '" + DateTime.Parse(noID.AdminDateNoID) + "', AdminStudentNumber='" + noID.AdminStudentNumber + "', AdminReasons='" + noID.AdminReasons + "', AdminAccount='" + noID.AdminAccount + "' WHERE AdminNoId = '" + noID.AdminNoId + "'";
-                con.Execute(sql);
-                res = true;
-                return res;
-            }
-            catch
-            {
-                res = false;
-                return res;
-            }
-
-        }
-        public void AdminDeleteNoID(int Id)
-        {
-            string sql = $"DELETE FROM AdminNoID WHERE AdminNoId={Id}";
-            con.Execute(sql);
-        }
-
+       
         // --------------------- GET STUDENT WITH NO ID TODAY -------------
 
 
 
         // TODAYYYYYYY
-        public List<AdminNoID> GetToday()
+        public List<AdminNoID> GetNoIDToday()
         {
-            
-            string sql = "select * from AdminNoID where cast(AdminDateNoID as Date) = cast(getdate() as Date)";
-            List<AdminNoID> request = con.Query<AdminNoID>(sql);
-            return request;
+            var GetDate= DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
+            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID >= CAST('"+GetDate+"' AS DATE) ORDER BY AdminDateNoID DESC";
+            List<AdminNoID> NoId = con.Query<AdminNoID>(sql);
+            return NoId;
         }
 
 
-        // YESTERDAY
-        public List<AdminNoID> GetYesterday()
-        {
-            string sql = "SELECT * FROM Request";
-            List<AdminNoID> request = con.Query<AdminNoID>(sql);
-            return request;
-        }
+       
 
-
-        // LAST MONTH
-        public List<AdminNoID> GetLastWeek()
-        {
-            string sql = "SELECT * FROM Request";
-            List<AdminNoID> request = con.Query<AdminNoID>(sql);
-            return request;
-        }
 
 
     }

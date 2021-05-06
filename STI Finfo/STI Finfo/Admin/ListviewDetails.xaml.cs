@@ -25,5 +25,24 @@ namespace STI_Finfo.Admin
 
         }
        
+        public void PopulateNoIDList()
+
+        {
+            var list = this.FindByName<ListView>("adminList");
+            list.ItemsSource = null;
+            list.ItemsSource = DependencyService.Get<ISQLite>().GetNoIDToday();
+        }
+        private async void DeleteNoID(object sender, EventArgs e)
+        {
+
+            bool res = await DisplayAlert("Message", "Do you want to delete request?", "Yes", "Cancel");
+            if (res)
+            {
+                var menu = sender as MenuItem;
+                AdminNoID details = menu.CommandParameter as AdminNoID;
+                DependencyService.Get<ISQLite>().DeleteNoID(details.AdminNoId);
+                PopulateNoIDList();
+            }
+        }
     }
 }

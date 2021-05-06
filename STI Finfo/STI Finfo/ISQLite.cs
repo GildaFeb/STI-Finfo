@@ -8,29 +8,32 @@ namespace STI_Finfo
     public interface ISQLite
     {
         SQLiteConnection GetConnectionWithCreateDatabase();
-        // GUEST
+        // ==================== GUEST==================
         bool SaveRequest(Request request);
         List<Request> GetRequest();
         bool UpdateRequest(Request request);
         void DeleteRequest(int Id);
-        // NO ID
-        bool AdminSaveNoID(NoID request);
+        //======================== NO ID =================
+        bool SaveNoID(NoID request);
 
         List<NoID> GetNoID();
 
-        bool UpdateNoID(NoID noID);
+      
         void DeleteNoID(int id);
 
-        bool DeleteNoIDss(NoID noID);
-        // ADMIN NO ID
+       
+        //======================== ADMIN NO ID ================
 
 
         bool AdminSaveNoID(AdminNoID request);
 
-        List<AdminNoID> AdminGetNoID();
+       
 
-        bool AdminUpdateNoID(AdminNoID noID);
-        void AdminDeleteNoID(int id);
+        //============= ADMIN DATE SORTING ==============
+
+        // ------ NO ID
+        List<AdminNoID> GetNoIDToday();
+      
 
 
     }

@@ -45,7 +45,7 @@ namespace STI_Finfo
             if (result)
             {
                 // ----------------- ADD TO LIST  ----------------------
-                this.Title = "ADD STUDENT";
+                
                 var save = this.FindByName<Button>("saveB");
                 if (save.Text == "SUBMIT REPORT")
                 {
@@ -56,12 +56,12 @@ namespace STI_Finfo
                         AdminReasons = reasons.Text,
                         AdminDateNoID = DateID.Text
                     };
-                   
+                    this.Title = "ADD STUDENT";
                     bool res = DependencyService.Get<ISQLite>().AdminSaveNoID(requestss);
                     if (res == true )
                     {
                         await DisplayAlert("Message", "Report Submitted Successfully ", "Okay");
-                        await Navigation.PopAsync();
+                        await Navigation.PushAsync(new NoIDTable());
                     }
                     else
                     {
@@ -79,25 +79,21 @@ namespace STI_Finfo
                         AdminReasons = reasons.Text
 
                     };
-                    NoID deleteToList = new NoID
-                    {
-                        StudentNumber = studentnumber.Text,
-                        Account = account.Text,
-                        Reasons = reasons.Text,
-                        DateNoID = DateID.Text
-                    };
-                    bool delete = DependencyService.Get<ISQLite>().DeleteNoIDss(deleteToList);
+                 
+                    this.Title = "UPDATE AND SUBMIT REPORT";
                     bool ADD = DependencyService.Get<ISQLite>().AdminSaveNoID(NoIDDetails);
-                    if (ADD == true && delete == true)
+                    if (ADD == true )
                     {
-                       await DisplayAlert("Message", "Report Submitted Successfull ", "Okay");
+                      
+                        await  DisplayAlert("Message", "Report Submitted Successfully", "Okay");
+                        await Navigation.PushAsync(new NoIDTable());
                         
-                        await  Navigation.PopAsync();
                     }
                     else
                     {
                         await DisplayAlert("Message", "Failed to submit", "Okay");
                     }
+                    
                 }
             }
             else
