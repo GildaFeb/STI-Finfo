@@ -46,8 +46,8 @@ namespace STI_Finfo
             var save = this.FindByName<Button>("saveBtn");
             save.Text = "UPDATE ONLY";
             var submit = this.FindByName<Button>("ToAdmin");
-            submit.Text = "UPDATE AND ACCEPT";
-            this.Title = "UPDATE AND ACCEPT";
+            submit.Text = "SUBMIT REPORT";
+            this.Title = "EDIT";
            
         }
 
@@ -78,12 +78,12 @@ namespace STI_Finfo
                 bool res = DependencyService.Get<ISQLite>().SaveRequest(request);
                 if (res)
                 {
-                   
+                    DisplayAlert("Message", "Successfully Added to List", "Okay");
                     Navigation.PopAsync();
                 }
                 else
                 {
-                    DisplayAlert("Message", "Data Failed To Savessss", "Okay");
+                    DisplayAlert("Message", "Data Failed To Save", "Okay");
                 }
             }
             else
@@ -101,6 +101,8 @@ namespace STI_Finfo
                     Email = email.Text,
                     Department = department.Text,
                     Transaction = transaction.Text,
+                    TimeIn = TimeIn.Text,
+                    TimeOut = TimeOut.Text
                 };
 
                 bool res = DependencyService.Get<ISQLite>().UpdateRequest(RequestDetails); 
@@ -118,15 +120,52 @@ namespace STI_Finfo
         }
         private void TimeIn_Clicked(object sender, EventArgs e)
         {
+            
             var inTime = this.FindByName<Entry>("TimeIn");
-            inTime.Text = DateTime.Now.ToString("T");
+            inTime.Text = DateTime.Now.ToString("yyyy/M/d HH:mm:ss"); 
             return;
         }
         private void TimeOut_Clicked(object sender, EventArgs e)
         {
-            var OutTime = this.FindByName<Entry>("TimeOut");
-            OutTime.Text = DateTime.Now.ToString("T");
+            var inTime = this.FindByName<Entry>("TimeOut");
+            inTime.Text = DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
             return;
+        }
+        private async void Report_Clicked(object sender, EventArgs e)
+        {
+            var result = await DisplayAlert("Alert!", "Update and submit report. Do you want to continue?", "Yes", "No");
+            if (result)
+            {
+                AdminRequest RequestDetails = new AdminRequest
+                {
+                    LastName = Last.Text,
+                    FirstName = first.Text,
+                    MiddleName = middle.Text,
+                    Suffix = first.Text,
+                    Age = age.Text,
+                    Number = number.Text,
+                    Address = address.Text,
+                    Email = email.Text,
+                    Department = department.Text,
+                    Transaction = transaction.Text,
+                    TimeIn =TimeIn.Text,
+                    TimeOut= TimeOut.Text
+                };
+                this.Title = "UPDATE AND SUBMIT REPORT";
+                bool ADD = DependencyService.Get<ISQLite>().AdminSaveGuest(RequestDetails);
+                if (ADD == true)
+                {
+
+                    await DisplayAlert("Message", "Report Submitted Successfully", "Okay");
+                    await Navigation.PushAsync(new TableRequest());
+
+                }
+                else
+                {
+                    await DisplayAlert("Message", "Failed to submit", "Okay");
+                }
+            }
+           
         }
     }
 }

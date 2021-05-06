@@ -23,6 +23,7 @@ namespace STI_Finfo.Droid
             con.CreateTable<Request>();
             con.CreateTable<NoID>();
             con.CreateTable<AdminNoID>();
+            con.CreateTable<AdminRequest>();
             return con;
         }
         public bool SaveRequest(Request request)
@@ -72,10 +73,27 @@ namespace STI_Finfo.Droid
             string sql = $"DELETE FROM Request WHERE Id={Id}";
             con.Execute(sql);
             return;
-        }  
-       
+        }
 
-        // no id
+        //============= ADMIN GUESTS =================
+
+        public bool AdminSaveGuest(AdminRequest request)
+        {
+            bool res;
+            try
+            {
+                con.Insert(request);
+                res = true;
+            }
+            catch
+            {
+                res = false;
+            }
+            return res;
+        }
+
+
+        // ======no id
 
         public bool SaveNoID(NoID noID)
         {
@@ -129,7 +147,7 @@ namespace STI_Finfo.Droid
             return res;
         }
        
-        // --------------------- GET STUDENT WITH NO ID TODAY -------------
+        // --------------------- GET STUDENT BY DATE -------------
 
 
 
@@ -142,10 +160,36 @@ namespace STI_Finfo.Droid
             return NoId;
         }
 
+        // YESTERDAYYYYYY
+        public List<AdminNoID> GetNoIDYesterday()
+        {
+            var GetDate = DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
+           
+            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID >= CAST('" + GetDate + "' AS DATE) ORDER BY AdminDateNoID DESC";
+            List<AdminNoID> NoId = con.Query<AdminNoID>(sql);
+            return NoId;
+        }
 
-       
+        //------------------ GET GUEST BY DATE ------------------
 
+        // TODAYYYYYYY
+        public List<AdminRequest> GetGuestToday()
+        {
+            var GetDate = DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
+            string sql = "SELECT * FROM AdminRequest WHERE TimeOut >= CAST('" + GetDate + "' AS DATE) ORDER BY TimeOut DESC";
+            List<AdminRequest> NoId = con.Query<AdminRequest>(sql);
+            return NoId;
+        }
 
+        // YESTERDAYYYYYY
+        public List<AdminRequest> GetGuestYesterday()
+        {
+            var GetDate = DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
+
+            string sql = "SELECT * FROM AdminRequest WHERE TimeOut >= CAST('" + GetDate + "' AS DATE) ORDER BY TimeOut DESC";
+            List<AdminRequest> NoId = con.Query<AdminRequest>(sql);
+            return NoId;
+        }
 
     }
 }

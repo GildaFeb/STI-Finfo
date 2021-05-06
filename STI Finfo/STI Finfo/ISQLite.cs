@@ -33,8 +33,12 @@ namespace STI_Finfo
 
         // ------ NO ID
         List<AdminNoID> GetNoIDToday();
-      
+        List<AdminNoID> GetNoIDYesterday();
 
+        // ============ ADMIN DATE: GUEST ==================
 
+        bool AdminSaveGuest(AdminRequest request);
+        List<AdminRequest> GetGuestToday();
+        List<AdminRequest> GetGuestYesterday();
     }
 }

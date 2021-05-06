@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local11="clr-namespace:STI_Finfo.Admin" 
-             x:Class="STI_Finfo.Admin.ListviewDetails"
-             BackgroundImageSource="gray.png"
-           >
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local11="clr-namespace:STI_Finfo.Admin"
+             x:Class="STI_Finfo.Admin.GuestAdmin">
     <ContentPage.BindingContext>
-        <local11:MainViewModel></local11:MainViewModel>
+        <local11:GuestViewModel></local11:GuestViewModel>
     </ContentPage.BindingContext>
 
     <ScrollView>
@@ -60,24 +57,25 @@
                                     </Grid>
                                 </Frame>
                                 <!--  ====================  LIST OF DATA COLUMNS ===========  -->
-                                <ListView x:Name="AdminList" SeparatorVisibility="None" ItemsSource="{Binding NoID_Details}" IsVisible="{Binding IsVisible}"    HasUnevenRows="true"  >
+                                <ListView x:Name="AdminList" SeparatorVisibility="None" ItemsSource="{Binding Request_Details}" IsVisible="{Binding IsVisible}"    HasUnevenRows="true"  >
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <ViewCell>
-                                                
-                                                <Frame Margin="12,5,12,5"  CornerRadius="10" HorizontalOptions="FillAndExpand">
-                                                    <StackLayout Margin="-7,-7,-7,-7" HorizontalOptions="FillAndExpand" >
-                                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                                            <Label Text="Student number:" FontSize="10" FontAttributes="Bold" Margin="9,9,0,-4" TextColor="Black"/>
-                                                            <Label Text="{Binding AdminStudentNumber,StringFormat='{0:F0}'}" FontSize="10" FontAttributes="None" Margin="5,9,0,-4" TextColor="Black"/>
-                                                            <Label Text="{Binding AdminDateNoID}" FontSize="10" FontAttributes="None" Margin="0,9,0,0" TextColor="Gray" HorizontalOptions="EndAndExpand"/>
+                                                <Grid  HorizontalOptions="CenterAndExpand" Margin="2,0,2,0">
+                                                    <Frame CornerRadius="3" HasShadow="True" Margin="12,5,12,5" WidthRequest="1000" >
+                                                        <StackLayout Spacing="2" Margin="0,-6,3,-6">
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label Text="{Binding LastName,StringFormat='Name: {0:F0},'}" FontSize="Small" FontAttributes="Bold" Margin="-4,0,-4,0" TextColor="Black"/>
+                                                                <Label Text="{Binding FirstName,StringFormat=' {0:F0}'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
+                                                                <Label Text="{Binding MiddleName,StringFormat='{0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
+                                                            </StackLayout>
+                                                            <StackLayout Orientation="Vertical">
+                                                                <Label Text="{Binding Age,StringFormat='Age: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,-5,0,-5" TextColor="Black"/>
+                                                                <Label Text="{Binding Number,StringFormat='Number: {0:F0}.'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
+                                                            </StackLayout>
                                                         </StackLayout>
-                                                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                                            <Label Text="{Binding AdminAccount,StringFormat='0365 account: {0:F0}'}" FontSize="10" FontAttributes="None" Margin="9,-5,0,5" TextColor="Black"/>
-                                                            <Label Text="{Binding AdminReasons,StringFormat='Reason: {0:F0}'}" FontSize="10" FontAttributes="None" Margin="9,-12,0,9" TextColor="Black"/>
-                                                        </StackLayout>
-                                                    </StackLayout>
-                                                </Frame>
+                                                    </Frame>
+                                                </Grid>
                                             </ViewCell>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>

@@ -5,8 +5,7 @@ using Xamarin.Forms;
 
 namespace STI_Finfo.Admin
 {
-    public class MainViewModel
-
+    class GuestViewModel
     {
         public class List
         {
@@ -22,7 +21,7 @@ namespace STI_Finfo.Admin
                 expImage = value;
             }
 
-            public ObservableCollection<AdminNoID> NoID_Details { get; set; }
+            public ObservableCollection<AdminRequest> Request_Details { get; set; }
             public string Day { get; set; }
             public bool IsVisible { get; set; }
             public string CollImage { get; set; }
@@ -37,10 +36,10 @@ namespace STI_Finfo.Admin
         private List _oldList;
         public ObservableCollection<List> Lists { get; set; }
 
-        public MainViewModel()
+        public GuestViewModel()
         {
-            ObservableCollection<AdminNoID> yesterday = new ObservableCollection<AdminNoID>((IEnumerable<AdminNoID>)DependencyService.Get<ISQLite>().GetNoIDYesterday());
-            ObservableCollection<AdminNoID> Today = new ObservableCollection<AdminNoID>((IEnumerable<AdminNoID>)DependencyService.Get<ISQLite>().GetNoIDToday());
+            ObservableCollection<AdminRequest> yesterday = new ObservableCollection<AdminRequest>((IEnumerable<AdminRequest>)DependencyService.Get<ISQLite>().GetGuestYesterday());
+            ObservableCollection<AdminRequest> Today = new ObservableCollection<AdminRequest>((IEnumerable<AdminRequest>)DependencyService.Get<ISQLite>().GetGuestToday());
             Lists = new ObservableCollection<List>
             {
                 new List
@@ -50,8 +49,8 @@ namespace STI_Finfo.Admin
                     ExpImage="down3.png",
 
                     IsVisible = false,
-                    NoID_Details= Today
-
+                    Request_Details= Today
+                    
 
                  },
 
@@ -62,13 +61,13 @@ namespace STI_Finfo.Admin
                     ExpImage="down3.png",
 
                     IsVisible = false,
-                    NoID_Details= yesterday
+                    Request_Details= yesterday
 
                  },
             };
-           
-          
-           
+
+
+
 
         }
 
@@ -101,6 +100,5 @@ namespace STI_Finfo.Admin
 
         }
     }
-
-
 }
+

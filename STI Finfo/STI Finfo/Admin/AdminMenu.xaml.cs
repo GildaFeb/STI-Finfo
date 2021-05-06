@@ -21,9 +21,9 @@ namespace STI_Finfo.Admin
             await Navigation.PushAsync( new ListviewDetails());
         }
 
-        private void Guest_Admin_Clicked(object sender, EventArgs e)
+        private async void Guest_Admin_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new GuestAdmin());
         }
     }
 }
