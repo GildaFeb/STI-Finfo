@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,12 +16,13 @@ namespace STI_Finfo
         public AddNoID(NoID details)
         {
             InitializeComponent();
+            
             if (details != null)
             {
 
                 PopulateDetails(details);
             }
-
+            
 
         }
        

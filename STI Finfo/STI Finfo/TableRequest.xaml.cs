@@ -69,8 +69,21 @@ namespace STI_Finfo
                 lastCell = viewCell;
             }
         }
+        public List<Request> tempdata;
+        void OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var data = DependencyService.Get<ISQLite>().GetRequest();
+            if (string.IsNullOrEmpty(e.NewTextValue))
+            {
+                RequestList.ItemsSource = data;
+            }
 
-       
+            else
+            {
+                RequestList.ItemsSource = data.Where(x => x.LastName.StartsWith(e.NewTextValue));
+            }
+        }
+
 
     }
 }

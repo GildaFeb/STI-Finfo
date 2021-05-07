@@ -67,5 +67,18 @@ namespace STI_Finfo.Views
             }
         }
 
+        private async void Entry_Focused(object sender, FocusEventArgs e)
+        {
+            await Navigation.PushAsync(new Page2());
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            MessagingCenter.Subscribe<object, string>(this, "Hi", (obj, s) => {
+                department.Text = s;
+            });
+        }
     }
 }

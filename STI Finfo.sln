@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STI Finfo.Android", "STI Finfo\STI Finfo.Android\STI Finfo.Android.csproj", "{7B1786C5-57B7-4884-A95F-B72B3FCCF5CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STI Finfo", "STI Finfo\STI Finfo\STI Finfo.csproj", "{494A6322-9BF2-40EE-8876-E6ECADD3623A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STI Finfo", "STI Finfo\STI Finfo\STI Finfo.csproj", "{494A6322-9BF2-40EE-8876-E6ECADD3623A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

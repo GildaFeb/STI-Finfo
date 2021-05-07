@@ -43,8 +43,8 @@
                                         <Label Padding="0,0,0,0">
                                             <Label.FormattedText>
                                                 <FormattedString>
-                                                    <Span Text="STI College San Jose Del Monte  &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
-                                                    <Span Text="Online Monitoring Form &#10;" FontSize="24" FontAttributes="Bold" ForegroundColor="White" />
+                                                    <Span Text="STI College San Jose Del Monte " FontSize="22" FontAttributes="Bold" ForegroundColor="White" />
+                                                    <Span Text="Online Monitoring Form &#10;" FontSize="22" FontAttributes="Bold" ForegroundColor="White" />
                                                     <Span Text="Paperless. Contactless. Hassle-less. " FontSize="17" ForegroundColor="Yellow" FontAttributes="Italic" />
                                                 </FormattedString>
                                             </Label.FormattedText>

@@ -11,7 +11,7 @@
 
     <ScrollView>
         <StackLayout Margin="15,50,15,0">
-            <Frame  CornerRadius="3" BackgroundColor="White" >
+            <Frame  CornerRadius="3" BackgroundColor="White" HeightRequest="100" >
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>

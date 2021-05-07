@@ -65,7 +65,19 @@
                                    
                                     <Label Text="Suffix" FontSize="15" TextColor="#003366"/>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
-                                        <Entry  x:Name="suffix"   Placeholder="e.g., Jr." PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                        <Picker x:Name="suffix" FontSize="15" Margin="-2,2,-2,6" Title="Suffix" >
+                                            <Picker.Items>
+                                                <x:String></x:String>
+                                                <x:String>Jr</x:String>
+                                                <x:String>Sr</x:String>
+                                                <x:String>I</x:String>
+                                                <x:String>II</x:String>
+                                                <x:String>III</x:String>
+                                                <x:String>IV</x:String>
+                                                <x:String>V</x:String>
+                                                <x:String>VI</x:String>
+                                            </Picker.Items>
+                                        </Picker>
                                     </Frame>
                                 </StackLayout>
 
@@ -121,7 +133,7 @@
                                         <Frame  Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="150" Padding="10,-2,5,2" >
                                             <Grid Margin="0,0,0,0" >
                                                 <ScrollView Margin="2,0,2,0"  Orientation="Horizontal">
-                                                    <Entry  x:Name="department"  Placeholder="e.g., registrar, cashier, or faculty" PlaceholderColor="#cccccc" FontSize="15"  Margin="1,0,2,0" />
+                                                    <Entry Focused="Entry_Focused"  Placeholder="e.g., registrar, cashier, or faculty" PlaceholderColor="#cccccc" FontSize="15"  x:Name="department"  Margin="1,0,2,0" />
 
                                                 </ScrollView>
                                             </Grid>

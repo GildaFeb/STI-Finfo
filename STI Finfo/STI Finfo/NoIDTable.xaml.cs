@@ -56,6 +56,30 @@ namespace STI_Finfo
         }
 
 
+        public List<NoID> tempdata;
+        void OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+          var data=  DependencyService.Get<ISQLite>().GetNoID();
+            if (string.IsNullOrEmpty(e.NewTextValue))
+            {
+                NoIDList.ItemsSource = data;
+            }
+
+            else
+            {
+                NoIDList.ItemsSource = data.Where(x => x.StudentNumber.StartsWith(e.NewTextValue) );
+            }
+        }
+        public void data()
+        {
+            // all the temp data  
+            tempdata = new List<NoID> {
+                new NoID(){ StudentNumber = "umair", Account = "2323423", Reasons="My bag was snatched together w/ my ID"},
+                new NoID(){ StudentNumber = "umair", Account = "2323423", Reasons="My bag was snatched together w/ my ID"},
+                 new NoID(){ StudentNumber = "umair", Account = "2323423", Reasons="My bag was snatched together w/ my ID"},
+            };
+            return;
+        }
 
 
     }

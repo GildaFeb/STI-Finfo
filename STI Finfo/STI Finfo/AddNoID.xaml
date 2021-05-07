@@ -3,7 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:sti_finfo="clr-namespace:STI_Finfo" 
              x:DataType="sti_finfo:AppShell"
-             x:Class="STI_Finfo.AddNoID">
+             x:Class="STI_Finfo.AddNoID"
+              xmlns:behaviour="clr-namespace:STI_Finfo.Helpers.Behaviours"
+             xmlns:converter="clr-namespace:STI_Finfo.Helpers.Converters"
+             Visual="Material">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converter:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ScrollView>
         <StackLayout>
             <StackLayout>

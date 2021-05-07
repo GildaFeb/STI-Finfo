@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STI_Finfo.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -166,6 +167,19 @@ namespace STI_Finfo
                 }
             }
            
+        }
+        private async void Entry_Focused(object sender, FocusEventArgs e)
+        {
+            await Navigation.PushAsync(new Page2());
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            MessagingCenter.Subscribe<object, string>(this, "Hi", (obj, s) => {
+                department.Text = s;
+            });
         }
     }
 }
