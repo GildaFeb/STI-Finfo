@@ -35,14 +35,14 @@
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
                                     <Label Text="Last name" FontSize="15" TextColor="#003366"/>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
-                                        <Entry x:Name="lastName"  Placeholder="e.g., Mapagmahal" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                        <Entry MaxLength="50" x:Name="lastName"  Placeholder="e.g., Mapagmahal" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
                                 <!--- FIRST NAME -->
                                 <StackLayout Grid.Column="2"  Grid.ColumnSpan="2">
                                     <Label Text="First name" FontSize="15" TextColor="#003366"/>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
-                                        <Entry  x:Name="firstName"   Placeholder="e.g., Juan John" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                        <Entry MaxLength="50"  x:Name="firstName"   Placeholder="e.g., Juan John" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
                                 
@@ -57,7 +57,7 @@
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
                                     <Label Text="Middle name" FontSize="15" TextColor="#003366"/>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
-                                        <Entry  x:Name="middleName"   Placeholder="e.g., Delacor" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                        <Entry MaxLength="50"  x:Name="middleName"   Placeholder="e.g., Delacor" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
                                 <!--- SUFFIX-->
@@ -92,14 +92,14 @@
                                 <StackLayout Grid.Column="0">
                                     <Label Text="Age" FontSize="15" TextColor="#003366"/>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
-                                        <Entry  x:Name="age"   Placeholder="e.g., 18" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                        <Entry MaxLength="2"  Keyboard="Numeric" x:Name="age"   Placeholder="e.g., 18" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
                                 <!--- Contact no. -->
                                 <StackLayout Grid.Column="1"  Grid.ColumnSpan="2">
                                     <Label Text="Mobile number" FontSize="15" TextColor="#003366"/>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
-                                        <Entry  x:Name="contactNumber"   Placeholder="e.g., 09692536215" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                        <Entry Keyboard="Telephone" MaxLength="11" x:Name="contactNumber"   Placeholder="e.g., 09692536215" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
 
@@ -109,7 +109,7 @@
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
                                     <Label Text="Address" FontSize="15" TextColor="#003366"/>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
-                                        <Entry  x:Name="address"   Placeholder="e.g., 143 Heart Avenue" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                        <Entry MaxLength="50" x:Name="address"   Placeholder="e.g., 143 Heart Avenue" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                    
                                 </StackLayout>
@@ -119,7 +119,7 @@
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="2">
                                     <Label Text="Email address" FontSize="15" TextColor="#003366"/>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" >
-                                        <Entry  x:Name="email"   Placeholder="e.g., example@email.com" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
+                                        <Entry Keyboard="Email"  x:Name="email"   Placeholder="e.g., example@email.com" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                     </Frame>
                                 </StackLayout>
                             </Grid >
@@ -133,7 +133,7 @@
                                         <Frame  Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="150" Padding="10,-2,5,2" >
                                             <Grid Margin="0,0,0,0" >
                                                 <ScrollView Margin="2,0,2,0"  Orientation="Horizontal">
-                                                    <Entry Focused="Entry_Focused"  Placeholder="e.g., registrar, cashier, or faculty" PlaceholderColor="#cccccc" FontSize="15"  x:Name="department"  Margin="1,0,2,0" />
+                                                    <Entry MaxLength="50" Focused="Entry_Focused"  Placeholder="e.g., registrar, cashier, or faculty" PlaceholderColor="#cccccc" FontSize="15"  x:Name="department"  Margin="1,0,2,0" />
 
                                                 </ScrollView>
                                             </Grid>
@@ -151,7 +151,7 @@
                                         <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="150" Padding="10,-2,5,2" >
                                             <Grid Margin="0,0,0,0">
                                                 <ScrollView Margin="2,0,2,0" Orientation="Vertical" Padding="2,2,2,2"  >
-                                                    <Entry  x:Name="transaction"   Placeholder="e.g., inquire or pass requirements" PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"   />
+                                                    <Entry MaxLength="50"  x:Name="transaction"   Placeholder="e.g., inquire or pass requirements" PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"   />
 
                                                 </ScrollView>
                                             </Grid>

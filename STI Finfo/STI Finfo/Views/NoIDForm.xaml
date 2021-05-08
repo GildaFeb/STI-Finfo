@@ -41,7 +41,7 @@
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="3">
                                     <Label Text="Student no."  TextColor="#003366" Margin="0,0,0,-2"></Label>
                                     <Frame Margin="0,-3,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="50" Padding="10,-2,10,-1" >
-                                        <Entry  Placeholder="e.g., 2000175865" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" x:Name="studentnumber" />
+                                        <Entry Keyboard="Numeric" MaxLength="10"  Placeholder="e.g., 2000175865" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" x:Name="studentnumber" />
                                     </Frame>
                                 </StackLayout>
                             </Grid>
@@ -50,7 +50,7 @@
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="3" >
                                     <Label Text="Email"  TextColor="#003366" ></Label>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="50" Padding="10,-2,10,-1" >
-                                        <Entry  Placeholder="e.g., STICollege.sti.edu.ph" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" x:Name="account"/>
+                                        <Entry Keyboard="Email"  Placeholder="e.g., STICollege.sti.edu.ph" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" x:Name="account"/>
                                     </Frame>
                                 </StackLayout>
                             </Grid>
@@ -59,7 +59,7 @@
                                 <StackLayout>
                                     <Label Text="Reason for having no ID"  TextColor="#003366"></Label>
                                     <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
-                                        <Entry  Placeholder="e.g., I forgot my ID in house" PlaceholderColor="#cccccc" Margin="-2,2,-2,6" FontSize="15" x:Name="reasons" />
+                                        <Entry Keyboard="Text"   Placeholder="e.g., I forgot my ID in house" PlaceholderColor="#cccccc" Margin="-2,2,-2,6" FontSize="15" x:Name="reasons" />
                                     </Frame>
                                 </StackLayout>
                             </Grid>
