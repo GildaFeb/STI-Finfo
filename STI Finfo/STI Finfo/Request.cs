@@ -18,9 +18,8 @@ namespace STI_Finfo
         public string Address { get; set; }
         public string Email { get; set; }
         public string Department { get; set; }
-        public string Transaction { get; set; }
-        public string Exit { get; set; }
-        public string Enter { get; set; }
+        public string sac { get; set; }
+   
         public string TimeIn { get; set; }
         public string TimeOut{ get; set; }
         public bool IsVisible { get; set; }
@@ -40,7 +39,7 @@ namespace STI_Finfo
         public string Address { get; set; }
         public string Email { get; set; }
         public string Department { get; set; }
-        public string Transaction { get; set; }
+        public string sac { get; set; }
         public string Exit { get; set; }
         public string Enter { get; set; }
         public string TimeIn { get; set; }

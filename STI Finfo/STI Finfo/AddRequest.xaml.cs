@@ -31,17 +31,19 @@ namespace STI_Finfo
        
         private void PopulateDetails(Request details)
         {
+
+
             Last.Text = details.LastName;
-            first.Text = details.FirstName;
-           middle.Text = details.MiddleName;
-          
-            age.Text= details.Age;
-            number.Text = details.Number;
-            address.Text = details.Address;
-            email.Text = details.Email;
-            transaction.Text = details.Transaction;
+            First.Text = details.FirstName;
+            Middle.Text = details.MiddleName;
+            Suffix.Text = details.Suffix;
+            Age.Text = details.Age;
+            Number.Text = details.Number;
+            Address.Text = details.Address;
+            Email.Text = details.Email;
+            sac.Text = details.sac;
             department.Text = details.Department;
-            TimeIn.Text = details.TimeIn; 
+            TimeIn.Text = details.TimeIn;
             TimeOut.Text = details.TimeOut;
 
             var save = this.FindByName<Button>("saveBtn");
@@ -52,7 +54,7 @@ namespace STI_Finfo
            
         }
 
-        private void SaveRequests(object sender, EventArgs e)
+        private async void SaveRequests(object sender, EventArgs e)
         {
             this.Title = "ADD GUEST";
             var save = this.FindByName<Button>("saveBtn");
@@ -62,15 +64,15 @@ namespace STI_Finfo
                 Request request = new Request
                 {
                     LastName = Last.Text,
-                    FirstName = first.Text,
-                    MiddleName = middle.Text,
-                    Suffix = first.Text,
-                    Age = age.Text,
-                    Number = number.Text,
-                    Address = address.Text,
-                    Email = email.Text,
+                    FirstName = First.Text,
+                    MiddleName = Middle.Text,
+                    Suffix = Suffix.Text,
+                    Age = Age.Text,
+                    Number = Number.Text,
+                    Address = Address.Text,
+                    Email = Email.Text,
                     Department = department.Text,
-                    Transaction = transaction.Text,
+                    sac = sac.Text,
                     TimeIn = TimeIn.Text,
                     TimeOut = TimeOut.Text
 
@@ -79,12 +81,12 @@ namespace STI_Finfo
                 bool res = DependencyService.Get<ISQLite>().SaveRequest(request);
                 if (res)
                 {
-                    DisplayAlert("Message", "Successfully Added to List", "Okay");
-                    Navigation.PopAsync();
+                    await DisplayAlert ("Message", "Successfully Added to List", "Okay");
+                    await Navigation.PopAsync();
                 }
                 else
                 {
-                    DisplayAlert("Message", "Data Failed To Save", "Okay");
+                    await DisplayAlert ("Message", "Data Failed To Save", "Okay");
                 }
             }
             else
@@ -93,32 +95,35 @@ namespace STI_Finfo
                 Request RequestDetails = new Request
                 {
                     LastName = Last.Text,
-                    FirstName = first.Text,
-                    MiddleName = middle.Text,
-                    Suffix = first.Text,
-                    Age = age.Text,
-                    Number = number.Text,
-                    Address = address.Text,
-                    Email = email.Text,
-                    Department = department.Text,
-                    Transaction = transaction.Text,
+                    FirstName = First.Text,
+                    MiddleName = Middle.Text,
+                    Suffix = Suffix.Text,
+                    Age = Age.Text,
+                    Number = Number.Text,
+                    Address = Address.Text,
+                    Email = Email.Text,
                     TimeIn = TimeIn.Text,
-                    TimeOut = TimeOut.Text
+                    TimeOut = TimeOut.Text,
+                    sac = sac.Text,
+                    Department = department.Text,
                 };
 
                 bool res = DependencyService.Get<ISQLite>().UpdateRequest(RequestDetails); 
                 
-                if (res)
+                if (res == true)
                 {
-                    
-                    Navigation.PopAsync();
+                    await DisplayAlert("Message", "Form Updated Successfully", "Okay");
+                    await Navigation.PushAsync(new TableRequest());
                 }
                 else
                 {
-                    DisplayAlert("Message", "Data Failed To Update", "Okay");
+                    await DisplayAlert("Message", "Data Failed To Update", "Okay");
                 }
             }
         }
+
+       
+
         private void TimeIn_Clicked(object sender, EventArgs e)
         {
             
@@ -140,15 +145,15 @@ namespace STI_Finfo
                 AdminRequest RequestDetails = new AdminRequest
                 {
                     LastName = Last.Text,
-                    FirstName = first.Text,
-                    MiddleName = middle.Text,
-                    Suffix = first.Text,
-                    Age = age.Text,
-                    Number = number.Text,
-                    Address = address.Text,
-                    Email = email.Text,
+                    FirstName = First.Text,
+                    MiddleName = Middle.Text,
+                    Suffix = First.Text,
+                    Age = Age.Text,
+                    Number = Number.Text,
+                    Address = Address.Text,
+                    Email = Email.Text,
                     Department = department.Text,
-                    Transaction = transaction.Text,
+                    sac = sac.Text,
                     TimeIn =TimeIn.Text,
                     TimeOut= TimeOut.Text
                 };

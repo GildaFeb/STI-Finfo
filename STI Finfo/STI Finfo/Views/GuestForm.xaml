@@ -144,7 +144,7 @@
                                         <Frame Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="150" Padding="10,-2,5,2" >
                                             <Grid Margin="0,0,0,0">
                                                 <ScrollView Margin="2,0,2,0" Orientation="Vertical" Padding="2,2,2,2"  >
-                                                    <Entry MaxLength="50"  x:Name="transaction"   Placeholder="e.g., inquire or pass requirements" PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"   />
+                                                    <Entry MaxLength="50"  x:Name="sac"   Placeholder="e.g., inquire or pass requirements" PlaceholderColor="#cccccc" FontSize="15" Margin="1,0,2,0"   />
 
                                                 </ScrollView>
                                             </Grid>

@@ -42,7 +42,7 @@ namespace STI_Finfo.Views
             {
                 await DisplayAlert("Alert", "Username or password is not correct.", "okay");
             }
-            else if (staffUsername != "Adminfx21" || staffPassword != "Admin54xcvz")
+            else if (staffUsername != "Admin" || staffPassword != "Admin54xcvz")
             {
                 await DisplayAlert("Alert", "Username or password is not correct.", "okay");
             }

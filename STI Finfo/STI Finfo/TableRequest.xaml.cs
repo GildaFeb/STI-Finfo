@@ -18,6 +18,7 @@ namespace STI_Finfo
         private ViewCell lastCell;
         public TableRequest()
         {
+            
             InitializeComponent();
         }
         protected override void OnAppearing()

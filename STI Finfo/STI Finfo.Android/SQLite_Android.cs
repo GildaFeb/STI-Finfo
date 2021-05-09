@@ -52,21 +52,20 @@ namespace STI_Finfo.Droid
 
         public bool UpdateRequest(Request request)
         {
-            bool res = false;
+            bool res;
             try
             {
-                string sql = $"UPDATE Request SET LastName='{request.LastName}',Firstname='{request.FirstName}',MiddleName='{request.MiddleName}'," +
-                                $"Suffix='{request.Suffix}', Age='{request.Age}',Number='{request.Number}',Address='{request.Address}' " +
-                                $"Email='{request.Email}',Department='{request.Department}', Transaction='{request.Transaction}'" +
-                                $"TimeIn='{request.TimeIn}',TimeOut='{request.TimeOut}' WHERE Id={request.Id}";
+                string sql = $"UPDATE Request SET LastName='{request.LastName}',Firstname='{request.FirstName}',MiddleName='{request.MiddleName}' ,Suffix='{request.Suffix}', Age='{request.Age}',Address='{request.Address}', Email='{request.Email}',  Department='{request.Department}', TimeIn='{request.TimeIn}',  TimeOut='{request.TimeOut}',  sac='{request.sac}'   WHERE Id={request.Id}";
                 con.Execute(sql);
                 res = true;
+                return res;
             }
             catch (Exception)
             {
-
+                res = false;
+                return res;
             }
-            return res;
+            
         }
         public void DeleteRequest(int Id)
         {

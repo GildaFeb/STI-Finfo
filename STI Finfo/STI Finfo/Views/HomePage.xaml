@@ -34,12 +34,19 @@
                                 <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,40,0,-30">
                                     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                         <Button Text="Security" Padding="90,15,90,15" BackgroundColor="#2c384a" TextColor="white" FontAttributes="Bold" CornerRadius="30" Clicked="SecurityButton_Clicked" >
+                                            <Button.Background>
+                                                <LinearGradientBrush EndPoint="0,2">
+                                                    <GradientStop Color="#2c384a" Offset="0.1" />
+                                                    <GradientStop Color="Black" Offset="1.0" />
+                                                </LinearGradientBrush>
+                                            </Button.Background>
                                         </Button>
                                     </StackLayout>
                                 </Grid>
                                 <!--- APP NAME -->
                                 <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#003366" Margin="0,-10">
                                     <StackLayout BackgroundColor="#003366" HorizontalOptions="Center" VerticalOptions="Center" Margin="10,0,10,0"  >
+                                        
                                         <Label Padding="0,0,0,0">
                                             <Label.FormattedText>
                                                 <FormattedString>

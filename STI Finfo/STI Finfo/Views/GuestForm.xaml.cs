@@ -40,7 +40,7 @@ namespace STI_Finfo.Views
                     Address = address.Text,
                     Email = email.Text,
                     Department = department.Text,
-                    Transaction = transaction.Text,
+                    sac = sac.Text,
 
 
                 };

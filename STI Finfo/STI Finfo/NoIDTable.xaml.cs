@@ -16,7 +16,7 @@ namespace STI_Finfo
         public NoIDTable()
         {
             InitializeComponent();
-            
+           
         }
         protected override void OnAppearing()
         {
