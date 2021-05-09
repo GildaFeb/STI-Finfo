@@ -20,7 +20,7 @@ namespace STI_Finfo.Views
         }
 
 
-        private void SaveNoID(object sender, EventArgs e)
+        private async void SaveNoID(object sender, EventArgs e)
         {
 
 
@@ -33,50 +33,56 @@ namespace STI_Finfo.Views
             
             if (string.IsNullOrEmpty(Accounts.Text) || string.IsNullOrEmpty(StudentNo.Text) || string.IsNullOrEmpty(Reasons.Text))
             {
-                DisplayAlert("Message", "Failed to submit! Please Complete the form.", "Okay");
+                await DisplayAlert("Message", "Failed to submit! Please Complete the form.", "Okay");
                 return;
             }
            
             else if (!(StudentNo.Text.Length == 10) && !(Accounts.Text.Contains("@sjdelmonte.sti.edu.ph")))
             {
-                DisplayAlert("Message", "Failed to submit! Student number and O365 account must valid.", "Okay");
+                await DisplayAlert("Message", "Failed to submit! Student number and O365 account must valid.", "Okay");
                 return;
             }
             else if (!(Reasons.Text.Length > 7 ))
             {
-                DisplayAlert("Message", "Failed to submit! Reason must contain atleast 8 characters", "Okay");
+                await DisplayAlert("Message", "Failed to submit! Reason must contain atleast 8 characters", "Okay");
                 return;
             }
             else if (!(Accounts.Text.Contains("@sjdelmonte.sti.edu.ph")))
             {
-                DisplayAlert("Message", "Failed to submit. Please enter valid o365 account.", "Okay");
+                await DisplayAlert("Message", "Failed to submit. Please enter valid o365 account.", "Okay");
                 return;
             }
             else if (!(StudentNo.Text.Length == 10))
             {
-                DisplayAlert("Message", "Failed to submit! Student number must contain 10 characters.", "Okay");
+                await DisplayAlert("Message", "Failed to submit! Student number must contain 10 characters.", "Okay");
             }
             else
             {
-                NoID requestss = new NoID
-                {
-                    StudentNumber = StudentNo.Text,
-                    Account = Accounts.Text,
-                    Reasons = Reasons.Text,
+                var result = await DisplayAlert("Alert!", "Submit form. Do you want to continue?", "Yes", "No");
 
-                };
+                if (result)
+                {
+                    NoID requestss = new NoID
+                    {
+                        StudentNumber = StudentNo.Text,
+                        Account = Accounts.Text,
+                        Reasons = Reasons.Text,
 
-                bool res = DependencyService.Get<ISQLite>().SaveNoID(requestss);
-                if (res)
-                {
-                    DisplayAlert("Message", "Form Submitted Successfully.", "Okay");
-                    Navigation.PopAsync();
+                    };
+
+                    bool res = DependencyService.Get<ISQLite>().SaveNoID(requestss);
+                    if (res)
+                    {
+                        await DisplayAlert ("Message", "Form Submitted Successfully.", "Okay");
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert ("Message", "Failed to submit!", "Okay");
+                    }
+                   
                 }
-                else
-                {
-                    DisplayAlert("Message", "Failed to submit!", "Okay");
-                }
-                return;
+                else { }
             }
           
             

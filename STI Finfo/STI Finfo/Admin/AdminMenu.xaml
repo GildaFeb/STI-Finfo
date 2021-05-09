@@ -10,8 +10,7 @@
                         <StackLayout>
                             <Label Text="MONITORING PAGE" VerticalOptions="Start" FontFamily="Helvetica" FontAttributes="Bold" TextColor="White" FontSize="30" HorizontalOptions="Start" Margin="30,9 ,20,-10">
                             </Label>
-                            <Label Text="April 14, 2021 13:34:02" Margin="30,0,0,0" TextColor="#2c384a" VerticalOptions="Start" FontAttributes="Bold"  FontSize="13" HorizontalOptions="Start">
-                            </Label>
+                            
                         </StackLayout>
                         <StackLayout Margin="12,100,12,0">
                             <Button  Text="NO ID" WidthRequest="300"  FontAttributes="Bold" Margin="12,150,12,10" CornerRadius="20" BackgroundColor="#003366" Clicked="NoID_Admin_Clicked" TextColor="White">

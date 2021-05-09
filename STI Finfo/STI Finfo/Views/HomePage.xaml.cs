@@ -21,7 +21,7 @@ namespace STI_Finfo.Views
         }
         private async void GuestButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GuardMenu());
+            await Navigation.PushAsync(new GuestForm());
         }
         private async void SecurityButton_Clicked(object sender, EventArgs e)
         {

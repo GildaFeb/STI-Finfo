@@ -56,37 +56,41 @@ namespace STI_Finfo
 
         private async void SaveRequests(object sender, EventArgs e)
         {
+            
             this.Title = "ADD GUEST";
             var save = this.FindByName<Button>("saveBtn");
             if (save.Text == "ADD TO REQUEST LIST")
             {
-
-                Request request = new Request
+                var result = await DisplayAlert("Message", "Add to list. Do you want to continue?", "No", "Yes");
+               if (result)
                 {
-                    LastName = Last.Text,
-                    FirstName = First.Text,
-                    MiddleName = Middle.Text,
-                    Suffix = Suffix.Text,
-                    Age = Age.Text,
-                    Number = Number.Text,
-                    Address = Address.Text,
-                    Email = Email.Text,
-                    Department = department.Text,
-                    sac = sac.Text,
-                    TimeIn = TimeIn.Text,
-                    TimeOut = TimeOut.Text
+                    Request request = new Request
+                    {
+                        LastName = Last.Text,
+                        FirstName = First.Text,
+                        MiddleName = Middle.Text,
+                        Suffix = Suffix.Text,
+                        Age = Age.Text,
+                        Number = Number.Text,
+                        Address = Address.Text,
+                        Email = Email.Text,
+                        Department = department.Text,
+                        sac = sac.Text,
+                        TimeIn = TimeIn.Text,
+                        TimeOut = TimeOut.Text
 
-                };
+                    };
 
-                bool res = DependencyService.Get<ISQLite>().SaveRequest(request);
-                if (res)
-                {
-                    await DisplayAlert ("Message", "Successfully Added to List", "Okay");
-                    await Navigation.PopAsync();
-                }
-                else
-                {
-                    await DisplayAlert ("Message", "Data Failed To Save", "Okay");
+                    bool res = DependencyService.Get<ISQLite>().SaveRequest(request);
+                    if (res)
+                    {
+                        await DisplayAlert("Message", "Successfully Added to List", "Okay");
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Message", "Data Failed To Save", "Okay");
+                    }
                 }
             }
             else

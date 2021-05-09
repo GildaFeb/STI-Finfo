@@ -33,19 +33,16 @@ namespace STI_Finfo.Views
                 await DisplayAlert("Message", "Log in successfully", "okay");
                 await Navigation.PushAsync(new GuardMenu());
             }
-            else if (staffUsername == "Admin" && staffPassword == "Admin54xcvz")
+            else if (staffUsername == "admin" && staffPassword == "admin54xcvz")
             {
                 await DisplayAlert("Message", "Log in successfully", "okay");
                 await Navigation.PushAsync(new AdminMenu());
             }
-            else if (staffUsername != "staff" || staffPassword != "staff5vcb2")
+            else 
             {
                 await DisplayAlert("Alert", "Username or password is not correct.", "okay");
             }
-            else if (staffUsername != "Admin" || staffPassword != "Admin54xcvz")
-            {
-                await DisplayAlert("Alert", "Username or password is not correct.", "okay");
-            }
+           
         }
     }
 }

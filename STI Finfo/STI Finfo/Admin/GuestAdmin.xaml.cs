@@ -24,5 +24,12 @@ namespace STI_Finfo.Admin
             vm?.ShoworHiddenProducts(list);
 
         }
+        private void EditRequest(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item is Request list)
+            {
+                Navigation.PushAsync(new AddRequest(list));
+            }
+        }
     }
 }
