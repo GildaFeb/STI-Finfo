@@ -24,7 +24,21 @@ namespace STI_Finfo.Admin
             vm?.ShoworHiddenProducts(list);
 
         }
-       
-      
+        public List<AdminNoID> tempdata;
+        void OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var GuestList = this.FindByName<ListView>("AdminList");
+            var data = DependencyService.Get<ISQLite>().AdminGetNoID();
+            if (string.IsNullOrEmpty(e.NewTextValue))
+            {
+                GuestList.ItemsSource = data;
+            }
+
+            else
+            {
+                GuestList.ItemsSource = data.Where(x => x.AdminAccount.Contains(e.NewTextValue));
+            }
+        }
+
     }
 }

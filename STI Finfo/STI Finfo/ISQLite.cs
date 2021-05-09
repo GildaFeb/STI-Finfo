@@ -26,8 +26,9 @@ namespace STI_Finfo
 
 
         bool AdminSaveNoID(AdminNoID request);
+        
+        List<AdminNoID> AdminGetNoID();
 
-       
 
         //============= ADMIN DATE SORTING ==============
 

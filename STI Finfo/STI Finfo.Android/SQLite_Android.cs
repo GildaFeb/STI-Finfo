@@ -115,6 +115,9 @@ namespace STI_Finfo.Droid
             return noID;
         }
       
+
+
+
         public void DeleteNoID(int Id)
         {
             string sql = "DELETE FROM NoID WHERE NoId='"+Id+"'";
@@ -145,7 +148,15 @@ namespace STI_Finfo.Droid
             }
             return res;
         }
-       
+
+
+        public List<AdminNoID> AdminGetNoID()
+        {
+            
+            string sql = "SELECT * FROM AdminNoID ";
+            List<AdminNoID> NoId = con.Query<AdminNoID>(sql);
+            return NoId;
+        }
         // --------------------- GET STUDENT BY DATE -------------
 
 

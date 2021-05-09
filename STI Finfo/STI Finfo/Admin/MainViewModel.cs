@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
@@ -23,8 +23,10 @@ namespace STI_Finfo.Admin
             }
 
             public ObservableCollection<AdminNoID> NoID_Details { get; set; }
+            public string Sort { get; set; }
             public string Day { get; set; }
             public bool IsVisible { get; set; }
+            public bool Search { get; set; }
             public string CollImage { get; set; }
             public string ExpImage { get; set; }
         }
@@ -45,10 +47,11 @@ namespace STI_Finfo.Admin
             {
                 new List
                 {
-                    Day = "Today (3)",
+                    Sort = "Today",
+                    Day = Today.Count.ToString(),
                     CollImage="down2.png",
                     ExpImage="down3.png",
-
+                    Search= false,
                     IsVisible = false,
                     NoID_Details= Today
 
@@ -57,7 +60,30 @@ namespace STI_Finfo.Admin
 
                  new List
                 {
-                    Day = "Yesterday (3)",
+                    Sort = "Yesterday",
+                    Day = yesterday.Count.ToString(),
+                    CollImage="down2.png",
+                    ExpImage="down3.png",
+                     Search= false,
+                    IsVisible = false,
+                    NoID_Details= yesterday
+
+                 },
+                   new List
+                {
+                       Sort = "Last Week",
+                    Day = yesterday.Count.ToString(),
+                    CollImage="down2.png",
+                    ExpImage="down3.png",
+                     Search= false,
+                    IsVisible = false,
+                    NoID_Details= yesterday
+
+                 },
+                      new List
+                {
+                       Sort = "Last Month",
+                    Day = yesterday.Count.ToString(),
                     CollImage="down2.png",
                     ExpImage="down3.png",
 
