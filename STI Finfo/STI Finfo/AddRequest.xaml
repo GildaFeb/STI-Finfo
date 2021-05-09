@@ -64,19 +64,7 @@
                             <StackLayout Grid.Column="2" >
                                 <Label Text="Suffix" FontSize="15" TextColor="#003366"/>
                                 <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="60" Padding="10,-2,10,-1" Grid.Column="2">
-                                    <Picker x:Name="suffix" FontSize="15" Margin="-2,2,-2,6" Title="Suffix" >
-                                        <Picker.Items>
-                                            <x:String> </x:String>
-                                            <x:String>Jr</x:String>
-                                            <x:String>Sr</x:String>
-                                            <x:String>I</x:String>
-                                            <x:String>II</x:String>
-                                            <x:String>III</x:String>
-                                            <x:String>IV</x:String>
-                                            <x:String>V</x:String>
-                                            <x:String>VI</x:String>
-                                        </Picker.Items>
-                                    </Picker>
+                                    <Entry MaxLength="3" x:Name="suffix"  Placeholder="e.g., Jr" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" />
                                 </Frame>
                             </StackLayout>
 

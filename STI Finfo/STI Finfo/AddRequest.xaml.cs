@@ -110,7 +110,7 @@ namespace STI_Finfo
                 
                 if (res)
                 {
-              
+                    
                     Navigation.PopAsync();
                 }
                 else

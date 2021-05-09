@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:converter="clr-namespace:STI_Finfo.Helpers.Converters" xmlns:behaviour="clr-namespace:STI_Finfo.Helpers.Behaviours" xmlns:noidmodel="clr-namespace:STI_Finfo.NoIDModel" x:DataType="noidmodel:NoIDPageViewModel"
              x:Class="STI_Finfo.Views.NoIDForm">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converter:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
+        
         <ScrollView>
             <StackLayout>
                 <StackLayout>
@@ -41,7 +48,11 @@
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="3">
                                     <Label Text="Student no."  TextColor="#003366" Margin="0,0,0,-2"></Label>
                                     <Frame Margin="0,-3,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="50" Padding="10,-2,10,-1" >
-                                        <Entry Keyboard="Numeric" MaxLength="10"  Placeholder="e.g., 2000175865" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" x:Name="studentnumber" />
+                                        <StackLayout>
+                                            <Entry SelectionLength="10" Keyboard="Numeric" MaxLength="10" Placeholder="e.g., 2000175865"   PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" x:Name="studentnumber"   >
+
+                                            </Entry>
+                                        </StackLayout>
                                     </Frame>
                                 </StackLayout>
                             </Grid>
@@ -50,23 +61,28 @@
                                 <StackLayout Grid.Column="0" Grid.ColumnSpan="3" >
                                     <Label Text="Email"  TextColor="#003366" ></Label>
                                     <Frame Margin="0,-4,0,6" BorderColor="#003366" CornerRadius="4" HeightRequest="50" Padding="10,-2,10,-1" >
-                                        <Entry Keyboard="Email"  Placeholder="e.g., STICollege.sti.edu.ph" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" x:Name="account"/>
+                                        <Entry  Keyboard="Email"  Placeholder="e.g., STICollege.sti.edu.ph" PlaceholderColor="#cccccc" FontSize="15" Margin="-2,2,-2,6" x:Name="account">
+                                         
+                                        </Entry>
                                     </Frame>
                                 </StackLayout>
+                             
                             </Grid>
                             <Grid>
                                 <!--- REASON -->
                                 <StackLayout>
                                     <Label Text="Reason for having no ID"  TextColor="#003366"></Label>
                                     <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
-                                        <Entry Keyboard="Text"   Placeholder="e.g., I forgot my ID in house" PlaceholderColor="#cccccc" Margin="-2,2,-2,6" FontSize="15" x:Name="reasons" />
+                                        <Entry  Keyboard="Text"   Placeholder="e.g., I forgot my ID in house" PlaceholderColor="#cccccc" Margin="-2,2,-2,6" FontSize="15" x:Name="reasons" >
+
+                                        </Entry>
                                     </Frame>
                                 </StackLayout>
                             </Grid>
                           
                             <!-- BUTTON SUBMIT-->
                             <Grid>
-                                <Button Text="SUBMIT" x:Name="submit"   BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,23,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="50" Clicked="SaveNoID"/>
+                                <Button Command="{Binding SignUpCommand}" Text="SUBMIT" x:Name="submit"   BackgroundColor="#d7ac00" HorizontalOptions="CenterAndExpand" Margin="10,23,10,0" WidthRequest="10000" CornerRadius="5" HeightRequest="50" Clicked="SaveNoID"/>
                             </Grid>
                             <Grid>
                                 <Grid.ColumnDefinitions>

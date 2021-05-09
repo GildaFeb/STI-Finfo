@@ -41,7 +41,7 @@ namespace STI_Finfo.Droid
             return res;
         }
         public List<Request> GetRequest()
-
+            
         {
             string sql = "SELECT * FROM Request";
             List<Request> request = con.Query<Request>(sql);

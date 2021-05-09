@@ -25,7 +25,7 @@
                                             <Frame CornerRadius="10" HeightRequest="50" Padding="0" Margin="0" HorizontalOptions="FillAndExpand" HasShadow="True">
                                                 <StackLayout Orientation="Horizontal" Margin="-2,-2,-2,-2">
                                                     <Image Source="username.png" Margin="0,0,-10,0"></Image>
-                                                    <Entry Placeholder="Username" Margin="0,5,10,5" HeightRequest="50"  HorizontalOptions="FillAndExpand" Keyboard="Email" TextColor="black" PlaceholderColor="#002d5a" />
+                                                    <Entry Placeholder="Username" x:Name="username" Margin="0,5,10,5" HeightRequest="50"  HorizontalOptions="FillAndExpand" Keyboard="Email" TextColor="black" PlaceholderColor="#002d5a" />
                                                 </StackLayout>
                                             </Frame>
                                         </StackLayout>
@@ -34,7 +34,7 @@
                                             <Frame CornerRadius="10" HeightRequest="50" Padding="0" Margin="0" HorizontalOptions="FillAndExpand" HasShadow="True">
                                                 <StackLayout Orientation="Horizontal" Margin="-2,-2,-2,-2">
                                                     <Image Source="password.png" Margin="12,8,0,8" ></Image>
-                                                    <Entry Placeholder="Password" Margin="0,5,10,5" HeightRequest="50" IsPassword="True" HorizontalOptions="FillAndExpand" TextColor="black" PlaceholderColor="#002d5a" />
+                                                    <Entry Placeholder="Password" x:Name="password" Margin="0,5,10,5" HeightRequest="50" IsPassword="True" HorizontalOptions="FillAndExpand" TextColor="black" PlaceholderColor="#002d5a" />
                                                 </StackLayout>
                                             </Frame>
                                         </StackLayout>

@@ -51,57 +51,65 @@ namespace STI_Finfo
                 var save = this.FindByName<Button>("saveB");
                 if (save.Text == "SUBMIT REPORT")
                 {
-                    AdminNoID requestss = new AdminNoID
-                    {
-                        AdminStudentNumber = studentnumber.Text,
-                        AdminAccount = account.Text,
-                        AdminReasons = reasons.Text,
-                        AdminDateNoID = DateID.Text
-                    };
-                    this.Title = "ADD STUDENT";
-                    bool res = DependencyService.Get<ISQLite>().AdminSaveNoID(requestss);
-                    if (res == true )
-                    {
-                        await DisplayAlert("Message", "Report Submitted Successfully ", "Okay");
-                        await Navigation.PushAsync(new NoIDTable());
-                    }
-                    else
-                    {
-                        await DisplayAlert("Message", "Failed to submit", "Okay");
-                    }
-                }
-                else if (save.Text == "UPDATE AND SUBMIT REPORT")
-                {
-                    // ----------------- SUBMIT TO ADMIN ----------------------
-                    AdminNoID NoIDDetails = new AdminNoID
-                    {
-                        AdminDateNoID = DateID.Text,
-                        AdminStudentNumber = studentnumber.Text,
-                        AdminAccount = account.Text,
-                        AdminReasons = reasons.Text
+                    this.Title = "GUEST FORM";
 
-                    };
-                 
-                    this.Title = "UPDATE AND SUBMIT REPORT";
-                    bool ADD = DependencyService.Get<ISQLite>().AdminSaveNoID(NoIDDetails);
-                    if (ADD == true )
+                    var StudentNo = this.FindByName<Entry>("studentnumber");
+                    var Accounts = this.FindByName<Entry>("account");
+                    var Reasons = this.FindByName<Entry>("reasons");
+
+
+                    if (string.IsNullOrEmpty(Accounts.Text) || string.IsNullOrEmpty(StudentNo.Text) || string.IsNullOrEmpty(Reasons.Text))
                     {
-                      
-                        await  DisplayAlert("Message", "Report Submitted Successfully", "Okay");
-                        await Navigation.PushAsync(new NoIDTable());
-                        
+                        await DisplayAlert("Message", "Failed to submit! Please Complete the form.", "Okay");
+                        return;
+                    }
+
+                    else if (!(StudentNo.Text.Length == 10) && !(Accounts.Text.Contains("@sjdelmonte.sti.edu.ph")))
+                    {
+                        await DisplayAlert("Message", "Failed to submit! Student number and O365 account must valid.", "Okay");
+                        return;
+                    }
+                    else if (!(Reasons.Text.Length > 7))
+                    {
+                       await  DisplayAlert("Message", "Failed to submit! Reason must contain atleast 8 characters", "Okay");
+                        return;
+                    }
+                    else if (!(Accounts.Text.Contains("@sjdelmonte.sti.edu.ph")))
+                    {
+                        await DisplayAlert ("Message", "Failed to submit. Please enter valid o365 account.", "Okay");
+                        return;
+                    }
+                    else if (!(StudentNo.Text.Length == 10))
+                    {
+                        await  DisplayAlert("Message", "Failed to submit! Student number must contain 10 characters.", "Okay");
                     }
                     else
                     {
-                        await DisplayAlert("Message", "Failed to submit", "Okay");
+                        AdminNoID requestss = new AdminNoID
+                        {
+                            AdminStudentNumber = StudentNo.Text,
+                            AdminAccount = Accounts.Text,
+                            AdminReasons = Reasons.Text,
+
+                        };
+
+                        bool res = DependencyService.Get<ISQLite>().AdminSaveNoID(requestss);
+                        if (res)
+                        {
+                           await DisplayAlert("Message", "Form Submitted Successfully.", "Okay");
+                            await Navigation.PopAsync();
+                        }
+                        else
+                        {
+                            await DisplayAlert ("Message", "Failed to submit!", "Okay");
+                        }
+                        return;
                     }
-                    
+
                 }
+               
             }
-            else
-            {
-                
-            }
+           
         }
 
         private void Date_Clicked(object sender, EventArgs e)

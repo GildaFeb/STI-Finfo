@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Syncfusion.XForms.ComboBox;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,35 +18,25 @@ namespace STI_Finfo.Views
         public GuestForm()
         {
             InitializeComponent();
-           
+            this.Title = "ADD GUEST";
 
         }
         private void SaveRequests(object sender, EventArgs e)
         {
-            this.Title = "ADD GUEST";
-            var lastname = this.FindByName<Entry>("lastName");
-            var firstname = this.FindByName<Entry>("firstName");
-            var middlename = this.FindByName<Entry>("middleName");
-            var suffix = this.FindByName<Entry>("suffix");
-            var age = this.FindByName<Entry>("age");
-            var number = this.FindByName<Entry>("contactNumber");
-            var address = this.FindByName<Entry>("address");
-            var email = this.FindByName<Entry>("email");
-            var department = this.FindByName<Entry>("department");
-            var transaction = this.FindByName<Entry>("transaction");
-          
+
+
             var save = this.FindByName<Button>("submit");
             if (save.Text == "SUBMIT")
             {
 
-                Request request = new Request
+                Request requests = new Request
                 {
-                    LastName = lastname.Text,
-                    FirstName = firstname.Text,
-                    MiddleName = middlename.Text,
+                    LastName = lastName.Text,
+                    FirstName = firstName.Text,
+                    MiddleName = middleName.Text,
                     Suffix = suffix.Text,
                     Age = age.Text,
-                    Number = number.Text,
+                    Number = contactNumber.Text,
                     Address = address.Text,
                     Email = email.Text,
                     Department = department.Text,
@@ -54,10 +45,10 @@ namespace STI_Finfo.Views
 
                 };
 
-                bool res = DependencyService.Get<ISQLite>().SaveRequest(request);
+                bool res = DependencyService.Get<ISQLite>().SaveRequest(requests);
                 if (res)
                 {
-
+                    DisplayAlert("Message", "Form Submitted Successfully", "Okay");
                     Navigation.PopAsync();
                 }
                 else
@@ -71,14 +62,7 @@ namespace STI_Finfo.Views
         {
             await Navigation.PushAsync(new Page2());
         }
+     
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            MessagingCenter.Subscribe<object, string>(this, "Hi", (obj, s) => {
-                department.Text = s;
-            });
-        }
     }
 }

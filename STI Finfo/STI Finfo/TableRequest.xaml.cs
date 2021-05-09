@@ -72,6 +72,7 @@ namespace STI_Finfo
         public List<Request> tempdata;
         void OnTextChanged(object sender, TextChangedEventArgs e)
         {
+            var RequestLlist= this.FindByName<ListView>("RequestList");
             var data = DependencyService.Get<ISQLite>().GetRequest();
             if (string.IsNullOrEmpty(e.NewTextValue))
             {
@@ -80,7 +81,7 @@ namespace STI_Finfo
 
             else
             {
-                RequestList.ItemsSource = data.Where(x => x.LastName.StartsWith(e.NewTextValue));
+                RequestList.ItemsSource = data.Where(x => x.LastName.Contains(e.NewTextValue));
             }
         }
 

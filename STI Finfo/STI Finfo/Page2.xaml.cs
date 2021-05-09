@@ -58,22 +58,22 @@ namespace STI_Finfo
             this.BackgroundColor = Color.White;
 
 
-            list.Add(new Model() { Text = "Front Desk" });
-            list.Add(new Model() { Text = "Cashier" });
-            list.Add(new Model() { Text = "Registrar" });
-            list.Add(new Model() { Text = "Gymnasium" });
-            list.Add(new Model() { Text = "Faculty" });
-            list.Add(new Model() { Text = "Computer laboratory" });
-            list.Add(new Model() { Text = "Kitchen laboratory" });
-            list.Add(new Model() { Text = "Chemistry laboratory" });
-            list.Add(new Model() { Text = "Canteen" });
-            list.Add(new Model() { Text = "Lobby" });
-            list.Add(new Model() { Text = "Student Library" });
-            list.Add(new Model() { Text = "Student Lounge" });
-            list.Add(new Model() { Text = "Guidance Office" });
-            list.Add(new Model() { Text = "Principal's Office" });
-            list.Add(new Model() { Text = "First Floor: Classrom" });
-            list.Add(new Model() { Text = "Second Floor: Classrom" });
+            list.Add(new Model() { Text = " Front Desk" });
+            list.Add(new Model() { Text = " Cashier" });
+            list.Add(new Model() { Text = " Registrar" });
+            list.Add(new Model() { Text = " Gymnasium" });
+            list.Add(new Model() { Text = " Faculty" });
+            list.Add(new Model() { Text = " Computer laboratory" });
+            list.Add(new Model() { Text = " Kitchen laboratory" });
+            list.Add(new Model() { Text = " Chemistry laboratory" });
+            list.Add(new Model() { Text = " Canteen" });
+            list.Add(new Model() { Text = " Lobby" });
+            list.Add(new Model() { Text = " Student Library" });
+            list.Add(new Model() { Text = " Student Lounge" });
+            list.Add(new Model() { Text = " Guidance Office" });
+            list.Add(new Model() { Text = " Principal's Office" });
+            list.Add(new Model() { Text = " First Floor: Classrom" });
+            list.Add(new Model() { Text = " Second Floor: Classrom" });
             listView.ItemsSource = list;
             return;
         }
