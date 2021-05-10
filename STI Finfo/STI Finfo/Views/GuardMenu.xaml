@@ -19,6 +19,7 @@
                             <StackLayout Margin="0,70,0,0">
                                 <Button Text="GUEST" CornerRadius="3"  FontAttributes="Bold" Margin="15,30,15,10" BackgroundColor="#003366" Clicked="Guest_Clicked"  TextColor="White"/>
                                 <Button Text="NO ID" CornerRadius="3" FontAttributes="Bold" Margin="15,0,15,10" BackgroundColor="#003663" Clicked="NoID_Clicked" TextColor="White"/>
+                                <Button Text="Log out" FontSize="10" HeightRequest="40" WidthRequest="100" Clicked="logout_Clicked" CornerRadius="3"  BorderColor="White"  TextColor="White"></Button>
                             </StackLayout>
                         </StackLayout>
                     </ScrollView>

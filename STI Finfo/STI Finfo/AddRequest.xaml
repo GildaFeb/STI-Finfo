@@ -176,13 +176,13 @@
                                 </Frame>
                             </StackLayout>
                         </Grid>
-                        <Grid>
+                        <Grid IsVisible="false">
                             
                             <!--- ID -->
                             <StackLayout Margin="0,5,0,0">
                                 
                                 <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
-                                    <Entry IsVisible="false" Keyboard="Numeric"  x:Name="ID" FontSize="15" Margin="1,0,2,0"  />
+                                    <Entry  Keyboard="Numeric"  x:Name="ID" FontSize="15" Margin="1,0,2,0"  />
                                 </Frame>
                             </StackLayout>
                         </Grid>

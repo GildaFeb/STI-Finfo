@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STI_Finfo.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,16 @@ namespace STI_Finfo.Admin
         private async void Guest_Admin_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new GuestAdmin());
+        }
+        private async void logout_Clicked(object sender, EventArgs e)
+        {
+            var result = await DisplayAlert("Message", "Submit form. Do you want to continue?", "Confirm", "Cancel");
+
+            if (result)
+            {
+                await Navigation.PushAsync(new HomePage());
+            }
+               
         }
     }
 }

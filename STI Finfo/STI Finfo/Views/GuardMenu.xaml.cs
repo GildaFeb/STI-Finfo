@@ -27,5 +27,16 @@ namespace STI_Finfo.Views
              await Navigation.PushAsync(new NoIDTable());
             
         }
+
+        private async void logout_Clicked(object sender, EventArgs e)
+        {
+            var result = await DisplayAlert("Message", "Submit form. Do you want to continue?", "Confirm", "Cancel");
+
+            if (result)
+            {
+                await Navigation.PushAsync(new HomePage());
+            }
+
+        }
     }
 }

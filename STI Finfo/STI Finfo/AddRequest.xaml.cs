@@ -65,11 +65,11 @@ namespace STI_Finfo
             var save = this.FindByName<Button>("saveBtn");
             if (save.Text == "ADD TO REQUEST LIST")
             {
-                var result = await DisplayAlert("Message", "Add to list. Do you want to continue?", "No", "Yes");
+                var result = await DisplayAlert("Message", "Add to list. Do you want to continue?", "Yes", "No");
                if (result)
                 {
 
-                    if (string.IsNullOrEmpty(Last.Text) || string.IsNullOrEmpty(First.Text) || string.IsNullOrEmpty(department.Text) || string.IsNullOrEmpty(sac.Text) || string.IsNullOrEmpty(Age.Text) || string.IsNullOrEmpty(Number.Text) || string.IsNullOrEmpty(Address.Text))
+                    if (string.IsNullOrEmpty(Last.Text) || string.IsNullOrEmpty(First.Text) ||  string.IsNullOrEmpty(Age.Text) || string.IsNullOrEmpty(Number.Text) || string.IsNullOrEmpty(Address.Text))
                     {
                         await DisplayAlert("Message", "Failed to submit! All field are required except Middle name, suffix, and email.", "Okay");
                         return;
@@ -181,13 +181,13 @@ namespace STI_Finfo
         {
             
             var inTime = this.FindByName<Entry>("TimeIn");
-            inTime.Text = DateTime.Now.ToString("yyyy/M/d HH:mm:ss"); 
+            inTime.Text = DateTime.Now.ToString("HH:mm:ss"); 
             return;
         }
         private void TimeOut_Clicked(object sender, EventArgs e)
         {
             var inTime = this.FindByName<Entry>("TimeOut");
-            inTime.Text = DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
+            inTime.Text = DateTime.Now.ToString("HH:mm:ss");
             return;
         }
         private async void Report_Clicked(object sender, EventArgs e)
@@ -195,7 +195,7 @@ namespace STI_Finfo
             var result = await DisplayAlert("Alert!", "Submit report. Do you want to continue?", "Yes", "No");
             if (result)
             {
-                if (string.IsNullOrEmpty(Last.Text) || string.IsNullOrEmpty(First.Text) || string.IsNullOrEmpty(department.Text) || string.IsNullOrEmpty(sac.Text) || string.IsNullOrEmpty(Age.Text) || string.IsNullOrEmpty(Number.Text) || string.IsNullOrEmpty(Address.Text))
+                if (string.IsNullOrEmpty(Last.Text) || string.IsNullOrEmpty(First.Text) || string.IsNullOrEmpty(department.Text) || string.IsNullOrEmpty(sac.Text) || string.IsNullOrEmpty(Age.Text) || string.IsNullOrEmpty(Number.Text) || string.IsNullOrEmpty(Address.Text) || string.IsNullOrEmpty(DateGuest.Text))
                 {
                     await DisplayAlert("Message", "Failed to submit! All field are required except Middle name, suffix, and email.", "Okay");
                     return;

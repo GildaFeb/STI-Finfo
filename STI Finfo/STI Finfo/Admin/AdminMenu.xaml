@@ -29,7 +29,8 @@
                                     </LinearGradientBrush>
                                 </Button.Background>
                             </Button>
-                        </StackLayout>
+                        <Button Text="Log out" FontSize="10" Clicked="logout_Clicked" HeightRequest="40" WidthRequest="100" CornerRadius="3"  BorderColor="White"  TextColor="White"></Button>
+                    </StackLayout>
                     </StackLayout>
                 </StackLayout>
          

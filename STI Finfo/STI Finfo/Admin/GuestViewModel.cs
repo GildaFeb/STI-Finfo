@@ -43,6 +43,7 @@ namespace STI_Finfo.Admin
             ObservableCollection<AdminRequest> Today = new ObservableCollection<AdminRequest>((IEnumerable<AdminRequest>)DependencyService.Get<ISQLite>().GetGuestToday());
             ObservableCollection<AdminRequest> lastweek = new ObservableCollection<AdminRequest>((IEnumerable<AdminRequest>)DependencyService.Get<ISQLite>().GetGuestLASTWEEK());
             ObservableCollection<AdminRequest> lastmonth = new ObservableCollection<AdminRequest>((IEnumerable<AdminRequest>)DependencyService.Get<ISQLite>().GetGuestLASTMONTH());
+            
             Lists = new ObservableCollection<List>
             {
                 new List
