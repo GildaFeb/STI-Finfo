@@ -29,7 +29,7 @@ namespace STI_Finfo.Views
         }
         private async void NoIDButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NoIDForm());
+            await Navigation.PushAsync(new GuardMenu());
         }
         
         

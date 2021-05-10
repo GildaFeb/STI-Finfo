@@ -67,7 +67,7 @@
                         TextColor="Black" TextTransform="Lowercase"  HorizontalTextAlignment="Center" FontSize="20" HeightRequest="35" Margin="0,10,0,0" />
                                
                                 <!--  ====================  LIST OF DATA COLUMNS ===========  -->
-                                <ListView x:Name="AdminList" SeparatorVisibility="None" ItemsSource="{Binding NoID_Details}" IsVisible="{Binding IsVisible}"    HasUnevenRows="true"  >
+                                <ListView x:Name="AdminList" SeparatorVisibility="None" ItemsSource="{Binding NoID_Details}" IsVisible="{Binding IsVisible}" HeightRequest="300"    HasUnevenRows="true"  >
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <ViewCell>

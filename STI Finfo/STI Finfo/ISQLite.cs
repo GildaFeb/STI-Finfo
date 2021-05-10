@@ -35,6 +35,8 @@ namespace STI_Finfo
         // ------ NO ID
         List<AdminNoID> GetNoIDToday();
         List<AdminNoID> GetNoIDYesterday();
+        List<AdminNoID> GetNoIDLASTWEEK();
+        List<AdminNoID> GetNoIDLASTMONTH();
 
         // ============ ADMIN DATE: GUEST ==================
 

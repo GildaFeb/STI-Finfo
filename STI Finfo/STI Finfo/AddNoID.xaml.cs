@@ -36,16 +36,13 @@ namespace STI_Finfo
             
             
             var save = this.FindByName<Button>("saveB");
-            save.Text = "UPDATE AND SUBMIT REPORT";
-            this.Title = "UPDATE AND SUBMIT REPORT";
+            save.Text = "SUBMIT REPORT";
+            this.Title = "SUBMIT REPORT";
         }
 
         private async void SaveNoID(object sender, EventArgs e)
         {
-            var result = await DisplayAlert("Alert!", "Update and submit report. Do you want to continue?", "Yes", "No");
-
-            if (result)
-            {
+          
                 // ----------------- ADD TO LIST  ----------------------
                 
                 var save = this.FindByName<Button>("saveB");
@@ -56,9 +53,10 @@ namespace STI_Finfo
                     var StudentNo = this.FindByName<Entry>("studentnumber");
                     var Accounts = this.FindByName<Entry>("account");
                     var Reasons = this.FindByName<Entry>("reasons");
+                  var Date = this.FindByName<Entry>("DateID"); 
 
 
-                    if (string.IsNullOrEmpty(Accounts.Text) || string.IsNullOrEmpty(StudentNo.Text) || string.IsNullOrEmpty(Reasons.Text))
+                if (string.IsNullOrEmpty(Accounts.Text) || string.IsNullOrEmpty(StudentNo.Text) || string.IsNullOrEmpty(Reasons.Text) || string.IsNullOrEmpty(Date.Text))
                     {
                         await DisplayAlert("Message", "Failed to submit! Please Complete the form.", "Okay");
                         return;
@@ -85,37 +83,44 @@ namespace STI_Finfo
                     }
                     else
                     {
-                        AdminNoID requestss = new AdminNoID
-                        {
-                            AdminStudentNumber = StudentNo.Text,
-                            AdminAccount = Accounts.Text,
-                            AdminReasons = Reasons.Text,
+                          
+                               AdminNoID requestss = new AdminNoID
+                             {
+                                   AdminStudentNumber = StudentNo.Text,
+                                  AdminAccount = Accounts.Text,
+                                  AdminReasons = Reasons.Text,
+                                   AdminDateNoID = Date.Text,
 
-                        };
+                               };
 
-                        bool res = DependencyService.Get<ISQLite>().AdminSaveNoID(requestss);
-                        if (res)
+                              bool res = DependencyService.Get<ISQLite>().AdminSaveNoID(requestss);
+                              if (res)
+                              {
+                        var result = await DisplayAlert("Alert!", "Submit report. Do you want to continue?", "Yes", "No");
+                        if (result)
                         {
-                           await DisplayAlert("Message", "Form Submitted Successfully.", "Okay");
+                            await DisplayAlert("Message", "Form Submitted Successfully.", "Okay");
                             await Navigation.PopAsync();
                         }
-                        else
-                        {
-                            await DisplayAlert ("Message", "Failed to submit!", "Okay");
-                        }
-                        return;
+                              }
+                              else
+                              {
+                            await DisplayAlert("Message", "Failed to submit!", "Okay");
+                              }
+                           
+
                     }
 
                 }
                
-            }
+            
            
         }
 
         private void Date_Clicked(object sender, EventArgs e)
         {
             var dateNoID = this.FindByName<Entry>("DateID");
-            dateNoID.Text =  DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
+            dateNoID.Text =  DateTime.Now.ToString("yyyy/M/d");
             return;
         }
     }

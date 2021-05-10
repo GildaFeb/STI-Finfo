@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local11="clr-namespace:STI_Finfo.Admin"
-             x:Class="STI_Finfo.Admin.GuestAdmin">
+             x:Class="STI_Finfo.Admin.GuestAdmin"
+             BackgroundImageSource="gray.png">
     <ContentPage.BindingContext>
         <local11:GuestViewModel></local11:GuestViewModel>
     </ContentPage.BindingContext>
@@ -52,6 +53,10 @@
                                VerticalOptions="Start" 
                                Grid.Row="0"
                                Grid.Column="0" />
+                                        <Label Text="{Binding Sort, StringFormat='{0:F0} '}" FontSize="14" TextColor="Black"   HorizontalOptions="Start" VerticalOptions="Start" 
+                                />
+                                        <Label Text="{Binding Day, StringFormat='({0:F0})'}" Margin="-2,0,0,0"   FontSize="14" TextColor="Black"   HorizontalOptions="Start" VerticalOptions="Start"  />
+
                                         <Image Source="{Binding CollImage}" HeightRequest="18" WidthRequest="18" HorizontalOptions="End" Margin="0,0,0,0"   Grid.Row="0"  Grid.Column="1"     ></Image>
                                         <Image Source="{Binding ExpImage}"  HeightRequest="18"  WidthRequest="18"  IsVisible="{Binding IsVisible}" Margin="0,0,0,0"   HorizontalOptions="End"  Grid.Row="0"  Grid.Column="1"></Image>
                                     </Grid>

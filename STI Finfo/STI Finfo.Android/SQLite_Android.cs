@@ -164,22 +164,48 @@ namespace STI_Finfo.Droid
         // TODAYYYYYYY
         public List<AdminNoID> GetNoIDToday()
         {
-            var GetDate= DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
-            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID >= CAST('"+GetDate+"' AS DATE) ORDER BY AdminDateNoID DESC";
+            
+            var GetDate = DateTime.Now.ToString("yyyy/M/d");
+            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID = '"+GetDate+ "'   ";
             List<AdminNoID> NoId = con.Query<AdminNoID>(sql);
             return NoId;
         }
 
         // YESTERDAYYYYYY
+
         public List<AdminNoID> GetNoIDYesterday()
         {
-            var GetDate = DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
-           
-            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID >= CAST('" + GetDate + "' AS DATE) ORDER BY AdminDateNoID DESC";
+
+
+            var GetDateS = DateTime.Now.AddDays(-1).ToString("yyyy/M/d");
+            
+            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID = '" + GetDateS + "'  "; 
             List<AdminNoID> NoId = con.Query<AdminNoID>(sql);
             return NoId;
         }
+        // LAST WEEK
 
+        public List<AdminNoID> GetNoIDLASTWEEK()
+        {
+
+
+            var GetDateS = DateTime.Now.AddDays(-7).ToString("yyyy/M/d");
+            var GetDateSs = DateTime.Now.AddDays(-14).ToString("yyyy/M/d");
+            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID BETWEEN '" + GetDateSs + "' AND '" + GetDateS + "'  ";
+            List<AdminNoID> NoId = con.Query<AdminNoID>(sql);
+            return NoId;
+        }
+        //LAST MONTH
+        public List<AdminNoID> GetNoIDLASTMONTH()
+        {
+
+
+            var GetDateS = DateTime.Now.AddDays(-30).ToString("yyyy/M/d");
+            var GetDateSs = DateTime.Now.AddDays(-60).ToString("yyyy/M/d");
+            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID BETWEEN '" + GetDateS + "'  AND '" + GetDateSs + "'  ";
+            List<AdminNoID> NoId = con.Query<AdminNoID>(sql);
+            return NoId;
+        }
         //------------------ GET GUEST BY DATE ------------------
 
         // TODAYYYYYYY

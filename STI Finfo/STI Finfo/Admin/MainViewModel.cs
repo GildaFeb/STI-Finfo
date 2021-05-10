@@ -41,6 +41,9 @@ namespace STI_Finfo.Admin
 
         public MainViewModel()
         {
+
+            ObservableCollection<AdminNoID> lastmonth = new ObservableCollection<AdminNoID>((IEnumerable<AdminNoID>)DependencyService.Get<ISQLite>().GetNoIDLASTMONTH());
+            ObservableCollection<AdminNoID> lastweek = new ObservableCollection<AdminNoID>((IEnumerable<AdminNoID>)DependencyService.Get<ISQLite>().GetNoIDLASTWEEK());
             ObservableCollection<AdminNoID> yesterday = new ObservableCollection<AdminNoID>((IEnumerable<AdminNoID>)DependencyService.Get<ISQLite>().GetNoIDYesterday());
             ObservableCollection<AdminNoID> Today = new ObservableCollection<AdminNoID>((IEnumerable<AdminNoID>)DependencyService.Get<ISQLite>().GetNoIDToday());
             Lists = new ObservableCollection<List>
@@ -72,12 +75,12 @@ namespace STI_Finfo.Admin
                    new List
                 {
                        Sort = "Last Week",
-                    Day = yesterday.Count.ToString(),
+                    Day = lastweek.Count.ToString(),
                     CollImage="down2.png",
                     ExpImage="down3.png",
                      Search= false,
                     IsVisible = false,
-                    NoID_Details= yesterday
+                    NoID_Details= lastweek
 
                  },
                       new List
@@ -88,7 +91,7 @@ namespace STI_Finfo.Admin
                     ExpImage="down3.png",
 
                     IsVisible = false,
-                    NoID_Details= yesterday
+                    NoID_Details= lastmonth
 
                  },
             };
