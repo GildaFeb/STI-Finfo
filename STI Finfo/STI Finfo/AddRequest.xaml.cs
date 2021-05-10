@@ -32,11 +32,12 @@ namespace STI_Finfo
         private void PopulateDetails(Request details)
         {
 
-
+            var id = this.FindByName<Entry>("ID");
+            
             Last.Text = details.LastName;
             First.Text = details.FirstName;
             Middle.Text = details.MiddleName;
-            Suffix.Text = details.Suffix;
+            Suffix.Text = details.Suffix; 
             Age.Text = details.Age;
             Number.Text = details.Number;
             Address.Text = details.Address;
@@ -45,6 +46,7 @@ namespace STI_Finfo
             department.Text = details.Department;
             TimeIn.Text = details.TimeIn;
             TimeOut.Text = details.TimeOut;
+            id.Text = details.Id.ToString();
 
             var save = this.FindByName<Button>("saveBtn");
             save.Text = "UPDATE ONLY";
@@ -95,6 +97,8 @@ namespace STI_Finfo
             }
             else
             {
+                var id = this.FindByName<Entry>("ID");
+                int result = Int32.Parse(id.Text);
                 // update request
                 Request RequestDetails = new Request
                 {
@@ -110,8 +114,11 @@ namespace STI_Finfo
                     TimeOut = TimeOut.Text,
                     sac = sac.Text,
                     Department = department.Text,
+                    Id = result
+                   
+                   
                 };
-
+                
                 bool res = DependencyService.Get<ISQLite>().UpdateRequest(RequestDetails); 
                 
                 if (res == true)
@@ -143,7 +150,7 @@ namespace STI_Finfo
         }
         private async void Report_Clicked(object sender, EventArgs e)
         {
-            var result = await DisplayAlert("Alert!", "Update and submit report. Do you want to continue?", "Yes", "No");
+            var result = await DisplayAlert("Alert!", "Submit report. Do you want to continue?", "Yes", "No");
             if (result)
             {
                 AdminRequest RequestDetails = new AdminRequest
@@ -159,9 +166,10 @@ namespace STI_Finfo
                     Department = department.Text,
                     sac = sac.Text,
                     TimeIn =TimeIn.Text,
-                    TimeOut= TimeOut.Text
+                    TimeOut= TimeOut.Text,
+
                 };
-                this.Title = "UPDATE AND SUBMIT REPORT";
+               
                 bool ADD = DependencyService.Get<ISQLite>().AdminSaveGuest(RequestDetails);
                 if (ADD == true)
                 {

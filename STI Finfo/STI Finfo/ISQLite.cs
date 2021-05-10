@@ -17,8 +17,8 @@ namespace STI_Finfo
         bool SaveNoID(NoID request);
 
         List<NoID> GetNoID();
+        bool UpdateNoID(NoID noId);
 
-      
         void DeleteNoID(int id);
 
        

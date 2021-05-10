@@ -55,7 +55,7 @@ namespace STI_Finfo.Droid
             bool res;
             try
             {
-                string sql = $"UPDATE Request SET LastName='{request.LastName}',Firstname='{request.FirstName}',MiddleName='{request.MiddleName}' ,Suffix='{request.Suffix}', Age='{request.Age}',Address='{request.Address}', Email='{request.Email}',  Department='{request.Department}', TimeIn='{request.TimeIn}',  TimeOut='{request.TimeOut}',  sac='{request.sac}'   WHERE Id={request.Id}";
+                string sql = $"UPDATE Request SET LastName='{request.LastName}',Firstname='{request.FirstName}',MiddleName='{request.MiddleName}', Suffix='{request.Suffix}', Age='{request.Age}',Address='{request.Address}', Email='{request.Email}',  Department='{request.Department}', TimeIn='{request.TimeIn}',  TimeOut='{request.TimeOut}',  sac='{request.sac}'   WHERE Id={request.Id}";
                 con.Execute(sql);
                 res = true;
                 return res;
@@ -92,8 +92,24 @@ namespace STI_Finfo.Droid
         }
 
 
-        // ======no id
+        // ================== NO ID
+        public bool UpdateNoID(NoID request)
+        {
+            bool res;
+            try
+            {
+                string sql = $"UPDATE NoID SET StudentNumber='{request.StudentNumber}',Account='{request.Account}',Reasons='{request.Reasons}' WHERE NoId={request.NoId}";
+                con.Execute(sql);
+                res = true;
+                return res;
+            }
+            catch (Exception)
+            {
+                res = false;
+                return res;
+            }
 
+        }
         public bool SaveNoID(NoID noID)
         {
             bool res;

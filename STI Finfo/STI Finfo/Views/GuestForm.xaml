@@ -116,17 +116,18 @@
                                     </Frame>
                                 </StackLayout>
                             </Grid >
-                            <Grid Margin="0,10,0,0" >
+                            <Grid >
                                 <!--- DEPARTMENT PLANNING TO VISIT -->
                                 <Frame Margin="0,7,0,0">
                                     <StackLayout>
                                         <Frame BackgroundColor="#003366">
                                             <Label TextColor="White" Text="What particular department/s you are planning to visit inside the campus?"/>
                                         </Frame>
-                                        <Frame  Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="150" Padding="10,-2,5,2" >
+                                        <Frame  Margin="0,2,3,0" BorderColor="#003366" CornerRadius="4"  HeightRequest="100" Padding="10,-2,5,2" >
                                             <Grid Margin="0,0,0,0" >
                                                 <ScrollView Margin="2,0,2,0"  Orientation="Horizontal">
                                                     <Entry MaxLength="50" Focused="Entry_Focused"  Placeholder="e.g., registrar, cashier, or faculty" PlaceholderColor="#cccccc" FontSize="15"  x:Name="department"  Margin="1,0,2,0" />
+
 
                                                 </ScrollView>
                                             </Grid>

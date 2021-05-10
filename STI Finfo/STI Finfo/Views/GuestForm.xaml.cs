@@ -90,9 +90,17 @@ namespace STI_Finfo.Views
 
         private async void Entry_Focused(object sender, FocusEventArgs e)
         {
-            await Navigation.PushAsync(new Page2());
+            await Navigation.PushAsync(new PopAdd());
         }
-     
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            MessagingCenter.Subscribe<object, string>(this, " ", (obj, s) => {
+                department.Text = s;
+            });
+        }
+
 
     }
 }
