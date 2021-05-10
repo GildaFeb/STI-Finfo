@@ -22,6 +22,7 @@ namespace STI_Finfo
    
         public string TimeIn { get; set; }
         public string TimeOut{ get; set; }
+        public string DateGuest { get; set; }
         public bool IsVisible { get; set; }
 
 
@@ -40,12 +41,10 @@ namespace STI_Finfo
         public string Email { get; set; }
         public string Department { get; set; }
         public string sac { get; set; }
-        public string Exit { get; set; }
-        public string Enter { get; set; }
         public string TimeIn { get; set; }
         public string TimeOut { get; set; }
         public bool IsVisible { get; set; }
-
+        public string DateGuest { get; set; }
 
     }
 

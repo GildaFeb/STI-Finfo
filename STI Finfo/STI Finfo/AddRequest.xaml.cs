@@ -33,6 +33,7 @@ namespace STI_Finfo
         {
 
             var id = this.FindByName<Entry>("ID");
+            var DateGuest = this.FindByName<Entry>("DateGuest");
             
             Last.Text = details.LastName;
             First.Text = details.FirstName;
@@ -46,6 +47,7 @@ namespace STI_Finfo
             department.Text = details.Department;
             TimeIn.Text = details.TimeIn;
             TimeOut.Text = details.TimeOut;
+            DateGuest.Text = details.DateGuest;
             id.Text = details.Id.ToString();
 
             var save = this.FindByName<Button>("saveBtn");
@@ -66,7 +68,81 @@ namespace STI_Finfo
                 var result = await DisplayAlert("Message", "Add to list. Do you want to continue?", "No", "Yes");
                if (result)
                 {
-                    Request request = new Request
+
+                    if (string.IsNullOrEmpty(Last.Text) || string.IsNullOrEmpty(First.Text) || string.IsNullOrEmpty(department.Text) || string.IsNullOrEmpty(sac.Text) || string.IsNullOrEmpty(Age.Text) || string.IsNullOrEmpty(Number.Text) || string.IsNullOrEmpty(Address.Text))
+                    {
+                        await DisplayAlert("Message", "Failed to submit! All field are required except Middle name, suffix, and email.", "Okay");
+                        return;
+                    }
+
+                    else if (!(Last.Text.Length > 1) || !(First.Text.Length > 1 || !(First.Text.Length > 1)))
+                    {
+                        await DisplayAlert("Message", "Failed to submit! Name fields must contain atleast atleast 2 characters", "Okay");
+                        return;
+                    }
+                    else if (!(sac.Text.Length > 6) || !(Address.Text.Length > 6))
+                    {
+                        await DisplayAlert("Message", "Failed to submit! Transaction, mobile number, and address must contain atleast 7 ", "Okay");
+                        return;
+                    }
+                    else if (!(Email.Text.Contains("@")))
+                    {
+                        await DisplayAlert("Message", "Invalid email. Try again.", "Okay");
+                        return;
+                    }
+                    else
+                    {
+                        var choose = await DisplayAlert("Alert!", "Add to List. Do you want to continue?", "Yes", "No");
+                        if (choose)
+                        {
+                            var DateGuest = this.FindByName<Entry>("DateGuest");
+                            Request request = new Request
+                            {
+                                LastName = Last.Text,
+                                FirstName = First.Text,
+                                MiddleName = Middle.Text,
+                                Suffix = Suffix.Text,
+                                Age = Age.Text,
+                                Number = Number.Text,
+                                Address = Address.Text,
+                                Email = Email.Text,
+                                Department = department.Text,
+                                sac = sac.Text,
+                                TimeIn = TimeIn.Text,
+                                TimeOut = TimeOut.Text,
+                                DateGuest = DateGuest.Text
+                            };
+
+                            bool res = DependencyService.Get<ISQLite>().SaveRequest(request);
+                            if (res)
+                            {
+                                await DisplayAlert("Message", "Successfully Added to List", "Okay");
+                                await Navigation.PopAsync();
+                            }
+                            else
+                            {
+                                await DisplayAlert("Message", "Data Failed To Save", "Okay");
+                            }
+                        }
+                          
+                    }
+
+
+                    //==============================
+                  
+                }
+            }
+            else
+            {
+                var choose = await DisplayAlert("Alert!", "Update this Form. Do you want to continue?", "Yes", "No");
+                if (choose)
+                {
+                    var DateGuest = this.FindByName<Entry>("DateGuest");
+
+                    var id = this.FindByName<Entry>("ID");
+                    int result = Int32.Parse(id.Text);
+                    // update request
+                    Request RequestDetails = new Request
                     {
                         LastName = Last.Text,
                         FirstName = First.Text,
@@ -76,59 +152,25 @@ namespace STI_Finfo
                         Number = Number.Text,
                         Address = Address.Text,
                         Email = Email.Text,
-                        Department = department.Text,
-                        sac = sac.Text,
                         TimeIn = TimeIn.Text,
-                        TimeOut = TimeOut.Text
-
+                        TimeOut = TimeOut.Text,
+                        sac = sac.Text,
+                        Department = department.Text,
+                        Id = result,
+                        DateGuest = DateGuest.Text
                     };
 
-                    bool res = DependencyService.Get<ISQLite>().SaveRequest(request);
-                    if (res)
+                    bool res = DependencyService.Get<ISQLite>().UpdateRequest(RequestDetails);
+
+                    if (res == true)
                     {
-                        await DisplayAlert("Message", "Successfully Added to List", "Okay");
-                        await Navigation.PopAsync();
+                        await DisplayAlert("Message", "Form Updated Successfully", "Okay");
+                        await Navigation.PushAsync(new TableRequest());
                     }
                     else
                     {
-                        await DisplayAlert("Message", "Data Failed To Save", "Okay");
+                        await DisplayAlert("Message", "Data Failed To Update", "Okay");
                     }
-                }
-            }
-            else
-            {
-                var id = this.FindByName<Entry>("ID");
-                int result = Int32.Parse(id.Text);
-                // update request
-                Request RequestDetails = new Request
-                {
-                    LastName = Last.Text,
-                    FirstName = First.Text,
-                    MiddleName = Middle.Text,
-                    Suffix = Suffix.Text,
-                    Age = Age.Text,
-                    Number = Number.Text,
-                    Address = Address.Text,
-                    Email = Email.Text,
-                    TimeIn = TimeIn.Text,
-                    TimeOut = TimeOut.Text,
-                    sac = sac.Text,
-                    Department = department.Text,
-                    Id = result
-                   
-                   
-                };
-                
-                bool res = DependencyService.Get<ISQLite>().UpdateRequest(RequestDetails); 
-                
-                if (res == true)
-                {
-                    await DisplayAlert("Message", "Form Updated Successfully", "Okay");
-                    await Navigation.PushAsync(new TableRequest());
-                }
-                else
-                {
-                    await DisplayAlert("Message", "Data Failed To Update", "Okay");
                 }
             }
         }
@@ -153,35 +195,67 @@ namespace STI_Finfo
             var result = await DisplayAlert("Alert!", "Submit report. Do you want to continue?", "Yes", "No");
             if (result)
             {
-                AdminRequest RequestDetails = new AdminRequest
+                if (string.IsNullOrEmpty(Last.Text) || string.IsNullOrEmpty(First.Text) || string.IsNullOrEmpty(department.Text) || string.IsNullOrEmpty(sac.Text) || string.IsNullOrEmpty(Age.Text) || string.IsNullOrEmpty(Number.Text) || string.IsNullOrEmpty(Address.Text))
                 {
-                    LastName = Last.Text,
-                    FirstName = First.Text,
-                    MiddleName = Middle.Text,
-                    Suffix = First.Text,
-                    Age = Age.Text,
-                    Number = Number.Text,
-                    Address = Address.Text,
-                    Email = Email.Text,
-                    Department = department.Text,
-                    sac = sac.Text,
-                    TimeIn =TimeIn.Text,
-                    TimeOut= TimeOut.Text,
+                    await DisplayAlert("Message", "Failed to submit! All field are required except Middle name, suffix, and email.", "Okay");
+                    return;
+                }
 
-                };
-               
-                bool ADD = DependencyService.Get<ISQLite>().AdminSaveGuest(RequestDetails);
-                if (ADD == true)
+                else if (!(Last.Text.Length > 1) || !(First.Text.Length > 1 || !(First.Text.Length > 1)))
                 {
-
-                    await DisplayAlert("Message", "Report Submitted Successfully", "Okay");
-                    await Navigation.PushAsync(new TableRequest());
-
+                    await DisplayAlert("Message", "Failed to submit! Name fields must contain atleast atleast 2 characters", "Okay");
+                    return;
+                }
+                else if (!(sac.Text.Length > 6) || !(Address.Text.Length > 6))
+                {
+                    await DisplayAlert("Message", "Failed to submit! Transaction, mobile number, and address must contain atleast 7 ", "Okay");
+                    return;
+                }
+                else if (!(Email.Text.Contains("@")))
+                {
+                    await DisplayAlert("Message", "Invalid email. Try again.", "Okay");
+                    return;
                 }
                 else
                 {
-                    await DisplayAlert("Message", "Failed to submit", "Okay");
+
+                    var choose = await DisplayAlert("Alert!", "Submit report. Do you want to continue?", "Yes", "No");
+                    if (choose)
+                    {
+                        var DateGuest = this.FindByName<Entry>("DateGuest");
+                        AdminRequest RequestDetails = new AdminRequest
+                        {
+                            LastName = Last.Text,
+                            FirstName = First.Text,
+                            MiddleName = Middle.Text,
+                            Suffix = First.Text,
+                            Age = Age.Text,
+                            Number = Number.Text,
+                            Address = Address.Text,
+                            Email = Email.Text,
+                            Department = department.Text,
+                            sac = sac.Text,
+                            TimeIn = TimeIn.Text,
+                            TimeOut = TimeOut.Text,
+                            DateGuest = DateGuest.Text
+                        };
+
+                        bool ADD = DependencyService.Get<ISQLite>().AdminSaveGuest(RequestDetails);
+                        if (ADD == true)
+                        {
+
+                            await DisplayAlert("Message", "Report Submitted Successfully", "Okay");
+                            await Navigation.PushAsync(new TableRequest());
+
+                        }
+                        else
+                        {
+                            await DisplayAlert("Message", "Failed to submit", "Okay");
+                        }
+                    }
+                      
                 }
+                
             }
            
         }
@@ -197,6 +271,13 @@ namespace STI_Finfo
             MessagingCenter.Subscribe<object, string>(this, "Hi", (obj, s) => {
                 department.Text = s;
             });
+        }
+
+        private void Date_Clicked(object sender, EventArgs e)
+        {
+            var dateNoID = this.FindByName<Entry>("DateGuest");
+            dateNoID.Text = DateTime.Now.ToString("yyyy/M/d");
+            return;
         }
     }
 }

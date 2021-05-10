@@ -173,7 +173,9 @@ namespace STI_Finfo.Droid
             List<AdminNoID> NoId = con.Query<AdminNoID>(sql);
             return NoId;
         }
-        // --------------------- GET STUDENT BY DATE -------------
+
+
+        // --------------------------- GET STUDENT BY DATE ------------------
 
 
 
@@ -207,7 +209,7 @@ namespace STI_Finfo.Droid
 
             var GetDateS = DateTime.Now.AddDays(-7).ToString("yyyy/M/d");
             var GetDateSs = DateTime.Now.AddDays(-14).ToString("yyyy/M/d");
-            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID BETWEEN '" + GetDateSs + "' AND '" + GetDateS + "'  ";
+            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID BETWEEN '" + GetDateS + "' AND '" + GetDateSs + "'  ";
             List<AdminNoID> NoId = con.Query<AdminNoID>(sql);
             return NoId;
         }
@@ -224,21 +226,47 @@ namespace STI_Finfo.Droid
         }
         //------------------ GET GUEST BY DATE ------------------
 
-        // TODAYYYYYYY
         public List<AdminRequest> GetGuestToday()
         {
-            var GetDate = DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
-            string sql = "SELECT * FROM AdminRequest WHERE TimeOut >= CAST('" + GetDate + "' AS DATE) ORDER BY TimeOut DESC";
+
+            var GetDate = DateTime.Now.ToString("yyyy/M/d");
+            string sql = "SELECT * FROM AdminRequest WHERE DateGuest = '" + GetDate + "'   ";
             List<AdminRequest> NoId = con.Query<AdminRequest>(sql);
             return NoId;
         }
 
         // YESTERDAYYYYYY
+
         public List<AdminRequest> GetGuestYesterday()
         {
-            var GetDate = DateTime.Now.ToString("yyyy/M/d HH:mm:ss");
 
-            string sql = "SELECT * FROM AdminRequest WHERE TimeOut >= CAST('" + GetDate + "' AS DATE) ORDER BY TimeOut DESC";
+
+            var GetDateS = DateTime.Now.AddDays(-1).ToString("yyyy/M/d");
+
+            string sql = "SELECT * FROM AdminRequest WHERE DateGuest = '" + GetDateS + "'   ";
+            List<AdminRequest> NoId = con.Query<AdminRequest>(sql);
+            return NoId;
+        }
+        // LAST WEEK
+
+        public List<AdminRequest> GetGuestLASTWEEK()
+        {
+
+
+            var GetDateS = DateTime.Now.AddDays(-7).ToString("yyyy/M/d");
+            var GetDateSs = DateTime.Now.AddDays(-14).ToString("yyyy/M/d");
+            string sql = "SELECT * FROM AdminRequest WHERE DateGuest BETWEEN '" + GetDateSs + "' AND '" + GetDateS + "'  ";
+            List<AdminRequest> NoId = con.Query<AdminRequest>(sql);
+            return NoId;
+        }
+        //LAST MONTH
+        public List<AdminRequest> GetGuestLASTMONTH()
+        {
+
+
+            var GetDateS = DateTime.Now.AddDays(-30).ToString("yyyy/M/d");
+            var GetDateSs = DateTime.Now.AddDays(-60).ToString("yyyy/M/d");
+            string sql = "SELECT * FROM AdminRequest WHERE DateGuest BETWEEN '" + GetDateS + "'  AND '" + GetDateSs + "'  ";
             List<AdminRequest> NoId = con.Query<AdminRequest>(sql);
             return NoId;
         }

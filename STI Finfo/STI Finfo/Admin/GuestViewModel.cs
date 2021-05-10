@@ -23,6 +23,7 @@ namespace STI_Finfo.Admin
 
             public ObservableCollection<AdminRequest> Request_Details { get; set; }
             public string Day { get; set; }
+            public string Sort { get; set; }
             public bool IsVisible { get; set; }
             public string CollImage { get; set; }
             public string ExpImage { get; set; }
@@ -40,11 +41,14 @@ namespace STI_Finfo.Admin
         {
             ObservableCollection<AdminRequest> yesterday = new ObservableCollection<AdminRequest>((IEnumerable<AdminRequest>)DependencyService.Get<ISQLite>().GetGuestYesterday());
             ObservableCollection<AdminRequest> Today = new ObservableCollection<AdminRequest>((IEnumerable<AdminRequest>)DependencyService.Get<ISQLite>().GetGuestToday());
+            ObservableCollection<AdminRequest> lastweek = new ObservableCollection<AdminRequest>((IEnumerable<AdminRequest>)DependencyService.Get<ISQLite>().GetGuestLASTWEEK());
+            ObservableCollection<AdminRequest> lastmonth = new ObservableCollection<AdminRequest>((IEnumerable<AdminRequest>)DependencyService.Get<ISQLite>().GetGuestLASTMONTH());
             Lists = new ObservableCollection<List>
             {
                 new List
                 {
-                    Day = "Today (3)",
+                    Day="Today",
+                    Sort = Today.Count.ToString(),
                     CollImage="down2.png",
                     ExpImage="down3.png",
 
@@ -56,12 +60,35 @@ namespace STI_Finfo.Admin
 
                  new List
                 {
-                    Day = "Yesterday (3)",
+                      Day="Yesterday",
+                    Sort = yesterday.Count.ToString(),
                     CollImage="down2.png",
                     ExpImage="down3.png",
 
                     IsVisible = false,
                     Request_Details= yesterday
+
+                 },
+                 new List
+                {
+                      Day="Last Week",
+                    Sort = lastweek.Count.ToString(),
+                    CollImage="down2.png",
+                    ExpImage="down3.png",
+
+                    IsVisible = false,
+                    Request_Details= lastweek
+
+                 },
+                 new List
+                {
+                      Day="Last Month",
+                    Sort = lastmonth.Count.ToString(),
+                    CollImage="down2.png",
+                    ExpImage="down3.png",
+
+                    IsVisible = false,
+                    Request_Details= lastmonth
 
                  },
             };

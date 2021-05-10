@@ -43,5 +43,7 @@ namespace STI_Finfo
         bool AdminSaveGuest(AdminRequest request);
         List<AdminRequest> GetGuestToday();
         List<AdminRequest> GetGuestYesterday();
+        List<AdminRequest> GetGuestLASTWEEK();
+        List<AdminRequest> GetGuestLASTMONTH();
     }
 }

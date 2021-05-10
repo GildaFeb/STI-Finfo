@@ -20,7 +20,7 @@
                 </Grid>
             </StackLayout>
             <StackLayout>
-                <Frame WidthRequest="700" Margin="7,0,5,7"  HasShadow="true" BackgroundColor="#cccccc" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="1200" >
+                <Frame WidthRequest="750" Margin="7,0,5,7"  HasShadow="true" BackgroundColor="#cccccc" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="1200" >
                     <StackLayout>
 
                         <Grid>
@@ -150,6 +150,15 @@
                             </Frame>
                         </Grid>
                         <Grid>
+                            <!--- TIME AND DATE -->
+                            <StackLayout Margin="0,5,0,0">
+                                <Button Clicked="Date_Clicked" Text="ADD DATE"  TextColor="White"></Button>
+                                <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
+                                    <Entry  x:Name="DateGuest"  Margin="1,0,2,0" FontSize="15" />
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                        <Grid>
                             <!--- TIME IN -->
                             <StackLayout Margin="0,5,0,0">
                                 <Button Clicked="TimeIn_Clicked" Text="Add Time In" FontSize="13" TextColor="White"></Button>
@@ -168,11 +177,12 @@
                             </StackLayout>
                         </Grid>
                         <Grid>
+                            
                             <!--- ID -->
                             <StackLayout Margin="0,5,0,0">
                                 
                                 <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
-                                    <Entry IsEnabled="false" Keyboard="Numeric"  x:Name="ID" FontSize="15" Margin="1,0,2,0"  />
+                                    <Entry IsVisible="false" Keyboard="Numeric"  x:Name="ID" FontSize="15" Margin="1,0,2,0"  />
                                 </Frame>
                             </StackLayout>
                         </Grid>
