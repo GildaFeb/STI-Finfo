@@ -228,7 +228,7 @@ namespace STI_Finfo
                             LastName = Last.Text,
                             FirstName = First.Text,
                             MiddleName = Middle.Text,
-                            Suffix = First.Text,
+                            Suffix = Suffix.Text,
                             Age = Age.Text,
                             Number = Number.Text,
                             Address = Address.Text,

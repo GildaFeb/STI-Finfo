@@ -78,7 +78,7 @@
                             <StackLayout Margin="0,5,0,0">
                                 <Button Clicked="Date_Clicked" Text="ADD DATE"  TextColor="White"></Button>
                                 <Frame Margin="0,-3,0,5" BorderColor="#003366" CornerRadius="4"  HeightRequest="50" Padding="10,-2,10,-1">
-                                    <Entry IsVisible="false"  x:Name="DateID"  Margin="1,0,2,0" FontSize="15" />
+                                    <Entry IsVisible="true"  x:Name="DateID"  Margin="1,0,2,0" FontSize="15" />
                                 </Frame>
                             </StackLayout>
                         </Grid>

@@ -67,12 +67,14 @@
                                                         <StackLayout Spacing="2" Margin="0,-6,3,-6">
                                                             <StackLayout Orientation="Horizontal">
                                                                 <Label Text="Name: " FontSize="11" FontAttributes="Bold" Margin="-4,0,-4,0" TextColor="Black"/>
-                                                                <Label Text="{Binding FirstName,LastName,MiddleName, Suffix,StringFormat ='{0:F0} {0:F1} {0:F2} {0:F3} '}" FontSize="11" FontAttributes="None" Margin="-2,1,0,0" TextColor="Black"/>
-                                                               
+                                                                <Label Text="{Binding FirstName,StringFormat='{0:F0}'}" FontSize="11" FontAttributes="None" Margin="-2,1,0,0" TextColor="Black"/>
+                                                                <Label Text="{Binding LastName,StringFormat ='{0:F0}'}" FontSize="11" FontAttributes="None" Margin="-2,1,0,0" TextColor="Black"/>
+                                                                <Label Text="{Binding Suffix,StringFormat ='{0:F0}.'}" FontSize="11" FontAttributes="None" Margin="-2,1,0,0" TextColor="Black"/>
+                                                             
                                                             </StackLayout>
                                                             <StackLayout Orientation="Vertical">
-                                                                <Label Text="{Binding Department,StringFormat='{0:F0}:'}" FontSize="11" FontAttributes="None" Margin="-2,-2,0,-2" TextColor="Black"/>
-                                                                <Label Text="{Binding sac}" FontSize="11" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
+                                                                <Label Text="{Binding Department,StringFormat='Department: {0:F0}:'}" FontSize="11" FontAttributes="None" Margin="-2,-2,0,-2" TextColor="Black"/>
+                                                                <Label Text="{Binding sac,StringFormat='Transaction: {0:F0)}'}" FontSize="11" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
                                                                
                                                                 <Label Text="{Binding TimeIn,StringFormat='TimeIn: {0:F0}'}" FontSize="11" FontAttributes="None" Margin="-2,-5,0,-5" TextColor="Black"/>
                                                                 <Label Text="{Binding TimeOut,StringFormat='TimeOut: {0:F0}'}" FontSize="11" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>

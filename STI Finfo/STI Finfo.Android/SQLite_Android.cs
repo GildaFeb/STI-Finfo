@@ -208,8 +208,7 @@ namespace STI_Finfo.Droid
 
 
             var GetDateS = DateTime.Now.AddDays(-7).ToString("yyyy/M/d");
-            var GetDateSs = DateTime.Now.AddDays(-14).ToString("yyyy/M/d");
-            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID BETWEEN '" + GetDateS + "' AND '" + GetDateSs + "'  ";
+            string sql = "SELECT * FROM AdminNoID WHERE AdminDateNoID = '" + GetDateS + "'  ";
             List<AdminNoID> NoId = con.Query<AdminNoID>(sql);
             return NoId;
         }
@@ -253,9 +252,9 @@ namespace STI_Finfo.Droid
         {
 
 
+           
             var GetDateS = DateTime.Now.AddDays(-7).ToString("yyyy/M/d");
-            var GetDateSs = DateTime.Now.AddDays(-14).ToString("yyyy/M/d");
-            string sql = "SELECT * FROM AdminRequest WHERE DateGuest BETWEEN '" + GetDateSs + "' AND '" + GetDateS + "'  ";
+            string sql = "SELECT * FROM AdminRequest WHERE DateGuest = '" + GetDateS + "'  ";
             List<AdminRequest> NoId = con.Query<AdminRequest>(sql);
             return NoId;
         }

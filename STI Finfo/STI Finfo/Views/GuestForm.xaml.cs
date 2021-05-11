@@ -48,7 +48,7 @@ namespace STI_Finfo.Views
 
             else
             {
-                var result = await DisplayAlert("Message", "Submit form. Do you want to continue?", "No", "Yes");
+                var result = await DisplayAlert("Message", "Submit form. Do you want to continue?", "Yes", "No");
 
                 if (result)
                 {
