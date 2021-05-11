@@ -59,13 +59,17 @@ namespace STI_Finfo
         public List<NoID> tempdata;
         void OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            var search = this.FindByName<SearchBar>("search");
-            var text = search.Text;
-           
-            var RequestLlist = this.FindByName<ListView>("NoIDList");   
-            var data = DependencyService.Get<ISQLite>().GetNoID();
-            RequestLlist.ItemsSource = data.Where(x => x.Account.ToString().ToLower().Contains(text.ToLower()));
-            return;
+
+            var data = DependencyService.Get<ISQLite>().GetRequest();
+            if (string.IsNullOrEmpty(e.NewTextValue))
+            {
+                NoIDList.ItemsSource = data;
+            }
+
+            else
+            {
+                NoIDList.ItemsSource = data.Where(x => x.LastName.Contains(e.NewTextValue));
+            }
         }
 
 

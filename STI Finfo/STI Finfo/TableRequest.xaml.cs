@@ -73,7 +73,7 @@ namespace STI_Finfo
         public List<Request> tempdata;
         void OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            var RequestLlist= this.FindByName<ListView>("RequestList");
+            
             var data = DependencyService.Get<ISQLite>().GetRequest();
             if (string.IsNullOrEmpty(e.NewTextValue))
             {

@@ -197,7 +197,7 @@ namespace STI_Finfo
             {
                 if (string.IsNullOrEmpty(Last.Text) || string.IsNullOrEmpty(First.Text) || string.IsNullOrEmpty(department.Text) || string.IsNullOrEmpty(sac.Text) || string.IsNullOrEmpty(Age.Text) || string.IsNullOrEmpty(Number.Text) || string.IsNullOrEmpty(Address.Text) || string.IsNullOrEmpty(DateGuest.Text))
                 {
-                    await DisplayAlert("Message", "Failed to submit! All field are required except Middle name, suffix, and email.", "Okay");
+                    await DisplayAlert("Message", "Failed to submit! All field are required except middle name, suffix, and email.", "Okay");
                     return;
                 }
 
