@@ -6,7 +6,6 @@
     <ContentPage.Content>
         <ScrollView>
             <AbsoluteLayout Margin="0,0,0,-100">
-             
                 <Grid Margin="0,0,0,-100">
                     <StackLayout Padding="2" >
                         <Grid Opacity=".9">

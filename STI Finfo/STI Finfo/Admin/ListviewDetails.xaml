@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local11="clr-namespace:STI_Finfo.Admin" 
              x:Class="STI_Finfo.Admin.ListviewDetails"
-              BackgroundImageSource="gray.png"
+             BackgroundImageSource="gray.png"
            >
     <ContentPage.BindingContext>
         <local11:MainViewModel></local11:MainViewModel>
@@ -25,7 +25,7 @@
                         <Label Text="Student of STI College that has no ID" FontSize="12" TextColor="Black"/>
                     </StackLayout>
                     <StackLayout Grid.Column="2" Margin="-20,-40,0,20">
-                        <Image Source="add.png" HeightRequest="175"/>
+                        <Image Source="teacher.png" HeightRequest="175"/>
                     </StackLayout>
                 </Grid>
             </Frame>
@@ -73,15 +73,21 @@
                                             <ViewCell>
                                                 <ScrollView>
                                                     <Frame Margin="12,5,12,5"  CornerRadius="10" HorizontalOptions="FillAndExpand">
-                                                        <StackLayout Margin="-7,-7,-7,-7" HorizontalOptions="FillAndExpand" >
-                                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                                                <Label Text="Student number:" FontSize="10" FontAttributes="Bold" Margin="9,9,0,-4" TextColor="Black"/>
-                                                                <Label Text="{Binding AdminStudentNumber,StringFormat='{0:F0}'}" FontSize="10" FontAttributes="None" Margin="5,9,0,-4" TextColor="Black"/>
-                                                                <Label Text="{Binding AdminDateNoID}" FontSize="10" FontAttributes="None" Margin="0,9,0,0" TextColor="Gray" HorizontalOptions="EndAndExpand"/>
+                                                        <StackLayout Margin="-7,-7,-7,-7" HorizontalOptions="FillAndExpand" Padding="10,10,10,10" >
+                                                         
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label Text="Student Number:" FontAttributes="Bold" Margin="-5,-5,0,-5"   FontSize="11"  TextColor="Black" />
+                                                                <Label Text="{Binding AdminStudentNumber}" FontSize="11"  Margin="3,-5,0,-5" TextColor="Black"/>
+                                                                <Label Text="{Binding AdminDateNoID}" FontSize="11" FontAttributes="None" Margin="0,-5,0,0" TextColor="Gray" HorizontalOptions="EndAndExpand"/>
+
                                                             </StackLayout>
-                                                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                                                <Label Text="{Binding AdminAccount,StringFormat='0365 account: {0:F0}'}" FontSize="10" FontAttributes="None" Margin="9,-5,0,5" TextColor="Black"/>
-                                                                <Label Text="{Binding AdminReasons,StringFormat='Reason: {0:F0}'}" FontSize="10" FontAttributes="None" Margin="9,-12,0,9" TextColor="Black"/>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label Text="Account:" FontAttributes="Bold" Margin="-5,-4,0,-5"   FontSize="11"  TextColor="Black" />
+                                                                <Label Text="{Binding AdminAccount}" FontSize="11"  Margin="3,-4,0,-5" TextColor="Black"/>
+                                                            </StackLayout>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label Text="Reason/s:" FontAttributes="Bold" Margin="-5,-3,0,-5"   FontSize="11"  TextColor="Black" />
+                                                                <Label Text="{Binding AdminReasons}" FontSize="11"  Margin="3,-3,0,-5" TextColor="Black"/>
                                                             </StackLayout>
                                                         </StackLayout>
                                                     </Frame>

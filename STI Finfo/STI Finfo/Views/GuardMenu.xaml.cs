@@ -30,7 +30,7 @@ namespace STI_Finfo.Views
 
         private async void logout_Clicked(object sender, EventArgs e)
         {
-            var result = await DisplayAlert("Message", "Submit form. Do you want to continue?", "Confirm", "Cancel");
+            var result = await DisplayAlert("Message", "Do you want to log out?", "Confirm", "Cancel");
 
             if (result)
             {

@@ -37,14 +37,16 @@
                                         <Frame CornerRadius="3" HasShadow="True" Margin="12,5,12,5" WidthRequest="1000" >
                                             <StackLayout Spacing="2" Margin="0,-6,3,-6">
                                                 <StackLayout Orientation="Horizontal">
-                                                    <Label Text="{Binding FirstName,StringFormat='Name: {0:F0}'}" FontSize="Small" FontAttributes="Bold" Margin="-4,0,-4,0" TextColor="Black"/>
-                                                    <Label Text="{Binding MiddleName,StringFormat=' {0:F0}'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
-                                                    <Label Text="{Binding LastName,StringFormat=' {0:F0}'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
-                                                    <Label Text="{Binding Suffix,StringFormat='{0:F0}'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
+                                                    <Label Text="Name: " FontSize="11" FontAttributes="Bold" Margin="-4,0,-4,0" TextColor="Black"/>
+                                                    <Label Text="{Binding FullName,StringFormat='{0:F0}'}" FontSize="11" FontAttributes="None" Margin="-2,1,0,0" TextColor="Black"/>
                                                 </StackLayout>
-                                                <StackLayout Orientation="Vertical">
-                                                    <Label Text="{Binding Age,StringFormat='Age: {0:F0}'}" FontSize="Small" FontAttributes="None" Margin="-2,-5,0,-5" TextColor="Black"/>
-                                                    <Label Text="{Binding Number,StringFormat='Number: {0:F0}'}" FontSize="Small" FontAttributes="None" Margin="-2,0,0,0" TextColor="Black"/>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Age: " FontSize="11" FontAttributes="Bold" Margin="-4,0,-4,0" TextColor="Black"/>
+                                                    <Label Text="{Binding Age,StringFormat='{0:F0}'}" FontSize="11" FontAttributes="None" Margin="-2,1,0,0" TextColor="Black"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Mobile Number: " FontSize="11" FontAttributes="Bold" Margin="-4,0,-4,0" TextColor="Black"/>
+                                                    <Label Text="{Binding Number,StringFormat='{0:F0}'}" FontSize="11" FontAttributes="None" Margin="-2,1,0,0" TextColor="Black"/>
                                                 </StackLayout>
                                             </StackLayout>
                                         </Frame>

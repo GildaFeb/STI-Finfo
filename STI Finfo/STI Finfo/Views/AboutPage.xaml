@@ -26,11 +26,11 @@
             </StackLayout>
             <StackLayout Margin="0,620,10,0">
                 <Label Text="Our Story" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="40"/>
-                <Label Text="We are Grade 12 students of STI college San Jose Del Monte and we want to utilize our skills in web designing and programming. So we decided to make a website that will help STI College SJDM to have our own footprint in our school." FontSize="15" HorizontalTextAlignment="Start" Margin="10" TextColor="#0a0a0a" Padding="15,15,0,0"/>
+                <Label Text="We are Grade 12 students of STI college San Jose Del Monte and we want to utilize our skills in web designing and programming. So we decided to make a website that will help STI College SJDM to have our own footprint in our school." FontSize="15" HorizontalTextAlignment="Center" Margin="10" TextColor="#0a0a0a" Padding="15,15,0,0"/>
             </StackLayout>
             <StackLayout Margin="0,1050,10,0">
                 <Label Text="Our Mission" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="40"/>
-                <Label Text="Our mission is to provide an online monitoring system for STI College San Jose Del Monte to monitor the individuals that comes in and out of the school's premises. We decided to make it online to avoid touching objects that may have corona virus, and to provide a paperless and less hassle system on monitoring individuals." FontSize="15" HorizontalTextAlignment="End" TextColor="#0a0a0a" Margin="10" Padding="15,15,0,0"/>
+                <Label Text="Our mission is to provide an online monitoring system for STI College San Jose Del Monte to monitor the individuals that comes in and out of the school's premises. We decided to make it online to avoid touching objects that may have corona virus, and to provide a paperless and less hassle system on monitoring individuals." FontSize="15" HorizontalTextAlignment="Center" TextColor="#0a0a0a" Margin="10" Padding="15,15,0,0"/>
             </StackLayout>
 
         </Grid>

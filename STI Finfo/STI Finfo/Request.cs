@@ -24,7 +24,7 @@ namespace STI_Finfo
         public string TimeOut{ get; set; }
         public string DateGuest { get; set; }
         public bool IsVisible { get; set; }
-
+        public string FullName { get { return LastName + " " + Suffix + ", " + FirstName + " " + MiddleName; } }
 
     }
     public class AdminRequest
@@ -45,7 +45,7 @@ namespace STI_Finfo
         public string TimeOut { get; set; }
         public bool IsVisible { get; set; }
         public string DateGuest { get; set; }
-
+        public string FullName { get { return LastName + " " + Suffix +", " + FirstName + " " + MiddleName; } }
     }
 
 

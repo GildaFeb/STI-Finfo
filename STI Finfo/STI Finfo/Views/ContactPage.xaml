@@ -5,20 +5,43 @@
              BackgroundColor="#cccccc"
 >
     <ContentPage.Content>
-        <ScrollView>
-            <Grid>
-                <StackLayout Padding="0" Margin="0,30,0,0">
-                    <Frame BackgroundColor="#2c384a" HeightRequest="600" HorizontalOptions="FillAndExpand" Padding="0">
-                        <Image Source="contact_bg.png" Margin="0" Aspect="AspectFill"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Opacity=".9" Grid.Row="0" Margin="0,10,0,10">
+                <StackLayout Margin="10,0,10,0" >
+                    <Frame  HasShadow="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                        <Grid HorizontalOptions="FillAndExpand" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Margin="0,10,0,3"  Grid.Row="0">
+                                <Image Source="add.jpg"  Aspect="AspectFill" Margin="40,0,40,40"/>
+                            </StackLayout>
+                            <StackLayout Margin="10,0,10,0"  Grid.Row="1">
+                                <StackLayout Orientation="Horizontal" Margin="0,4,0,3">
+                                    <Label Text="You may contact us through:" HorizontalTextAlignment="Center" TextColor="#2c384a" FontSize="25" FontAttributes="Bold" FontFamily="Helvetica"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="0,4,0,3">
+                                    <Label Text="EMAIL:" HorizontalTextAlignment="Center" TextColor="#2c384a" FontAttributes="Bold" FontSize="Small"  FontFamily="Helvetica"/>
+
+                                    <Label Text="sticollegesjdm@gmail.com" HorizontalTextAlignment="Center" TextColor="#2c384a" FontSize="Small"  FontFamily="Helvetica"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="0,4,0,3">
+                                    <Label Text="FACEBOOK:" HorizontalTextAlignment="Center" TextColor="#2c384a" FontAttributes="Bold" FontSize="Small" FontFamily="Helvetica"/>
+                                    <Label Text="STI College SJDM" HorizontalTextAlignment="Center" TextColor="#2c384a" FontSize="Small"  FontFamily="Helvetica"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="0,4,0,3">
+                                    <Label Text="CONTACT:" HorizontalTextAlignment="Center" TextColor="#2c384a" FontAttributes="Bold" FontSize="Small" FontFamily="Helvetica"/>
+                                    <Label Text="09278363748" HorizontalTextAlignment="Center" TextColor="#2c384a" FontSize="Small"  FontFamily="Helvetica"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </Grid>
                     </Frame>
                 </StackLayout>
-                <StackLayout Margin="10,300,10,0">
-                    <Label Text="You may contact us throught:" HorizontalTextAlignment="Center" TextColor="#2c384a" FontSize="30" FontAttributes="Bold" FontFamily="Helvetica"/>
-                    <Label Text="Email: sticollegesjdm@gamil.com" FontSize="Subtitle" Padding="17,15,0,0"/>
-                    <Label Text="Facebook: Sti College SJDM" FontSize="Subtitle" Padding="17,15,0,0"/>
-                    <Label Text="Contact #: 09278363748" FontSize="Subtitle" Padding="17,15,0,0"/>
-                </StackLayout>
             </Grid>
-        </ScrollView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

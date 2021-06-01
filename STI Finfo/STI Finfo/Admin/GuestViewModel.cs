@@ -55,8 +55,6 @@ namespace STI_Finfo.Admin
 
                     IsVisible = false,
                     Request_Details= Today
-                    
-
                  },
 
                  new List

@@ -4,27 +4,61 @@
              x:Class="STI_Finfo.Views.GuardMenu"
              BackgroundImageSource="guardmenu.png">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Margin="0,0,0,-100">
-                <Grid Margin="0,0,0,-100">
-                    <ScrollView>
-                        <StackLayout>
-                            <StackLayout>
-                                <Label Text="Request" FontAttributes="Bold" TextColor="White" FontSize="38" HorizontalOptions="Start" Margin="20,35,20,-30">
-                                </Label>
-                            </StackLayout>
-                            <StackLayout Margin="0,-5,0,0">
-                                <Image Source="secu_icon.png" HeightRequest="250"  />
-                            </StackLayout>
-                            <StackLayout Margin="0,70,0,0">
-                                <Button Text="GUEST" CornerRadius="3"  FontAttributes="Bold" Margin="15,30,15,10" BackgroundColor="#003366" Clicked="Guest_Clicked"  TextColor="White"/>
-                                <Button Text="NO ID" CornerRadius="3" FontAttributes="Bold" Margin="15,0,15,10" BackgroundColor="#003663" Clicked="NoID_Clicked" TextColor="White"/>
-                                <Button Text="Log out" FontSize="10" HeightRequest="40" WidthRequest="100" Clicked="logout_Clicked" CornerRadius="3"  BorderColor="White"  TextColor="White"></Button>
-                            </StackLayout>
-                        </StackLayout>
-                    </ScrollView>
+
+        <ScrollView >
+            <Grid  Margin="10,0,10,10" >
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,0,0">
+                    <Label Padding="0,0,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"   >
+                        <Label.FormattedText >
+                            <FormattedString>
+                                <Span Text="GUARD MONITORING" FontSize="30" FontAttributes="Bold" TextColor="white"  />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Padding="0,0,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"  >
+                        <Label.FormattedText >
+                            <FormattedString>
+                                <Span Text="For Updating Time in and Time out of Guest or No ID Students" FontSize="10" FontAttributes="Bold" TextColor="white"  />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <!--- SECURITY BUTTON -->
+                <Grid Grid.Row="1" Grid.Column="0"  Margin="0,0,0,5" >
+                    <StackLayout VerticalOptions="EndAndExpand" Margin="5,5,5,5">
+                        <!-- GUEST -->
+                        <Button Text="GUEST" TextColor="white"  VerticalOptions="End"   Clicked="Guest_Clicked"  CornerRadius="5" Margin="50,0,50,0"  >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,2">
+                                    <GradientStop Color="#d7ac00" Offset="0.1" />
+                                    <GradientStop Color="#d7ac00" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <!-- NO ID -->
+                        <Button Text="NO ID" TextColor="white" VerticalOptions="End"  Clicked="NoID_Clicked"  CornerRadius="5" Margin="50,0,50,0"  >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,2">
+                                    <GradientStop Color="#d7ac00" Offset="0.1" />
+                                    <GradientStop Color="#d7ac00" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Button Text="LOG OUT" TextColor="WhiteSmoke" VerticalOptions="End" Clicked="logout_Clicked"   CornerRadius="5" Margin="50,0,50,15"  >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,2">
+                                    <GradientStop Color="#2c384a" Offset="0.1" />
+                                    <GradientStop Color="#01579b" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackLayout>
                 </Grid>
-            </StackLayout>
+            </Grid>
         </ScrollView>
+
+
+
     </ContentPage.Content>
 </ContentPage>
+
